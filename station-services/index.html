@@ -1,0 +1,2905 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Elite Dangerous journal API">
+      
+      
+        <meta name="author" content="ROMVoid95">
+      
+      
+        <link rel="canonical" href="https://romvoid95.github.io/EDJournalAPI/station-services/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Station Services - ED:Journal API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#station_services" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ED:Journal API" class="md-header__button md-logo" aria-label="ED:Journal API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ED:Journal API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Station Services
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ROMVoid95/EDJournalAPI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ED:Journal API" class="md-nav__button md-logo" aria-label="ED:Journal API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ED:Journal API
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ROMVoid95/EDJournalAPI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-format/" class="md-nav__link">
+        File Format
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../startup/" class="md-nav__link">
+        Startup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../travel/" class="md-nav__link">
+        Travel
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat/" class="md-nav__link">
+        Combat
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exploration/" class="md-nav__link">
+        Exploration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trade/" class="md-nav__link">
+        Trade
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Station Services
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Station Services
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#station_services" class="md-nav__link">
+    Station Services
+  </a>
+  
+    <nav class="md-nav" aria-label="Station Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buyammo" class="md-nav__link">
+    BuyAmmo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buydrones" class="md-nav__link">
+    BuyDrones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cargodepot" class="md-nav__link">
+    CargoDepot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communitygoal" class="md-nav__link">
+    CommunityGoal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communitygoaldiscard" class="md-nav__link">
+    CommunityGoalDiscard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communitygoaljoin" class="md-nav__link">
+    CommunityGoalJoin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communitygoalreward" class="md-nav__link">
+    CommunityGoalReward
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewassign" class="md-nav__link">
+    CrewAssign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewfire" class="md-nav__link">
+    CrewFire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewhire" class="md-nav__link">
+    CrewHire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineerapply" class="md-nav__link">
+    EngineerApply
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineercontribution" class="md-nav__link">
+    EngineerContribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineercraft" class="md-nav__link">
+    EngineerCraft
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineerlegacyconvert" class="md-nav__link">
+    EngineerLegacyConvert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineerprogress" class="md-nav__link">
+    EngineerProgress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetchremotemodule" class="md-nav__link">
+    FetchRemoteModule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#market" class="md-nav__link">
+    Market
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#massmodulestore" class="md-nav__link">
+    MassModuleStore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#materialtrade" class="md-nav__link">
+    MaterialTrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missionabandoned" class="md-nav__link">
+    MissionAbandoned
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missionaccepted" class="md-nav__link">
+    MissionAccepted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missioncompleted" class="md-nav__link">
+    MissionCompleted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missionfailed" class="md-nav__link">
+    MissionFailed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missionredirected" class="md-nav__link">
+    MissionRedirected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulebuy" class="md-nav__link">
+    ModuleBuy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduleretrieve" class="md-nav__link">
+    ModuleRetrieve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulesell" class="md-nav__link">
+    ModuleSell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulesellremote" class="md-nav__link">
+    ModuleSellRemote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulestore" class="md-nav__link">
+    ModuleStore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduleswap" class="md-nav__link">
+    ModuleSwap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outfitting" class="md-nav__link">
+    Outfitting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paybounties" class="md-nav__link">
+    PayBounties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payfines" class="md-nav__link">
+    PayFines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paylegacyfines" class="md-nav__link">
+    PayLegacyFines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redeemvoucher" class="md-nav__link">
+    RedeemVoucher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refuelall" class="md-nav__link">
+    RefuelAll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refuelpartial" class="md-nav__link">
+    RefuelPartial
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repair" class="md-nav__link">
+    Repair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repairall" class="md-nav__link">
+    RepairAll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restockvehicle" class="md-nav__link">
+    RestockVehicle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scientificresearch" class="md-nav__link">
+    ScientificResearch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searchandrescue" class="md-nav__link">
+    SearchAndRescue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selldrones" class="md-nav__link">
+    SellDrones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sellshiponrebuy" class="md-nav__link">
+    SellShipOnRebuy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setusershipname" class="md-nav__link">
+    SetUserShipName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipyard" class="md-nav__link">
+    Shipyard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipyardbuy" class="md-nav__link">
+    ShipyardBuy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipyardnew" class="md-nav__link">
+    ShipyardNew
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipyardsell" class="md-nav__link">
+    ShipyardSell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipyardtransfer" class="md-nav__link">
+    ShipyardTransfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipyardswap" class="md-nav__link">
+    ShipyardSwap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storedmodules" class="md-nav__link">
+    StoredModules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storedships" class="md-nav__link">
+    StoredShips
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technologybroker" class="md-nav__link">
+    TechnologyBroker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearimpound" class="md-nav__link">
+    ClearImpound
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../powerplay/" class="md-nav__link">
+        Powerplay
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squadrons/" class="md-nav__link">
+        Squadrons
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleetcarriers/" class="md-nav__link">
+        Fleet Carriers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-in-oddesey/" class="md-nav__link">
+        New in Odyssey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../misc-events/" class="md-nav__link">
+        Other Events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../status-file/" class="md-nav__link">
+        Status File
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#station_services" class="md-nav__link">
+    Station Services
+  </a>
+  
+    <nav class="md-nav" aria-label="Station Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buyammo" class="md-nav__link">
+    BuyAmmo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buydrones" class="md-nav__link">
+    BuyDrones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cargodepot" class="md-nav__link">
+    CargoDepot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communitygoal" class="md-nav__link">
+    CommunityGoal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communitygoaldiscard" class="md-nav__link">
+    CommunityGoalDiscard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communitygoaljoin" class="md-nav__link">
+    CommunityGoalJoin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#communitygoalreward" class="md-nav__link">
+    CommunityGoalReward
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewassign" class="md-nav__link">
+    CrewAssign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewfire" class="md-nav__link">
+    CrewFire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewhire" class="md-nav__link">
+    CrewHire
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineerapply" class="md-nav__link">
+    EngineerApply
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineercontribution" class="md-nav__link">
+    EngineerContribution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineercraft" class="md-nav__link">
+    EngineerCraft
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineerlegacyconvert" class="md-nav__link">
+    EngineerLegacyConvert
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineerprogress" class="md-nav__link">
+    EngineerProgress
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fetchremotemodule" class="md-nav__link">
+    FetchRemoteModule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#market" class="md-nav__link">
+    Market
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#massmodulestore" class="md-nav__link">
+    MassModuleStore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#materialtrade" class="md-nav__link">
+    MaterialTrade
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missionabandoned" class="md-nav__link">
+    MissionAbandoned
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missionaccepted" class="md-nav__link">
+    MissionAccepted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missioncompleted" class="md-nav__link">
+    MissionCompleted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missionfailed" class="md-nav__link">
+    MissionFailed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missionredirected" class="md-nav__link">
+    MissionRedirected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulebuy" class="md-nav__link">
+    ModuleBuy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduleretrieve" class="md-nav__link">
+    ModuleRetrieve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulesell" class="md-nav__link">
+    ModuleSell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulesellremote" class="md-nav__link">
+    ModuleSellRemote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modulestore" class="md-nav__link">
+    ModuleStore
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduleswap" class="md-nav__link">
+    ModuleSwap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#outfitting" class="md-nav__link">
+    Outfitting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paybounties" class="md-nav__link">
+    PayBounties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payfines" class="md-nav__link">
+    PayFines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paylegacyfines" class="md-nav__link">
+    PayLegacyFines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redeemvoucher" class="md-nav__link">
+    RedeemVoucher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refuelall" class="md-nav__link">
+    RefuelAll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refuelpartial" class="md-nav__link">
+    RefuelPartial
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repair" class="md-nav__link">
+    Repair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repairall" class="md-nav__link">
+    RepairAll
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restockvehicle" class="md-nav__link">
+    RestockVehicle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scientificresearch" class="md-nav__link">
+    ScientificResearch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#searchandrescue" class="md-nav__link">
+    SearchAndRescue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selldrones" class="md-nav__link">
+    SellDrones
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sellshiponrebuy" class="md-nav__link">
+    SellShipOnRebuy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setusershipname" class="md-nav__link">
+    SetUserShipName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipyard" class="md-nav__link">
+    Shipyard
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipyardbuy" class="md-nav__link">
+    ShipyardBuy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipyardnew" class="md-nav__link">
+    ShipyardNew
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipyardsell" class="md-nav__link">
+    ShipyardSell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipyardtransfer" class="md-nav__link">
+    ShipyardTransfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shipyardswap" class="md-nav__link">
+    ShipyardSwap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storedmodules" class="md-nav__link">
+    StoredModules
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storedships" class="md-nav__link">
+    StoredShips
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technologybroker" class="md-nav__link">
+    TechnologyBroker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearimpound" class="md-nav__link">
+    ClearImpound
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/ROMVoid95/EDJournalAPI/edit/main/docs/station-services.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>Station Services</h1>
+
+<h2 id="station_services">Station Services<a class="headerlink" href="#station_services" title="Permanent link">&para;</a></h2>
+<h3 id="buyammo">BuyAmmo<a class="headerlink" href="#buyammo" title="Permanent link">&para;</a></h3>
+<p>When Written: when purchasing ammunition</p>
+<p>Parameters:</p>
+<ul>
+<li>Cost </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;BuyAmmo&quot;,
+    &quot;Cost&quot;: 80
+}
+</code></pre></div>
+
+<h3 id="buydrones">BuyDrones<a class="headerlink" href="#buydrones" title="Permanent link">&para;</a></h3>
+<p>When Written: when purchasing drones</p>
+<p>Parameters:</p>
+<ul>
+<li>Type </li>
+<li>Count </li>
+<li>BuyPrice </li>
+<li>TotalCost </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;BuyDrones&quot;,
+    &quot;Type&quot;: &quot;Drones&quot;,
+    &quot;Count&quot;: 2,
+    &quot;SellPrice&quot;: 101,
+    &quot;TotalCost&quot;: 202
+}
+</code></pre></div>
+
+<h3 id="cargodepot">CargoDepot<a class="headerlink" href="#cargodepot" title="Permanent link">&para;</a></h3>
+<p>When written: when collecting or delivering cargo for a wing mission, or if a wing member updates progress</p>
+<p>Parameters:</p>
+<ul>
+<li>MissionID:(int) </li>
+<li>UpdateType:(string) (one of: "Collect", "Deliver", "WingUpdate") </li>
+<li>CargoType </li>
+<li>Count </li>
+<li>StartMarketID(int) </li>
+<li>EndMarketID(int) </li>
+<li>ItemsCollected(int) </li>
+<li>ItemsDelivered(int) </li>
+<li>TotalItemsToDeliver(int) </li>
+<li>Progress:(float) </li>
+</ul>
+<p>The CargoType and Count are included when you collect or deliver gods, they are not included for a wing update.</p>
+<p>The Progress value actually represents pending progress for goods in transit: (ItemsCollected-ItemsDelievered)/TotalItemsToDeliver</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2018-03-07T15:47:03Z&quot;,
+    &quot;event&quot;: &quot;CargoDepot&quot;,
+    &quot;MissionID&quot;: 65394170,
+    &quot;UpdateType&quot;: &quot;Deliver&quot;,
+    &quot;CargoType&quot;: &quot;BasicMedicines&quot;,
+    &quot;Count&quot;: 8,
+    &quot;StartMarketID&quot;: 3228867072,
+    &quot;EndMarketID&quot;: 3534964736,
+    &quot;ItemsCollected&quot;: 16,
+    &quot;ItemsDelivered&quot;: 16,
+    &quot;TotalItemsToDeliver&quot;: 3020,
+    &quot;Progress&quot;: 0
+}
+</code></pre></div>
+
+<h3 id="communitygoal">CommunityGoal<a class="headerlink" href="#communitygoal" title="Permanent link">&para;</a></h3>
+<p>When written: when the game retrieves info on community goals from the server, and the data has changed since last time</p>
+<p>This event contains the current status of all community goals the player is currently subscribed to</p>
+<p>Parameters:</p>
+<ul>
+<li>
+<p>CurrentGoals: an array with an entry for each CG, containing: </p>
+<ul>
+<li>CGID: a unique ID number for this CG </li>
+<li>Title: the description of the CG </li>
+<li>SystemName </li>
+<li>MarketName </li>
+<li>Expiry: time and date </li>
+<li>IsComplete: Boolean </li>
+<li>CurrentTotal </li>
+<li>PlayerContribution </li>
+<li>NumContributors </li>
+<li>PlayerPercentileBand </li>
+<li>TopTier:  <ul>
+<li>Name: string </li>
+<li>Bonus: string </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>If the community goal is constructed with a fixed-size top rank (ie max reward for top 10 players)</p>
+<ul>
+<li>TopRankSize: (integer) </li>
+<li>PlayerInTopRank: (Boolean) </li>
+</ul>
+</li>
+<li>
+<p>If the community goal has reached the first success tier:</p>
+<ul>
+<li>TierReached </li>
+<li>Bonus </li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2017-08-14T13:20:28Z&quot;,
+    &quot;event&quot;: &quot;CommunityGoal&quot;,
+    &quot;CurrentGoals&quot;: [
+        {
+            &quot;CGID&quot;: 726,
+            &quot;Title&quot;: &quot;Alliance Research Initiative – Trade&quot;,
+            &quot;SystemName&quot;: &quot;Kaushpoos&quot;,
+            &quot;MarketName&quot;: &quot;Neville Horizons&quot;,
+            &quot;Expiry&quot;: &quot;2017-08-17T14:58:14Z&quot;,
+            &quot;IsComplete&quot;: false,
+            &quot;CurrentTotal&quot;: 10062,
+            &quot;PlayerContribution&quot;: 562,
+            &quot;NumContributors&quot;: 101,
+            &quot;TopRankSize&quot;: 10,
+            &quot;PlayerInTopRank&quot;: false,
+            &quot;TierReached&quot;: &quot;Tier 1&quot;,
+            &quot;PlayerPercentileBand&quot;: 50,
+            &quot;Bonus&quot;: 200000
+        }
+    ]
+}
+</code></pre></div>
+
+<h3 id="communitygoaldiscard">CommunityGoalDiscard<a class="headerlink" href="#communitygoaldiscard" title="Permanent link">&para;</a></h3>
+<p>When written: when opting out of a community goal</p>
+<p>Parameters:</p>
+<ul>
+<li>CGID </li>
+<li>Name </li>
+<li>System </li>
+</ul>
+<h3 id="communitygoaljoin">CommunityGoalJoin<a class="headerlink" href="#communitygoaljoin" title="Permanent link">&para;</a></h3>
+<p>When Written: when signing up to a community goal</p>
+<p>Parameters:</p>
+<ul>
+<li>
+<p>CGID </p>
+</li>
+<li>
+<p>Name </p>
+</li>
+<li>System </li>
+</ul>
+<h3 id="communitygoalreward">CommunityGoalReward<a class="headerlink" href="#communitygoalreward" title="Permanent link">&para;</a></h3>
+<p>When Written: when receiving a reward for a community goal</p>
+<p>Parameters:</p>
+<ul>
+<li>CGID </li>
+<li>Name </li>
+<li>System </li>
+<li>Reward </li>
+</ul>
+<h3 id="crewassign">CrewAssign<a class="headerlink" href="#crewassign" title="Permanent link">&para;</a></h3>
+<p>When written: when changing the task assignment of a member of crew</p>
+<p>Parameters:</p>
+<ul>
+<li>Name </li>
+<li>CrewID </li>
+<li>Role </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-08-09T08:45:31Z&quot;,
+    &quot;event&quot;: &quot;CrewAssign&quot;,
+    &quot;Name&quot;: &quot;Dannie Koller&quot;,
+    &quot;Role&quot;: &quot;Active&quot;
+}
+</code></pre></div>
+
+<h3 id="crewfire">CrewFire<a class="headerlink" href="#crewfire" title="Permanent link">&para;</a></h3>
+<p>When written: when dismissing a member of crew</p>
+<p>Parameters:</p>
+<ul>
+<li>Name </li>
+<li>CrewID </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-08-09T08:46:11Z&quot;,
+    &quot;event&quot;: &quot;CrewFire&quot;,
+    &quot;Name&quot;: &quot;Whitney Pruitt-Munoz&quot;
+}
+</code></pre></div>
+
+<h3 id="crewhire">CrewHire<a class="headerlink" href="#crewhire" title="Permanent link">&para;</a></h3>
+<p>When written: when engaging a new member of crew</p>
+<p>Parameters:</p>
+<ul>
+<li>Name </li>
+<li>CrewID </li>
+<li>Faction </li>
+<li>Cost </li>
+<li>Combat Rank </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-08-09T08:46:29Z&quot;,
+    &quot;event&quot;: &quot;CrewHire&quot;,
+    &quot;Name&quot;: &quot;Margaret Parrish&quot;,
+    &quot;Faction&quot;: &quot;The Dark Wheel&quot;,
+    &quot;Cost&quot;: 15000,
+    &quot;CombatRank&quot;: 1
+}
+</code></pre></div>
+
+<h3 id="engineerapply">EngineerApply<a class="headerlink" href="#engineerapply" title="Permanent link">&para;</a></h3>
+<p>This event is obsolete, and is no longer written (as from v3.0)</p>
+<h3 id="engineercontribution">EngineerContribution<a class="headerlink" href="#engineercontribution" title="Permanent link">&para;</a></h3>
+<p>When written: when offering items cash or bounties to an Engineer to gain access</p>
+<p>Parameters:</p>
+<ul>
+<li>Engineer: name of engineer </li>
+<li>EngineerID </li>
+<li>Type: type of contribution (Commodity, materials, Credits, Bond, Bounty) </li>
+<li>Commodity </li>
+<li>Material </li>
+<li>Faction (for bond or bounty) </li>
+<li>Quantity: amount offered this time </li>
+<li>TotalQuantity: total amount now donated </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2017-05-24T10:41:51Z&quot;,
+    &quot;event&quot;: &quot;EngineerContribution&quot;,
+    &quot;Engineer&quot;: &quot;Elvira Martuuk&quot;,
+    &quot;EngineerID&quot;: 300160,
+    &quot;Type&quot;: &quot;Commodity&quot;,
+    &quot;Commodity&quot;: &quot;soontillrelics&quot;,
+    &quot;Quantity&quot;: 2,
+    &quot;TotalQuantity&quot;: 3
+}
+</code></pre></div>
+
+<h3 id="engineercraft">EngineerCraft<a class="headerlink" href="#engineercraft" title="Permanent link">&para;</a></h3>
+<p>When Written: when requesting an engineer upgrade</p>
+<p>Parameters:</p>
+<ul>
+<li>Engineer: name of engineer </li>
+<li>EngineerID </li>
+<li>BlueprintName: name of blueprint </li>
+<li>BlueprintID </li>
+<li>Level: crafting level </li>
+<li>Quality: float </li>
+<li>ApplyExperimentalEffect: (when applying a new effect) </li>
+<li>Ingredients: JSON array of objects with names and quantities of materials required </li>
+<li>Modifiers: JSON array of modification data <ul>
+<li>Label: string – (see §15.11 below) </li>
+<li>Value: float </li>
+<li>OriginalValue: float </li>
+<li>LessIsGood: bool </li>
+</ul>
+</li>
+<li>Some modifications have string values: <ul>
+<li>Label: string </li>
+<li>ValueStr: string </li>
+</ul>
+</li>
+</ul>
+<p>The new "quality" value represents the quality or progress of the blueprint. The quality should increase from 0 to 1 as the blueprint is refined through further crafting, and once it reaches a certain value, the player will have the option to upgrade the blueprint to the next level of recipe.</p>
+<p>When applying an experimental effect, the <em>ApplyExperimentalEffect</em> property will show the name of the effect applied, and the ingredient list will hold the ingredients for that effect.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2018-03-04T07:08:27Z&quot;,
+    &quot;event&quot;: &quot;EngineerCraft&quot;,
+    &quot;Slot&quot;: &quot;Slot03_Size3&quot;,
+    &quot;Module&quot;: &quot;int_dronecontrol_collection_size3_class5&quot;,
+    &quot;Ingredients&quot;: [
+        {
+            &quot;Name&quot;: &quot;phosphorus&quot;,
+            &quot;Count&quot;: 1
+        }
+    ],
+    &quot;Engineer&quot;: &quot;Ram Tah&quot;,
+    &quot;EngineerID&quot;: 300110,
+    &quot;BlueprintID&quot;: 128731526,
+    &quot;BlueprintName&quot;: &quot;Misc_LightWeight&quot;,
+    &quot;Level&quot;: 1,
+    &quot;Quality&quot;: 0.955,
+    &quot;Modifiers&quot;: [
+        {
+            &quot;Label&quot;: &quot;Mass&quot;,
+            &quot;Value&quot;: 4.436,
+            &quot;OriginalValue&quot;: 8,
+            &quot;LessIsGood&quot;: 1
+        },
+        {
+            &quot;Label&quot;: &quot;Integrity&quot;,
+            &quot;Value&quot;: 81,
+            &quot;OriginalValue&quot;: 90,
+            &quot;LessIsGood&quot;: 0
+        }
+    ]
+}
+</code></pre></div>
+
+<p>These modification types have string values: WeaponMode, DamageType, CabinClass</p>
+<p>(although I'm not sure if there are any blueprints that actually modify a cabin class!)</p>
+<h3 id="engineerlegacyconvert">EngineerLegacyConvert<a class="headerlink" href="#engineerlegacyconvert" title="Permanent link">&para;</a></h3>
+<p>When written: when converting a pre-2.4 engineered module</p>
+<p>This is generated when converting, or previewing a conversion of a legacy module to the new system. Due to the nature of the changes made for3.0, modules generated in the old system are not compatible with the new crafting system, so players will be unable to craft with them. However, players will be given the opportunity to convert their legacy modules to the new format with the caveat that converted modules will be a recipe level below what they were before the conversion. The EngineerLegacyConvert journal entry is generated when converting a recipe, or just previewing a conversion, so some of our creative third party developers out there may be able to make tools to show how a ship loadout compares before and after converting their modules. The entry itself is the same as the EngineerCraft entry, minus the ingredients data (since no materials are required to convert), but plus an "IsPreview" bool to indicate whether this entry has been generated from a conversion, or just a preview.</p>
+<h3 id="engineerprogress">EngineerProgress<a class="headerlink" href="#engineerprogress" title="Permanent link">&para;</a></h3>
+<p>When Written: when a player increases their access to an engineer</p>
+<p>Also a summary of progress for all engineers at startup</p>
+<p>Parameters (summary at startup)</p>
+<ul>
+<li>Engineers: array <ul>
+<li>Engineer: name </li>
+<li>EngineerID </li>
+<li>Rank: rank reached (when unlocked) </li>
+<li>Progress: progress stage (Invited/Acquainted/Unlocked/Barred) </li>
+<li>RankProgress: percentage towards next rank </li>
+</ul>
+</li>
+</ul>
+<p>Parameters (update for one engineer)</p>
+<ul>
+<li>Engineer: name </li>
+<li>EngineerID </li>
+<li>Rank: rank reached (when unlocked) </li>
+<li>Progress: progress stage (Invited/Acquainted/Unlocked/Barred) </li>
+<li>RankProgress: percentage towards next rank </li>
+</ul>
+<p>Example (update)</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2018-01-16T09:34:36Z&quot;,
+    &quot;event&quot;: &quot;EngineerProgress&quot;,
+    &quot;Engineer&quot;: &quot;Zacariah Nemo&quot;,
+    &quot;EngineerID&quot;: 300050,
+    &quot;Rank&quot;: 4,
+    &quot;RankProgress&quot;: 0
+}
+</code></pre></div>
+
+<p>Example (startup):</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2018-05-04T13:58:22Z&quot;,
+    &quot;event&quot;: &quot;EngineerProgress&quot;,
+    &quot;Engineers&quot;: [
+        {
+            &quot;Engineer&quot;: &quot;Zacariah Nemo&quot;,
+            &quot;EngineerID&quot;: 300050,
+            &quot;Progress&quot;: &quot;Unlocked&quot;,
+            &quot;RankProgress&quot;: 0,
+            &quot;Rank&quot;: 5
+        },
+        {
+            &quot;Engineer&quot;: &quot;Marco Qwent&quot;,
+            &quot;EngineerID&quot;: 300200,
+            &quot;Progress&quot;: &quot;Unlocked&quot;,
+            &quot;RankProgress&quot;: 37,
+            &quot;Rank&quot;: 4
+        },
+        {
+            &quot;Engineer&quot;: &quot;Hera Tani&quot;,
+            &quot;EngineerID&quot;: 300090,
+            &quot;Progress&quot;: &quot;Unlocked&quot;,
+            &quot;RankProgress&quot;: 0,
+            &quot;Rank&quot;: 3
+        },
+        {
+            &quot;Engineer&quot;: &quot;Tod &#39;The Blaster&#39; McQuinn&quot;,
+            &quot;EngineerID&quot;: 300260,
+            &quot;Progress&quot;: &quot;Unlocked&quot;,
+            &quot;RankProgress&quot;: 97,
+            &quot;Rank&quot;: 3
+        },
+        {
+            &quot;Engineer&quot;: &quot;Selene Jean&quot;,
+            &quot;EngineerID&quot;: 300210,
+            &quot;Progress&quot;: &quot;Known&quot;
+        },
+        {
+            &quot;Engineer&quot;: &quot;Lei Cheung&quot;,
+            &quot;EngineerID&quot;: 300120,
+            &quot;Progress&quot;: &quot;Known&quot;
+        },
+        {
+            &quot;Engineer&quot;: &quot;Juri Ishmaak&quot;,
+            &quot;EngineerID&quot;: 300250,
+            &quot;Progress&quot;: &quot;Known&quot;
+        },
+        {
+            &quot;Engineer&quot;: &quot;Felicity Farseer&quot;,
+            &quot;EngineerID&quot;: 300100,
+            &quot;Progress&quot;: &quot;Unlocked&quot;,
+            &quot;RankProgress&quot;: 0,
+            &quot;Rank&quot;: 5
+        },
+        {
+            &quot;Engineer&quot;: &quot;Professor Palin&quot;,
+            &quot;EngineerID&quot;: 300220,
+            &quot;Progress&quot;: &quot;Invited&quot;
+        },
+        {
+            &quot;Engineer&quot;: &quot;Elvira Martuuk&quot;,
+            &quot;EngineerID&quot;: 300160,
+            &quot;Progress&quot;: &quot;Unlocked&quot;,
+            &quot;RankProgress&quot;: 0,
+            &quot;Rank&quot;: 5
+        },
+        {
+            &quot;Engineer&quot;: &quot;Lori Jameson&quot;,
+            &quot;EngineerID&quot;: 300230,
+            &quot;Progress&quot;: &quot;Known&quot;
+        },
+        {
+            &quot;Engineer&quot;: &quot;The Dweller&quot;,
+            &quot;EngineerID&quot;: 300180,
+            &quot;Progress&quot;: &quot;Unlocked&quot;,
+            &quot;RankProgress&quot;: 0,
+            &quot;Rank&quot;: 5
+        },
+        {
+            &quot;Engineer&quot;: &quot;Liz Ryder&quot;,
+            &quot;EngineerID&quot;: 300080,
+            &quot;Progress&quot;: &quot;Unlocked&quot;,
+            &quot;RankProgress&quot;: 93,
+            &quot;Rank&quot;: 3
+        },
+        {
+            &quot;Engineer&quot;: &quot;Ram Tah&quot;,
+            &quot;EngineerID&quot;: 300110,
+            &quot;Progress&quot;: &quot;Unlocked&quot;,
+            &quot;RankProgress&quot;: 31,
+            &quot;Rank&quot;: 3
+        }
+    ]
+}
+</code></pre></div>
+
+<h3 id="fetchremotemodule">FetchRemoteModule<a class="headerlink" href="#fetchremotemodule" title="Permanent link">&para;</a></h3>
+<p>When written: when requesting a module is transferred from storage at another station</p>
+<p>Parameters:</p>
+<ul>
+<li>StorageSlot </li>
+<li>StoredItem </li>
+<li>ServerId </li>
+<li>TransferCost </li>
+<li>Ship </li>
+<li>ShipId </li>
+<li>TransferTime: (in seconds) </li>
+</ul>
+<h3 id="market">Market<a class="headerlink" href="#market" title="Permanent link">&para;</a></h3>
+<p>When written: when accessing the commodity market in a station</p>
+<p>A separate file <em><strong>market.json</strong></em> is written to the same folder as the journal, containing full market price info</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>StationName </li>
+<li>StarSystem </li>
+</ul>
+<p>The separate file also contains:</p>
+<ul>
+<li>Items: array of objects <ul>
+<li>id </li>
+<li>Name </li>
+<li>Category </li>
+<li>BuyPrice </li>
+<li>SellPrice </li>
+<li>MeanPrice </li>
+<li>StockBracket </li>
+<li>DemandBracket </li>
+<li>Stock </li>
+<li>Demand </li>
+<li>Consumer: bool </li>
+<li>Producer: bool </li>
+<li>Rare: bool </li>
+</ul>
+</li>
+</ul>
+<p>Example: in the journal:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2017-10-05T10:11:38Z&quot;,
+    &quot;event&quot;: &quot;Outfitting&quot;,
+    &quot;MarketID&quot;: 128678535,
+    &quot;StationName&quot;: &quot;Black Hide&quot;,
+    &quot;StarSystem&quot;: &quot;Wyrd&quot;
+}
+</code></pre></div>
+
+<p>Separate file:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="err">&quot;timestamp&quot;:&quot;2017-10-05</span><span class="n">T10</span><span class="p">:</span><span class="mi">10</span><span class="o">:</span><span class="mi">34</span><span class="n">Z</span><span class="s2">&quot;, &quot;</span><span class="n">event</span><span class="s2">&quot;:&quot;</span><span class="n">Market</span><span class="s2">&quot;, &quot;</span><span class="n">MarketID</span><span class="s2">&quot;:128678535, &quot;</span><span class="n">StationName</span><span class="s2">&quot;:&quot;</span><span class="n">Black</span><span class="w"> </span><span class="n">Hide</span><span class="s2">&quot;, &quot;</span><span class="n">StarSystem</span><span class="s2">&quot;:&quot;</span><span class="n">Wyrd</span><span class="s2">&quot;, &quot;</span><span class="n">Items</span><span class="err">&quot;</span><span class="o">:</span><span class="cp">[</span>
+    <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">128049152</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">:</span><span class="s2">&quot;$platinum_name;&quot;</span><span class="p">,</span> <span class="s2">&quot;Name_Localised&quot;</span><span class="p">:</span><span class="s2">&quot;Platinum&quot;</span><span class="p">,</span> <span class="s2">&quot;Category&quot;</span><span class="p">:</span><span class="s2">&quot;$MARKET_category_metals;&quot;</span><span class="p">,</span> <span class="s2">&quot;Category_Localised&quot;</span><span class="p">:</span><span class="s2">&quot;Metals&quot;</span><span class="p">,</span> <span class="s2">&quot;BuyPrice&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;SellPrice&quot;</span><span class="p">:</span><span class="mi">42220</span><span class="p">,</span> <span class="s2">&quot;MeanPrice&quot;</span><span class="p">:</span><span class="mi">19756</span><span class="p">,</span> <span class="s2">&quot;StockBracket&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;DemandBracket&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Stock&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Demand&quot;</span><span class="p">:</span><span class="mi">9182</span><span class="p">,</span> <span class="s2">&quot;Consumer&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;Producer&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span> <span class="s2">&quot;Rare&quot;</span><span class="p">:</span><span class="kc">false</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">128049153</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">:</span><span class="s2">&quot;$palladium_name;&quot;</span><span class="p">,</span> <span class="s2">&quot;Name_Localised&quot;</span><span class="p">:</span><span class="s2">&quot;Palladium&quot;</span><span class="p">,</span> <span class="s2">&quot;Category&quot;</span><span class="p">:</span><span class="s2">&quot;$MARKET_category_metals;&quot;</span><span class="p">,</span> <span class="s2">&quot;Category_Localised&quot;</span><span class="p">:</span><span class="s2">&quot;Metals&quot;</span><span class="p">,</span> <span class="s2">&quot;BuyPrice&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;SellPrice&quot;</span><span class="p">:</span><span class="mi">13999</span><span class="p">,</span> <span class="s2">&quot;MeanPrice&quot;</span><span class="p">:</span><span class="mi">13244</span><span class="p">,</span> <span class="s2">&quot;StockBracket&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;DemandBracket&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Stock&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Demand&quot;</span><span class="p">:</span><span class="mi">123183</span><span class="p">,</span> <span class="s2">&quot;Consumer&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;Producer&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span> <span class="s2">&quot;Rare&quot;</span><span class="p">:</span><span class="kc">false</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">128049154</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">:</span><span class="s2">&quot;$gold_name;&quot;</span><span class="p">,</span> <span class="s2">&quot;Name_Localised&quot;</span><span class="p">:</span><span class="s2">&quot;Gold&quot;</span><span class="p">,</span> <span class="s2">&quot;Category&quot;</span><span class="p">:</span><span class="s2">&quot;$MARKET_category_metals;&quot;</span><span class="p">,</span> <span class="s2">&quot;Category_Localised&quot;</span><span class="p">:</span><span class="s2">&quot;Metals&quot;</span><span class="p">,</span> <span class="s2">&quot;BuyPrice&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;SellPrice&quot;</span><span class="p">:</span><span class="mi">10831</span><span class="p">,</span> <span class="s2">&quot;MeanPrice&quot;</span><span class="p">:</span><span class="mi">9373</span><span class="p">,</span> <span class="s2">&quot;StockBracket&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;DemandBracket&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Stock&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Demand&quot;</span><span class="p">:</span><span class="mi">151492</span><span class="p">,</span> <span class="s2">&quot;Consumer&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;Producer&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span> <span class="s2">&quot;Rare&quot;</span><span class="p">:</span><span class="kc">false</span> <span class="p">},</span>
+    <span class="p">{</span> <span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="mi">128049155</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">:</span><span class="s2">&quot;$silver_name;&quot;</span><span class="p">,</span> <span class="s2">&quot;Name_Localised&quot;</span><span class="p">:</span><span class="s2">&quot;Silver&quot;</span><span class="p">,</span> <span class="s2">&quot;Category&quot;</span><span class="p">:</span><span class="s2">&quot;$MARKET_category_metals;&quot;</span><span class="p">,</span> <span class="s2">&quot;Category_Localised&quot;</span><span class="p">:</span><span class="s2">&quot;Metals&quot;</span><span class="p">,</span> <span class="s2">&quot;BuyPrice&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;SellPrice&quot;</span><span class="p">:</span><span class="mi">5512</span><span class="p">,</span> <span class="s2">&quot;MeanPrice&quot;</span><span class="p">:</span><span class="mi">4759</span><span class="p">,</span> <span class="s2">&quot;StockBracket&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;DemandBracket&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;Stock&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Demand&quot;</span><span class="p">:</span><span class="mi">266258</span><span class="p">,</span> <span class="s2">&quot;Consumer&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span> <span class="s2">&quot;Producer&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span> <span class="s2">&quot;Rare&quot;</span><span class="p">:</span><span class="kc">false</span> <span class="p">},</span>   <span class="p">:</span>
+<span class="cp">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="massmodulestore">MassModuleStore<a class="headerlink" href="#massmodulestore" title="Permanent link">&para;</a></h3>
+<p>When written: when putting multiple modules into storage</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>Ship </li>
+<li>ShipId </li>
+<li>Items: Array of records <ul>
+<li>Slot </li>
+<li>Name </li>
+<li>Hot </li>
+<li>EngineerModifications (only present if modified) </li>
+<li>Level </li>
+<li>Quality </li>
+</ul>
+</li>
+</ul>
+<h3 id="materialtrade">MaterialTrade<a class="headerlink" href="#materialtrade" title="Permanent link">&para;</a></h3>
+<p>When written: when exchanging materials at the Material trader contact</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>TraderType </li>
+<li>Paid <ul>
+<li>Material </li>
+<li>Category </li>
+<li>Quantity </li>
+</ul>
+</li>
+<li>Received <ul>
+<li>Material </li>
+<li>Category </li>
+<li>Quantity </li>
+</ul>
+</li>
+</ul>
+<p>Example: (note categories simplified)</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2018-02-21T15:23:49Z&quot;,
+    &quot;event&quot;: &quot;MaterialTrade&quot;,
+    &quot;MarketID&quot;: 3221397760,
+    &quot;TraderType&quot;: &quot;encoded&quot;,
+    &quot;Paid&quot;: {
+        &quot;Material&quot;: &quot;scandatabanks&quot;,
+        &quot;Material_Localised&quot;: &quot;Classified Scan Databanks&quot;,
+        &quot;Category&quot;: &quot;Encoded&quot;,
+        &quot;Quantity&quot;: 6
+    },
+    &quot;Received&quot;: {
+        &quot;Material&quot;: &quot;encodedscandata&quot;,
+        &quot;Material_Localised&quot;: &quot;Divergent Scan Data&quot;,
+        &quot;Quantity&quot;: 1
+    }
+}
+</code></pre></div>
+
+<h3 id="missionabandoned">MissionAbandoned<a class="headerlink" href="#missionabandoned" title="Permanent link">&para;</a></h3>
+<p>When Written: when a mission has been abandoned</p>
+<p>Parameters:</p>
+<ul>
+<li>Name: name of mission </li>
+<li>MissionID </li>
+<li>Fine: (if relevant) </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;MissionAbandoned&quot;,
+    &quot;Name&quot;: &quot;Mission_Collect_name&quot;,
+    &quot;MissionID&quot;: 65343025
+}
+</code></pre></div>
+
+<h3 id="missionaccepted">MissionAccepted<a class="headerlink" href="#missionaccepted" title="Permanent link">&para;</a></h3>
+<p>When Written: when starting a mission</p>
+<p>Parameters:</p>
+<ul>
+<li>Name: name of mission </li>
+<li>LocalisedName: the mission name as displayed to the user </li>
+<li>Faction: faction offering mission </li>
+<li>MissionID </li>
+<li>Influence: effect on influence (None/Low/Med/High) </li>
+<li>Reputation: effect on reputation (None/Low/Med/High) </li>
+<li>Reward: expected cash reward </li>
+<li>Wing: bool </li>
+</ul>
+<p>Optional Parameters (depending on mission type)</p>
+<ul>
+<li>Commodity: commodity type </li>
+<li>Count: number required / to deliver </li>
+<li>Donation: contracted donation (as string) (for altruism missions) </li>
+<li>Donated: actual donation (as int) </li>
+<li>Target: name of target </li>
+<li>TargetType: type of target </li>
+<li>TargetFaction: target's faction </li>
+<li>KillCount: number of targets </li>
+<li>Expiry: mission expiry time, in ISO 8601 </li>
+<li>DestinationSystem </li>
+<li>DestinationStation </li>
+<li>DestinationSettlement </li>
+<li>NewDestinationSystem (if it has been redirected) </li>
+<li>NewDestinationStation (if redirected) </li>
+<li>PassengerCount </li>
+<li>PassengerVIPs: bool </li>
+<li>PassengerWanted: bool </li>
+<li>PassengerType: eg Tourist, Soldier, Explorer,... </li>
+</ul>
+<p>Examples:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;timestamp&quot;:</span><span class="w"> </span><span class="err">&quot;2018-02-28</span><span class="n">T12</span><span class="p">:</span><span class="mi">06</span><span class="o">:</span><span class="mi">37</span><span class="n">Z</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">event</span><span class="s2">&quot;: &quot;</span><span class="n">MissionAccepted</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">Faction</span><span class="s2">&quot;: &quot;</span><span class="n">Official</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="n">Bootis</span><span class="w"> </span><span class="n">Liberty</span><span class="w"> </span><span class="n">Party</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">Name</span><span class="s2">&quot;: &quot;</span><span class="n">Mission_DeliveryWing_Agriculture</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">LocalisedName</span><span class="s2">&quot;: &quot;</span><span class="n">Agricultural</span><span class="w"> </span><span class="n">supply</span><span class="w"> </span><span class="n">run</span><span class="o">:</span><span class="w"> </span><span class="mi">2280</span><span class="w"> </span><span class="n">units</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Tea</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">Commodity</span><span class="s2">&quot;: &quot;</span><span class="err">$</span><span class="n">Tea_Name</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;Commodity_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Tea&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;Count&quot;:</span><span class="w"> </span><span class="err">2280,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;TargetFaction&quot;:</span><span class="w"> </span><span class="err">&quot;Ovid</span><span class="w"> </span><span class="err">Vision</span><span class="w"> </span><span class="err">&amp;amp</span><span class="p">;</span><span class="w"> </span><span class="err">Co&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;DestinationSystem&quot;:</span><span class="w"> </span><span class="err">&quot;Ovid&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;DestinationStation&quot;:</span><span class="w"> </span><span class="err">&quot;Shriver</span><span class="w"> </span><span class="err">Platform&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;Expiry&quot;:</span><span class="w"> </span><span class="err">&quot;2018-03-01</span><span class="n">T12</span><span class="p">:</span><span class="mi">05</span><span class="o">:</span><span class="mi">53</span><span class="n">Z</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">Wing</span><span class="s2">&quot;: true,</span>
+<span class="s2">    &quot;</span><span class="n">Influence</span><span class="s2">&quot;: &quot;</span><span class="n">Med</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">Reputation</span><span class="s2">&quot;: &quot;</span><span class="n">Med</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">Reward</span><span class="s2">&quot;: 2686155,</span>
+<span class="s2">    &quot;</span><span class="n">MissionID</span><span class="err">&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">65393626</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="missioncompleted">MissionCompleted<a class="headerlink" href="#missioncompleted" title="Permanent link">&para;</a></h3>
+<p>When Written: when a mission is completed</p>
+<p>Parameters:</p>
+<ul>
+<li>Name: mission type </li>
+<li>Faction: faction name </li>
+<li>MissionID </li>
+</ul>
+<p>Optional parameters (depending on mission type)</p>
+<ul>
+<li>Commodity </li>
+<li>Count </li>
+<li>Target </li>
+<li>TargetType </li>
+<li>TargetFaction  </li>
+<li>DestinationSystem </li>
+<li>DestinationStation </li>
+<li>DestinationSettlement </li>
+<li>Reward: value of reward </li>
+<li>Donation: contracted donation (as string) (for altruism missions) </li>
+<li>Donated: actual donation (as int) </li>
+<li>PermitsAwarded:[] (names of any permits awarded, as a JSON array) </li>
+<li>CommodityReward:[] (names and counts of any commodity rewards) </li>
+<li>MaterialsReward:[] ( name, category and count) </li>
+<li>FactionEffects: array of records <ul>
+<li>Faction </li>
+<li>Effects: array of Effect, Effect_Localised and Trend value pairs </li>
+<li>Influence: array of SystemAddress, Trend and Influence values </li>
+<li>Reputation </li>
+<li>ReputationTrend </li>
+</ul>
+</li>
+</ul>
+<p><em>TrendValue</em> can be UpGood, UpBad, DownGood, or DownBad</p>
+<p><em>Reputation</em> and _Influence _are a set of + indicators (eg "+++")</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;timestamp&quot;:</span><span class="w"> </span><span class="err">&quot;2018-12-19</span><span class="n">T21</span><span class="p">:</span><span class="mi">41</span><span class="o">:</span><span class="mi">09</span><span class="n">Z</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">event</span><span class="s2">&quot;: &quot;</span><span class="n">MissionCompleted</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">Faction</span><span class="s2">&quot;: &quot;</span><span class="n">Inara</span><span class="w"> </span><span class="n">Nexus</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">Name</span><span class="s2">&quot;: &quot;</span><span class="n">Mission_Courier_Elections_name</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">MissionID</span><span class="s2">&quot;: 442511682,</span>
+<span class="s2">    &quot;</span><span class="n">TargetFaction</span><span class="s2">&quot;: &quot;</span><span class="n">Tougeir</span><span class="w"> </span><span class="n">Blue</span><span class="w"> </span><span class="n">Clan</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">DestinationSystem</span><span class="s2">&quot;: &quot;</span><span class="n">Tougeir</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">DestinationStation</span><span class="s2">&quot;: &quot;</span><span class="n">Janes</span><span class="w"> </span><span class="n">Dock</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">Reward</span><span class="s2">&quot;: 10000,</span>
+<span class="s2">    &quot;</span><span class="n">FactionEffects</span><span class="s2">&quot;: </span><span class="cp">[</span><span class="p">{</span>
+            <span class="s2">&quot;Faction&quot;</span><span class="p">:</span> <span class="s2">&quot;Tougeir Blue Clan&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Effects&quot;</span><span class="p">:</span> <span class="err">[</span><span class="p">{</span>
+                <span class="s2">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;$MISSIONUTIL_Interaction_Summary_EP_up;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Effect_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;The economic status of $#MinorFaction; has improved in the $#System; system.&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Trend&quot;</span><span class="p">:</span> <span class="s2">&quot;UpGood&quot;</span>
+            <span class="p">}</span><span class="cp">]</span><span class="s2">,</span>
+<span class="s2">            &quot;</span><span class="n">Influence</span><span class="s2">&quot;: </span><span class="cp">[</span><span class="p">{</span>
+                <span class="s2">&quot;SystemAddress&quot;</span><span class="p">:</span> <span class="mi">5067927397769</span><span class="p">,</span>
+                <span class="s2">&quot;Trend&quot;</span><span class="p">:</span> <span class="s2">&quot;UpGood&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Influence&quot;</span><span class="p">:</span> <span class="s2">&quot;++++&quot;</span>
+            <span class="p">}</span><span class="cp">]</span><span class="s2">,</span>
+<span class="s2">            &quot;</span><span class="n">ReputationTrend</span><span class="s2">&quot;: &quot;</span><span class="n">UpGood</span><span class="s2">&quot;,</span>
+<span class="s2">            &quot;</span><span class="n">Reputation</span><span class="s2">&quot;: &quot;&quot;</span>
+<span class="s2">        },</span>
+<span class="s2">        {</span>
+<span class="s2">            &quot;</span><span class="n">Faction</span><span class="s2">&quot;: &quot;</span><span class="n">Inara</span><span class="w"> </span><span class="n">Nexus</span><span class="s2">&quot;,</span>
+<span class="s2">            &quot;</span><span class="n">Effects</span><span class="s2">&quot;: </span><span class="cp">[</span><span class="p">{</span>
+                    <span class="s2">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;$MISSIONUTIL_Interaction_Summary_EP_up;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Effect_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;The economic status of $#MinorFaction; has improved in the $#System; system.&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Trend&quot;</span><span class="p">:</span> <span class="s2">&quot;UpGood&quot;</span>
+                <span class="p">}</span>
+            <span class="cp">]</span><span class="s2">,</span>
+<span class="s2">            &quot;</span><span class="n">Influence</span><span class="s2">&quot;: </span><span class="cp">[]</span><span class="s2">,</span>
+<span class="s2">            &quot;</span><span class="n">ReputationTrend</span><span class="s2">&quot;: &quot;</span><span class="n">UpGood</span><span class="s2">&quot;,</span>
+<span class="s2">            &quot;</span><span class="n">Reputation</span><span class="s2">&quot;: &quot;</span><span class="o">+</span><span class="err">&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="o">]</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>Example of MaterialsReward:</p>
+<p>... "MaterialsReward":[ { "Name":"DisruptedWakeEchoes", "Name_Localised":"Atypical Disrupted Wake Echoes", "Category":"$MICRORESOURCE_CATEGORY_Encoded;", "Category_Localised":"Encoded", "Count":4 } ] ...</p>
+<h3 id="missionfailed">MissionFailed<a class="headerlink" href="#missionfailed" title="Permanent link">&para;</a></h3>
+<p>When Written: when a mission has failed</p>
+<p>Parameters:</p>
+<ul>
+<li>Name: name of mission </li>
+<li>MissionID </li>
+<li>Fine: (if relevant) </li>
+</ul>
+<h3 id="missionredirected">MissionRedirected<a class="headerlink" href="#missionredirected" title="Permanent link">&para;</a></h3>
+<p>When written: when a mission is updated with a new destination</p>
+<p>Parameters</p>
+<ul>
+<li>MissionID </li>
+<li>Name </li>
+<li>NewDestinationStation </li>
+<li>OldDestinationStation </li>
+<li>NewDestinationSystem </li>
+<li>OldDestinationSystem </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2017-08-01T09:04:07Z&quot;,
+    &quot;event&quot;: &quot;MissionRedirected&quot;,
+    &quot;MissionID&quot;: 65367315,
+    &quot;NewDestinationStation&quot;: &quot;Metcalf Orbital&quot;,
+    &quot;OldDestinationStation&quot;: &quot;Cuffey Orbital&quot;,
+    &quot;NewDestinationSystem&quot;: &quot;Cemiess&quot;,
+    &quot;OldDestinationSystem&quot;: &quot;Vequess&quot;
+}
+</code></pre></div>
+
+<h3 id="modulebuy">ModuleBuy<a class="headerlink" href="#modulebuy" title="Permanent link">&para;</a></h3>
+<p>When Written: when buying a module in outfitting</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>Slot: the outfitting slot </li>
+<li>BuyItem: the module being purchased </li>
+<li>BuyPrice: price paid </li>
+<li>Ship: the players ship </li>
+<li>ShipID </li>
+</ul>
+<p>If existing module is stored:</p>
+<ul>
+<li>StoredItem: item being stored </li>
+</ul>
+<p>If replacing an existing module:</p>
+<ul>
+<li>SellItem: item being sold </li>
+<li>SellPrice: sale price </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;ModuleBuy&quot;,
+    &quot;Slot&quot;: &quot;MediumHardpoint2&quot;,
+    &quot;SellItem&quot;: &quot;hpt_pulselaser_fixed_medium&quot;,
+    &quot;SellPrice&quot;: 0,
+    &quot;BuyItem&quot;: &quot;hpt_multicannon_gimbal_medium&quot;,
+    &quot;BuyPrice&quot;: 50018,
+    &quot;Ship&quot;: &quot;cobramkiii&quot;,
+    &quot;ShipID&quot;: 1
+}
+</code></pre></div>
+
+<h3 id="moduleretrieve">ModuleRetrieve<a class="headerlink" href="#moduleretrieve" title="Permanent link">&para;</a></h3>
+<p>When written: when fetching a previously stored module</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>Slot </li>
+<li>Ship </li>
+<li>ShipID </li>
+<li>RetrievedItem </li>
+<li>Hot </li>
+<li>EngineerModifications: name of modification blueprint, if any </li>
+<li>Level </li>
+<li>Quality </li>
+<li>SwapOutItem (if slot was not empty) </li>
+<li>Cost </li>
+</ul>
+<h3 id="modulesell">ModuleSell<a class="headerlink" href="#modulesell" title="Permanent link">&para;</a></h3>
+<p>When Written: when selling a module in outfitting</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>Slot </li>
+<li>SellItem </li>
+<li>SellPrice </li>
+<li>Ship </li>
+<li>ShipID </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;ModuleSell&quot;,
+    &quot;Slot&quot;: &quot;Slot06_Size2&quot;,
+    &quot;SellItem&quot;: &quot;int_cargorack_size1_class1&quot;,
+    &quot;SellPrice&quot;: 877,
+    &quot;Ship&quot;: &quot;asp&quot;,
+    &quot;ShipID&quot;: 1
+}
+</code></pre></div>
+
+<h3 id="modulesellremote">ModuleSellRemote<a class="headerlink" href="#modulesellremote" title="Permanent link">&para;</a></h3>
+<p>When written: when selling a module in storage at another station</p>
+<p>Parameters:</p>
+<ul>
+<li>StorageSlot </li>
+<li>SellItem </li>
+<li>ServerId </li>
+<li>SellPrice </li>
+<li>Ship </li>
+<li>ShipId </li>
+</ul>
+<h3 id="modulestore">ModuleStore<a class="headerlink" href="#modulestore" title="Permanent link">&para;</a></h3>
+<p>When written: when storing a module in Outfitting</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>Slot </li>
+<li>Ship </li>
+<li>ShipID </li>
+<li>StoredItem </li>
+<li>Hot </li>
+<li>EngineerModifications: name of modification blueprint, if any </li>
+<li>Level </li>
+<li>Quality </li>
+<li>ReplacementItem (if a core module) </li>
+<li>Cost (if any) </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;timestamp&quot;:</span><span class="w"> </span><span class="err">&quot;2018-01-31</span><span class="n">T10</span><span class="p">:</span><span class="mi">55</span><span class="o">:</span><span class="mi">15</span><span class="n">Z</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">event</span><span class="s2">&quot;: &quot;</span><span class="n">ModuleStore</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">MarketID</span><span class="s2">&quot;: 128676487,</span>
+<span class="s2">    &quot;</span><span class="n">Slot</span><span class="s2">&quot;: &quot;</span><span class="n">TinyHardpoint1</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">StoredItem</span><span class="s2">&quot;: &quot;</span><span class="err">$</span><span class="n">hpt_shieldbooster_size0_class3_name</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;StoredItem_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Shield</span><span class="w"> </span><span class="err">Booster&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;Ship&quot;:</span><span class="w"> </span><span class="err">&quot;empire_courier&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;ShipID&quot;:</span><span class="w"> </span><span class="err">11,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;Hot&quot;:</span><span class="w"> </span><span class="err">false,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;EngineerModifications&quot;:</span><span class="w"> </span><span class="err">&quot;ShieldBooster_Explosive&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;Level&quot;:</span><span class="w"> </span><span class="err">1,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;Quality&quot;:</span><span class="w"> </span><span class="err">0.5271</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="moduleswap">ModuleSwap<a class="headerlink" href="#moduleswap" title="Permanent link">&para;</a></h3>
+<p>When Written: when moving a module to a different slot on the ship</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>FromSlot </li>
+<li>ToSlot </li>
+<li>FromItem </li>
+<li>ToItem </li>
+<li>Ship </li>
+<li>ShipID </li>
+</ul>
+<p>Examples:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;ModuleSwap&quot;,
+    &quot;FromSlot&quot;: &quot;MediumHardpoint1&quot;,
+    &quot;ToSlot&quot;: &quot;MediumHardpoint2&quot;,
+    &quot;FromItem&quot;: &quot;hpt_pulselaser_fixed_medium&quot;,
+    &quot;ToItem&quot;: &quot;hpt_multicannon_gimbal_medium&quot;,
+    &quot;Ship&quot;: &quot;cobramkiii&quot;,
+    &quot;ShipID&quot;: 1
+}
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;ModuleSwap&quot;,
+    &quot;FromSlot&quot;: &quot;SmallHardpoint2&quot;,
+    &quot;ToSlot&quot;: &quot;SmallHardpoint1&quot;,
+    &quot;FromItem&quot;: &quot;hpt_pulselaserburst_fixed_small_scatter&quot;,
+    &quot;ToItem&quot;: &quot;Null&quot;,
+    &quot;Ship&quot;: &quot;cobramkiii&quot;,
+    &quot;ShipID&quot;: 1
+}
+</code></pre></div>
+
+<h3 id="outfitting">Outfitting<a class="headerlink" href="#outfitting" title="Permanent link">&para;</a></h3>
+<p>Written when accessing the outfitting menu</p>
+<p>The full parts pricelist is written to a separate file <em><strong>Outfitting.json</strong></em></p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>StationName </li>
+<li>StarSystem </li>
+</ul>
+<p>The separate file also contains</p>
+<ul>
+<li>Horizons: bool </li>
+<li>Items: array of objects <ul>
+<li>id </li>
+<li>Name </li>
+<li>BuyPrice </li>
+</ul>
+</li>
+</ul>
+<p>Example: (in journal)</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2017-10-05T10:11:38Z&quot;,
+    &quot;event&quot;: &quot;Outfitting&quot;,
+    &quot;MarketID&quot;: 128678535,
+    &quot;StationName&quot;: &quot;Black Hide&quot;,
+    &quot;StarSystem&quot;: &quot;Wyrd&quot;
+}
+</code></pre></div>
+
+<p>(In separate file)</p>
+<div class="codehilite"><pre><span></span><code>{ &quot;timestamp&quot;:&quot;2017-10-05T10:11:38Z&quot;, &quot;event&quot;:&quot;Outfitting&quot;, &quot;MarketID&quot;:128678535, &quot;StationName&quot;:&quot;Black Hide&quot;, &quot;StarSystem&quot;:&quot;Wyrd&quot;, &quot;Horizons&quot;:true, &quot;Items&quot;:[
+    { &quot;id&quot;:128049382, &quot;Name&quot;:&quot;hpt_pulselaser_fixed_medium&quot;, &quot;BuyPrice&quot;:16731 },
+    { &quot;id&quot;:128049383, &quot;Name&quot;:&quot;hpt_pulselaser_fixed_large&quot;, &quot;BuyPrice&quot;:66924 },
+    { &quot;id&quot;:128049385, &quot;Name&quot;:&quot;hpt_pulselaser_gimbal_small&quot;, &quot;BuyPrice&quot;:6275 },
+    { &quot;id&quot;:128049386, &quot;Name&quot;:&quot;hpt_pulselaser_gimbal_medium&quot;, &quot;BuyPrice&quot;:33653 },
+    { &quot;id&quot;:128049388, &quot;Name&quot;:&quot;hpt_pulselaser_turret_small&quot;, &quot;BuyPrice&quot;:24717 },
+    { &quot;id&quot;:128681995, &quot;Name&quot;:&quot;hpt_pulselaser_gimbal_huge&quot;, &quot;BuyPrice&quot;:834269 },
+] }
+</code></pre></div>
+
+<h3 id="paybounties">PayBounties<a class="headerlink" href="#paybounties" title="Permanent link">&para;</a></h3>
+<p>When written: when paying off bounties</p>
+<p>Parameters:</p>
+<ul>
+<li>Amount: (total amount paid , including any broker fee) </li>
+<li>BrokerPercentage (present if paid via a Broker) </li>
+<li>AllFines: bool </li>
+<li>Faction </li>
+<li>ShipID </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;timestamp&quot;:</span><span class="w"> </span><span class="err">&quot;2018-03-19</span><span class="n">T10</span><span class="p">:</span><span class="mi">25</span><span class="o">:</span><span class="mi">10</span><span class="n">Z</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">event</span><span class="s2">&quot;: &quot;</span><span class="n">PayBounties</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">Amount</span><span class="s2">&quot;: 400,</span>
+<span class="s2">    &quot;</span><span class="n">Faction</span><span class="s2">&quot;: &quot;</span><span class="err">$</span><span class="n">faction_Federation</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;Faction_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Federation&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;ShipID&quot;:</span><span class="w"> </span><span class="err">9,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;BrokerPercentage&quot;:</span><span class="w"> </span><span class="err">25</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="payfines">PayFines<a class="headerlink" href="#payfines" title="Permanent link">&para;</a></h3>
+<p>When Written: when paying fines</p>
+<p>Parameters:</p>
+<ul>
+<li>Amount: (total amount paid , including any broker fee) </li>
+<li>BrokerPercentage (present if paid via a Broker) </li>
+<li>AllFines: bool </li>
+<li>Faction: (if paying off an individual faction's fines) </li>
+<li>ShipID </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2018-03-19T10:24:21Z&quot;,
+    &quot;event&quot;: &quot;PayFines&quot;,
+    &quot;Amount&quot;: 250,
+    &quot;AllFines&quot;: false,
+    &quot;Faction&quot;: &quot;Batz Transport Commodities&quot;,
+    &quot;ShipID&quot;: 9
+}
+</code></pre></div>
+
+<h3 id="paylegacyfines">PayLegacyFines<a class="headerlink" href="#paylegacyfines" title="Permanent link">&para;</a></h3>
+<p>When Written: when paying legacy fines</p>
+<p>(This is now obsolete, as of v3.0)</p>
+<p>Parameters:</p>
+<ul>
+<li>Amount (total amount paid, including any broker fee) </li>
+<li>BrokerPercentage (present if paid through a broker) </li>
+</ul>
+<h3 id="redeemvoucher">RedeemVoucher<a class="headerlink" href="#redeemvoucher" title="Permanent link">&para;</a></h3>
+<p>When Written: when claiming payment for combat bounties and bonds</p>
+<p>Parameters:</p>
+<ul>
+<li>Type: (CombatBond/Bounty/Trade/Settlement/Scannable) </li>
+<li>Amount: (Net amount received, after any broker fee) </li>
+<li>Faction: name of faction <em>(for types other than Bounty)</em> </li>
+<li>BrokerPercentage (if redeemed through a broker) </li>
+<li>Factions: array of faction/amount pairs <em>(for Type=Bounty)</em> </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;RedeemVoucher&quot;,
+    &quot;Type&quot;: &quot;bounty&quot;,
+    &quot;Factions&quot;: [
+        {
+            &quot;Faction&quot;: &quot;Ed&#39;s 38&quot;,
+            &quot;Amount&quot;: 1000
+        },
+        {
+            &quot;Faction&quot;: &quot;Zac&#39;s Lads&quot;,
+            &quot;Amount&quot;: 2000
+        }
+    ]
+}
+</code></pre></div>
+
+<h3 id="refuelall">RefuelAll<a class="headerlink" href="#refuelall" title="Permanent link">&para;</a></h3>
+<p>When Written: when refuelling (full tank)</p>
+<p>Parameters:</p>
+<ul>
+<li>Cost: cost of fuel </li>
+<li>Amount: tons of fuel purchased </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;RefuelAll&quot;,
+    &quot;Cost&quot;: 317,
+    &quot;Amount&quot;: 6.322901
+}
+</code></pre></div>
+
+<h3 id="refuelpartial">RefuelPartial<a class="headerlink" href="#refuelpartial" title="Permanent link">&para;</a></h3>
+<p>When Written: when refuelling (10%)</p>
+<p>Parameters:</p>
+<ul>
+<li>Cost: cost of fuel </li>
+<li>Amount: tons of fuel purchased </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;RefuelPartial&quot;,
+    &quot;Cost&quot;: 83,
+    &quot;Amount&quot;: 1.649
+}
+</code></pre></div>
+
+<h3 id="repair">Repair<a class="headerlink" href="#repair" title="Permanent link">&para;</a></h3>
+<p>When Written: when repairing the ship</p>
+<p>Parameters:</p>
+<ul>
+<li>Item: all, wear, hull, paint, or name of module </li>
+<li>Cost: cost of repair </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;Repair&quot;,
+    &quot;Item&quot;: &quot;int_powerplant_size3_class5&quot;,
+    &quot;Cost&quot;: 1100
+}
+</code></pre></div>
+
+<p>Note when repairing on a FleetCarrier, you can now get a list of the modules repaired:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;timestamp&quot;:</span><span class="w"> </span><span class="err">&quot;2020-03-31</span><span class="n">T13</span><span class="p">:</span><span class="mi">39</span><span class="o">:</span><span class="mi">42</span><span class="n">Z</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">event</span><span class="s2">&quot;: &quot;</span><span class="n">Repair</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">Items</span><span class="s2">&quot;: </span><span class="cp">[</span>
+        <span class="s2">&quot;$hpt_dumbfiremissilerack_fixed_large_name;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;$hpt_beamlaser_gimbal_medium_name;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;$hpt_railgun_fixed_medium_name;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;$hpt_beamlaser_gimbal_medium_name;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;$hpt_dumbfiremissilerack_fixed_large_name;&quot;</span>
+    <span class="cp">]</span><span class="s2">,</span>
+<span class="s2">    &quot;</span><span class="n">Cost</span><span class="err">&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">34590</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="repairall">RepairAll<a class="headerlink" href="#repairall" title="Permanent link">&para;</a></h3>
+<p>When written: when repairing everything</p>
+<p>Parameters:</p>
+<ul>
+<li>Cost </li>
+</ul>
+<h3 id="restockvehicle">RestockVehicle<a class="headerlink" href="#restockvehicle" title="Permanent link">&para;</a></h3>
+<p>When Written: when purchasing an SRV or Fighter</p>
+<p>Parameters:</p>
+<ul>
+<li>Type: type of vehicle being purchased (SRV or fighter model) </li>
+<li>Loadout: variant </li>
+<li>Cost: purchase cost </li>
+<li>Count: number of vehicles purchased </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;RestockVehicle&quot;,
+    &quot;Type&quot;: &quot;SRV&quot;,
+    &quot;Loadout&quot;: &quot;starter&quot;,
+    &quot;Cost&quot;: 1030,
+    &quot;Count&quot;: 1
+}
+</code></pre></div>
+
+<h3 id="scientificresearch">ScientificResearch<a class="headerlink" href="#scientificresearch" title="Permanent link">&para;</a></h3>
+<p>When written: when contributing materials to a "research" community goal</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>Name: material name </li>
+<li>Category </li>
+<li>Count </li>
+<li></li>
+</ul>
+<h3 id="searchandrescue">SearchAndRescue<a class="headerlink" href="#searchandrescue" title="Permanent link">&para;</a></h3>
+<p>When written: when delivering items to a Search and Rescue contact</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>Name </li>
+<li>Count </li>
+<li>Reward </li>
+</ul>
+<h3 id="selldrones">SellDrones<a class="headerlink" href="#selldrones" title="Permanent link">&para;</a></h3>
+<p>When Written: when selling unwanted drones back to the market</p>
+<p>Parameters:</p>
+<ul>
+<li>Type </li>
+<li>Count </li>
+<li>SellPrice </li>
+<li>TotalSale </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;SellDrones&quot;,
+    &quot;Type&quot;: &quot;Drones&quot;,
+    &quot;Count&quot;: 1,
+    &quot;SellPrice&quot;: 91,
+    &quot;TotalSale&quot;: 91
+}
+</code></pre></div>
+
+<h3 id="sellshiponrebuy">SellShipOnRebuy<a class="headerlink" href="#sellshiponrebuy" title="Permanent link">&para;</a></h3>
+<p>When written: When selling a stored ship to raise funds when on insurance/rebuy screen</p>
+<p>Parameters:</p>
+<ul>
+<li>ShipType </li>
+<li>System </li>
+<li>SellShipId </li>
+<li>ShipPrice </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2017-07-20T08:56:39Z&quot;,
+    &quot;event&quot;: &quot;SellShipOnRebuy&quot;,
+    &quot;ShipType&quot;: &quot;Dolphin&quot;,
+    &quot;System&quot;: &quot;Shinrarta Dezhra&quot;,
+    &quot;SellShipId&quot;: 4,
+    &quot;ShipPrice&quot;: 4110183
+}
+</code></pre></div>
+
+<h3 id="setusershipname">SetUserShipName<a class="headerlink" href="#setusershipname" title="Permanent link">&para;</a></h3>
+<p>When written: when assigning a name to the ship in Starport Services</p>
+<p>Parameters:</p>
+<ul>
+<li>Ship: Ship model (eg CobraMkIII) </li>
+<li>ShipID: player's ship ID number </li>
+<li>UserShipName: selected name </li>
+<li>UserShipId: selected ship id </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2017-01-24T10:42:38Z&quot;,
+    &quot;event&quot;: &quot;SetUserShipName&quot;,
+    &quot;Ship&quot;: &quot;cobramkiii&quot;,
+    &quot;ShipID&quot;: 2,
+    &quot;UserShipName&quot;: &quot;Enterprise&quot;,
+    &quot;UserShipId&quot;: &quot;NCC 1701&quot;
+}
+</code></pre></div>
+
+<h3 id="shipyard">Shipyard<a class="headerlink" href="#shipyard" title="Permanent link">&para;</a></h3>
+<p>When written: when accessing shipyard in a station</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>StationName </li>
+<li>StarSystem </li>
+</ul>
+<p>The full price list is written to a separate file, in the same folder as the journal, <em><strong>Shipyard.json</strong></em></p>
+<ul>
+<li>Horizons: bool </li>
+<li>AllowCobraMkIV: bool </li>
+<li>Pricelist: array of objects <ul>
+<li>ShipType </li>
+<li>ShipPrice </li>
+</ul>
+</li>
+</ul>
+<p>Example: in the Journal:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2017-10-04T10:01:38Z&quot;,
+    &quot;event&quot;: &quot;Shipyard&quot;,
+    &quot;MarketID&quot;: 128122104,
+    &quot;StationName&quot;: &quot;Seven Holm&quot;,
+    &quot;StarSystem&quot;: &quot;Tamor&quot;
+}
+</code></pre></div>
+
+<p>In the separate shipyard.json file:</p>
+<div class="codehilite"><pre><span></span><code>{ &quot;timestamp&quot;:&quot;2017-10-04T10:01:38Z&quot;, &quot;event&quot;:&quot;Shipyard&quot;, &quot;MarketID&quot;: 128122104, &quot;StationName&quot;:&quot;Seven Holm&quot;, &quot;StarSystem&quot;:&quot;Tamor&quot;, &quot;Horizons&quot;:true, &quot;AllowCobraMkIV&quot;:true, &quot;PriceList&quot;:[
+    { &quot;id&quot;:128049249, &quot;ShipType&quot;:&quot;sidewinder&quot;, &quot;ShipPrice&quot;:24336 },
+    { &quot;id&quot;:128049255, &quot;ShipType&quot;:&quot;eagle&quot;, &quot;ShipPrice&quot;:34071 },
+    { &quot;id&quot;:128049261, &quot;ShipType&quot;:&quot;hauler&quot;, &quot;ShipPrice&quot;:40094 },
+    { &quot;id&quot;:128049267, &quot;ShipType&quot;:&quot;adder&quot;, &quot;ShipPrice&quot;:66779 },
+    { &quot;id&quot;:128672138, &quot;ShipType&quot;:&quot;empire_eagle&quot;, &quot;ShipType_Localised&quot;:&quot;Imperial Eagle&quot;, &quot;ShipPrice&quot;:84283 },
+] }
+</code></pre></div>
+
+<h3 id="shipyardbuy">ShipyardBuy<a class="headerlink" href="#shipyardbuy" title="Permanent link">&para;</a></h3>
+<p>When Written: when buying a new ship in the shipyard</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>ShipType: ship being purchased </li>
+<li>ShipPrice: purchase cost   </li>
+<li>StoreOldShip: (if storing old ship) ship type being stored </li>
+<li>StoreShipID </li>
+<li>SellOldShip: (if selling current ship) ship type being sold </li>
+<li>SellShipID </li>
+<li>SellPrice: (if selling current ship) ship sale price </li>
+</ul>
+<p>Note: the new ship's ShipID will be logged in a separate event after the purchase</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-07-21T14:36:38Z&quot;,
+    &quot;event&quot;: &quot;ShipyardBuy&quot;,
+    &quot;ShipType&quot;: &quot;hauler&quot;,
+    &quot;ShipPrice&quot;: 46262,
+    &quot;StoreOldShip&quot;: &quot;SideWinder&quot;,
+    &quot;StoreShipID&quot;: 2
+}
+</code></pre></div>
+
+<h3 id="shipyardnew">ShipyardNew<a class="headerlink" href="#shipyardnew" title="Permanent link">&para;</a></h3>
+<p>When written: after a new ship has been purchased</p>
+<p>Parameters:</p>
+<ul>
+<li>ShipType </li>
+<li>NewShipID </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-07-21T14:36:38Z&quot;,
+    &quot;event&quot;: &quot;ShipyardNew&quot;,
+    &quot;ShipType&quot;: &quot;hauler&quot;,
+    &quot;NewShipID&quot;: 4
+}
+</code></pre></div>
+
+<h3 id="shipyardsell">ShipyardSell<a class="headerlink" href="#shipyardsell" title="Permanent link">&para;</a></h3>
+<p>When Written: when selling a ship stored in the shipyard</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>ShipType: type of ship being sold </li>
+<li>SellShipID </li>
+<li>ShipPrice: sale price </li>
+<li>System: (if ship is in another system) name of system </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-07-21T15:12:19Z&quot;,
+    &quot;event&quot;: &quot;ShipyardSell&quot;,
+    &quot;ShipType&quot;: &quot;Adder&quot;,
+    &quot;SellShipID&quot;: 6,
+    &quot;ShipPrice&quot;: 79027,
+    &quot;System&quot;: &quot;Eranin&quot;
+}
+</code></pre></div>
+
+<h3 id="shipyardtransfer">ShipyardTransfer<a class="headerlink" href="#shipyardtransfer" title="Permanent link">&para;</a></h3>
+<p>When Written: when requesting a ship at another station be transported to this station</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>ShipType: type of ship </li>
+<li>ShipID </li>
+<li>System: where it is </li>
+<li>ShipMarketID </li>
+<li>Distance: how far away </li>
+<li>TransferPrice: cost of transfer </li>
+<li>TransferTime: time taken in seconds </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-07-21T15:19:49Z&quot;,
+    &quot;event&quot;: &quot;ShipyardTransfer&quot;,
+    &quot;ShipType&quot;: &quot;SideWinder&quot;,
+    &quot;ShipID&quot;: 7,
+    &quot;System&quot;: &quot;Eranin&quot;,
+    &quot;Distance&quot;: 85.639145,
+    &quot;TransferPrice&quot;: 580
+}
+</code></pre></div>
+
+<h3 id="shipyardswap">ShipyardSwap<a class="headerlink" href="#shipyardswap" title="Permanent link">&para;</a></h3>
+<p>When Written: when switching to another ship already stored at this station</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>ShipType: type of ship being switched to </li>
+<li>ShipID </li>
+<li>StoreOldShip: (if storing old ship) type of ship being stored </li>
+<li>StoreShipID </li>
+<li>SellOldShip: (if selling old ship) type of ship being sold </li>
+<li>SellShipID </li>
+</ul>
+<p>Example</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-07-21T14:36:06Z&quot;,
+    &quot;event&quot;: &quot;ShipyardSwap&quot;,
+    &quot;ShipType&quot;: &quot;sidewinder&quot;,
+    &quot;ShipID&quot;: 10,
+    &quot;StoreOldShip&quot;: &quot;Asp&quot;,
+    &quot;StoreShipID&quot;: 2
+}
+</code></pre></div>
+
+<h3 id="storedmodules">StoredModules<a class="headerlink" href="#storedmodules" title="Permanent link">&para;</a></h3>
+<p>When written: when first visiting Outfitting, and when the set of stored modules has changed</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID: current market </li>
+<li>Items: (array of objects) <ul>
+<li>Name </li>
+<li>StarSystem </li>
+<li>MarketID: where the module is stored </li>
+<li>StorageSlot </li>
+<li>TransferCost </li>
+<li>TransferTime </li>
+<li>Hot </li>
+<li>EngineerModifications: (recipe name) </li>
+<li>Level </li>
+<li>Quality </li>
+<li>InTransit:bool </li>
+</ul>
+</li>
+</ul>
+<p>"EngineerModifications", "Level" and "Quality" only appear for an engineered module</p>
+<p>The InTransit value only appears (with value true) if the module is being transferred. In this case, the system, market, transfer cost and transfer time are not written.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"> </span><span class="err">&quot;timestamp&quot;:&quot;2018-01-31</span><span class="n">T10</span><span class="p">:</span><span class="mi">55</span><span class="o">:</span><span class="mi">16</span><span class="n">Z</span><span class="s2">&quot;, &quot;</span><span class="n">event</span><span class="s2">&quot;:&quot;</span><span class="n">StoredModules</span><span class="s2">&quot;, &quot;</span><span class="n">MarketID</span><span class="s2">&quot;:128676487, &quot;</span><span class="n">StationName</span><span class="s2">&quot;:&quot;</span><span class="n">Farseer</span><span class="w"> </span><span class="n">Inc</span><span class="s2">&quot;, &quot;</span><span class="n">StarSystem</span><span class="s2">&quot;:&quot;</span><span class="n">Deciat</span><span class="s2">&quot;, &quot;</span><span class="n">Items</span><span class="err">&quot;</span><span class="o">:</span><span class="cp">[</span>
+<span class="p">{</span> <span class="s2">&quot;Name&quot;</span><span class="p">:</span><span class="s2">&quot;$int_engine_size3_class5_name;&quot;</span><span class="p">,</span> <span class="s2">&quot;Name_Localised&quot;</span><span class="p">:</span><span class="s2">&quot;Thrusters&quot;</span><span class="p">,</span> <span class="s2">&quot;StorageSlot&quot;</span><span class="p">:</span><span class="mi">57</span><span class="p">,</span> <span class="s2">&quot;StarSystem&quot;</span><span class="p">:</span><span class="s2">&quot;Deciat&quot;</span><span class="p">,</span> <span class="s2">&quot;MarketID&quot;</span><span class="p">:</span><span class="mi">128676487</span><span class="p">,</span> <span class="s2">&quot;TransferCost&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;TransferTime&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;BuyPrice&quot;</span><span class="p">:</span><span class="mi">495215</span><span class="p">,</span> <span class="s2">&quot;Hot&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span> <span class="s2">&quot;EngineerModifications&quot;</span><span class="p">:</span><span class="s2">&quot;Engine_Dirty&quot;</span><span class="p">,</span> <span class="s2">&quot;Level&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Quality&quot;</span><span class="p">:</span><span class="mf">0.000000</span> <span class="p">},</span>
+<span class="p">{</span> <span class="s2">&quot;Name&quot;</span><span class="p">:</span><span class="s2">&quot;$int_hyperdrive_size6_class5_name;&quot;</span><span class="p">,</span> <span class="s2">&quot;Name_Localised&quot;</span><span class="p">:</span><span class="s2">&quot;FSD&quot;</span><span class="p">,</span> <span class="s2">&quot;StorageSlot&quot;</span><span class="p">:</span><span class="mi">59</span><span class="p">,</span> <span class="s2">&quot;StarSystem&quot;</span><span class="p">:</span><span class="s2">&quot;Shinrarta Dezhra&quot;</span><span class="p">,</span> <span class="s2">&quot;MarketID&quot;</span><span class="p">:</span><span class="mi">128666762</span><span class="p">,</span> <span class="s2">&quot;TransferCost&quot;</span><span class="p">:</span><span class="mi">79680</span><span class="p">,</span> <span class="s2">&quot;TransferTime&quot;</span><span class="p">:</span><span class="mi">1317</span><span class="p">,</span> <span class="s2">&quot;BuyPrice&quot;</span><span class="p">:</span><span class="mi">12620035</span><span class="p">,</span> <span class="s2">&quot;Hot&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span> <span class="s2">&quot;EngineerModifications&quot;</span><span class="p">:</span><span class="s2">&quot;FSD_LongRange&quot;</span><span class="p">,</span> <span class="s2">&quot;Level&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;Quality&quot;</span><span class="p">:</span><span class="mf">0.000000</span> <span class="p">}</span> <span class="cp">]</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="storedships">StoredShips<a class="headerlink" href="#storedships" title="Permanent link">&para;</a></h3>
+<p>When written: when visiting shipyard</p>
+<p>Parameters:</p>
+<ul>
+<li>MarketID </li>
+<li>StationName </li>
+<li>StarSystem </li>
+<li>ShipsHere: (array of objects) <ul>
+<li>ShipID </li>
+<li>ShipType </li>
+<li>Name (if named) </li>
+<li>Value </li>
+<li>Hot </li>
+</ul>
+</li>
+<li>
+<p>ShipsRemote: (array of objects) </p>
+<ul>
+<li>ShipID </li>
+<li>ShipType </li>
+<li>Name (if named) </li>
+<li>Value </li>
+<li>Hot </li>
+</ul>
+</li>
+<li>
+<p>If the ship is in transit:</p>
+</li>
+<li>
+<p>InTransit: true </p>
+</li>
+<li>
+<p>If the ship is not in transit:</p>
+<ul>
+<li>StarSystem </li>
+<li>ShipMarketID </li>
+<li>TransferPrice </li>
+<li>TransferType </li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2017-10-04T10:07:21Z&quot;,
+    &quot;event&quot;: &quot;StoredShips&quot;,
+    &quot;StationName&quot;: &quot;Jameson Memorial&quot;,
+    &quot;StarSystem&quot;: &quot;Shinrarta Dezhra&quot;,
+    &quot;ShipsHere&quot;: [
+        {
+            &quot;ShipID&quot;: 64,
+            &quot;ShipType&quot;: &quot;sidewinder&quot;,
+            &quot;Value&quot;: 567962
+        },
+        {
+            &quot;ShipID&quot;: 20,
+            &quot;ShipType&quot;: &quot;empire_eagle&quot;,
+            &quot;Value&quot;: 6373956
+        }
+    ],
+    &quot;ShipsRemote&quot;: [
+        {
+            &quot;ShipID&quot;: 0,
+            &quot;ShipType&quot;: &quot;CobraMkIII&quot;,
+            &quot;StarSystem&quot;: &quot;Beta-1 Tucanae&quot;,
+            &quot;TransferPrice&quot;: 3777,
+            &quot;TransferTime&quot;: 1590,
+            &quot;Value&quot;: 9464239
+        }
+    ]
+}
+</code></pre></div>
+
+<h3 id="technologybroker">TechnologyBroker<a class="headerlink" href="#technologybroker" title="Permanent link">&para;</a></h3>
+<p>When written: when using the Technology Broker to unlock new purchasable technology</p>
+<p>Parameters:</p>
+<ul>
+<li>BrokerType </li>
+<li>MarketID </li>
+<li>ItemsUnlocked: the name(s) of the new item unlocked (available in Outfitting) </li>
+<li>Commodities: <ul>
+<li>Name: name of item </li>
+<li>Count: number of items used </li>
+</ul>
+</li>
+<li>Materials: <ul>
+<li>Name </li>
+<li>Count </li>
+<li>Category </li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2018-03-02T11:28:44Z&quot;,
+    &quot;event&quot;: &quot;TechnologyBroker&quot;,
+    &quot;BrokerType&quot;: &quot;Human&quot;,
+    &quot;MarketID&quot;: 128151032,
+    &quot;ItemsUnlocked&quot;: [
+        {
+            &quot;Name&quot;: &quot;Hpt_PlasmaShockCannon_Fixed_Medium&quot;,
+            &quot;Name_Localised&quot;: &quot;Shock Cannon&quot;
+        }
+    ],
+    &quot;Commodities&quot;: [
+        {
+            &quot;Name&quot;: &quot;iondistributor&quot;,
+            &quot;Name_Localised&quot;: &quot;Ion Distributor&quot;,
+            &quot;Count&quot;: 6
+        }
+    ],
+    &quot;Materials&quot;: [
+        {
+            &quot;Name&quot;: &quot;vanadium&quot;,
+            &quot;Count&quot;: 30,
+            &quot;Category&quot;: &quot;Raw&quot;
+        },
+        {
+            &quot;Name&quot;: &quot;tungsten&quot;,
+            &quot;Count&quot;: 30,
+            &quot;Category&quot;: &quot;Raw&quot;
+        },
+        {
+            &quot;Name&quot;: &quot;rhenium&quot;,
+            &quot;Count&quot;: 36,
+            &quot;Category&quot;: &quot;Raw&quot;
+        },
+        {
+            &quot;Name&quot;: &quot;technetium&quot;,
+            &quot;Count&quot;: 30,
+            &quot;Category&quot;: &quot;Raw&quot;
+        }
+    ]
+}
+</code></pre></div>
+
+<h3 id="clearimpound">ClearImpound<a class="headerlink" href="#clearimpound" title="Permanent link">&para;</a></h3>
+<p>When written: When clearing the impound off of one of your ships.</p>
+<p>Parameters:</p>
+<ul>
+<li>ShipType</li>
+<li>ShipID</li>
+<li>ShipMarketID: The market the ship is stored at</li>
+<li>MarketID: Your current market</li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;:&quot;2022-11-18T16:19:48Z&quot;,
+    &quot;event&quot;:&quot;ClearImpound&quot;, 
+    &quot;ShipType&quot;:&quot;asp&quot;,
+    &quot;ShipType_Localised&quot;:&quot;Asp Explorer&quot;,
+    &quot;ShipID&quot;:10,
+    &quot;ShipMarketID&quot;:128833431,
+    &quot;MarketID&quot;:128833431 
+}
+</code></pre></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../trade/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Trade" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Trade
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../powerplay/" class="md-footer__link md-footer__link--next" aria-label="Next: Powerplay" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Powerplay
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 ROMVoid95
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/ROMVoid95" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

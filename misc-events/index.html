@@ -1,0 +1,1974 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Elite Dangerous journal API">
+      
+      
+        <meta name="author" content="ROMVoid95">
+      
+      
+        <link rel="canonical" href="https://romvoid95.github.io/EDJournalAPI/misc-events/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Other Events - ED:Journal API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#other_events" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ED:Journal API" class="md-header__button md-logo" aria-label="ED:Journal API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ED:Journal API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Other Events
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ROMVoid95/EDJournalAPI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ED:Journal API" class="md-nav__button md-logo" aria-label="ED:Journal API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ED:Journal API
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ROMVoid95/EDJournalAPI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-format/" class="md-nav__link">
+        File Format
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../startup/" class="md-nav__link">
+        Startup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../travel/" class="md-nav__link">
+        Travel
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat/" class="md-nav__link">
+        Combat
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exploration/" class="md-nav__link">
+        Exploration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trade/" class="md-nav__link">
+        Trade
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../station-services/" class="md-nav__link">
+        Station Services
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../powerplay/" class="md-nav__link">
+        Powerplay
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squadrons/" class="md-nav__link">
+        Squadrons
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleetcarriers/" class="md-nav__link">
+        Fleet Carriers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-in-oddesey/" class="md-nav__link">
+        New in Odyssey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Other Events
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Other Events
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#other_events" class="md-nav__link">
+    Other Events
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afmurepairs" class="md-nav__link">
+    AfmuRepairs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approachsettlement" class="md-nav__link">
+    ApproachSettlement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changecrewrole" class="md-nav__link">
+    ChangeCrewRole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cockpitbreached" class="md-nav__link">
+    CockpitBreached
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commitcrime" class="md-nav__link">
+    CommitCrime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continued" class="md-nav__link">
+    Continued
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewlaunchfighter" class="md-nav__link">
+    CrewLaunchFighter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewmemberjoins" class="md-nav__link">
+    CrewMemberJoins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewmemberquits" class="md-nav__link">
+    CrewMemberQuits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewmemberrolechange" class="md-nav__link">
+    CrewMemberRoleChange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crimevictim" class="md-nav__link">
+    CrimeVictim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datalinkscan" class="md-nav__link">
+    DatalinkScan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datalinkvoucher" class="md-nav__link">
+    DatalinkVoucher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datascanned" class="md-nav__link">
+    DataScanned
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockfighter" class="md-nav__link">
+    DockFighter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docksrv" class="md-nav__link">
+    DockSRV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endcrewsession" class="md-nav__link">
+    EndCrewSession
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fighterrebuilt" class="md-nav__link">
+    FighterRebuilt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fuelscoop" class="md-nav__link">
+    FuelScoop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#friends" class="md-nav__link">
+    Friends
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jetconeboost" class="md-nav__link">
+    JetConeBoost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jetconedamage" class="md-nav__link">
+    JetConeDamage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joinacrew" class="md-nav__link">
+    JoinACrew
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kickcrewmember" class="md-nav__link">
+    KickCrewMember
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launchdrone" class="md-nav__link">
+    LaunchDrone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launchfighter" class="md-nav__link">
+    LaunchFighter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launchsrv" class="md-nav__link">
+    LaunchSRV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduleinfo" class="md-nav__link">
+    ModuleInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#music" class="md-nav__link">
+    Music
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npccrewpaidwage" class="md-nav__link">
+    NpcCrewPaidWage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npccrewrank" class="md-nav__link">
+    NpcCrewRank
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promotion" class="md-nav__link">
+    Promotion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prospectedasteroid" class="md-nav__link">
+    ProspectedAsteroid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quitacrew" class="md-nav__link">
+    QuitACrew
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebootrepair" class="md-nav__link">
+    RebootRepair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receivetext" class="md-nav__link">
+    ReceiveText
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repairdrone" class="md-nav__link">
+    RepairDrone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reservoirreplenished" class="md-nav__link">
+    ReservoirReplenished
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resurrect" class="md-nav__link">
+    Resurrect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scanned" class="md-nav__link">
+    Scanned
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfdestruct" class="md-nav__link">
+    SelfDestruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendtext" class="md-nav__link">
+    SendText
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    Shutdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synthesis" class="md-nav__link">
+    Synthesis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemsshutdown" class="md-nav__link">
+    SystemsShutdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ussdrop" class="md-nav__link">
+    USSDrop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vehicleswitch" class="md-nav__link">
+    VehicleSwitch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wingadd" class="md-nav__link">
+    WingAdd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winginvite" class="md-nav__link">
+    WingInvite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wingjoin" class="md-nav__link">
+    WingJoin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wingleave" class="md-nav__link">
+    WingLeave
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cargotransfer" class="md-nav__link">
+    CargoTransfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supercruisedestinationdrop" class="md-nav__link">
+    SupercruiseDestinationDrop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../status-file/" class="md-nav__link">
+        Status File
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#other_events" class="md-nav__link">
+    Other Events
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#afmurepairs" class="md-nav__link">
+    AfmuRepairs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#approachsettlement" class="md-nav__link">
+    ApproachSettlement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changecrewrole" class="md-nav__link">
+    ChangeCrewRole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cockpitbreached" class="md-nav__link">
+    CockpitBreached
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commitcrime" class="md-nav__link">
+    CommitCrime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continued" class="md-nav__link">
+    Continued
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewlaunchfighter" class="md-nav__link">
+    CrewLaunchFighter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewmemberjoins" class="md-nav__link">
+    CrewMemberJoins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewmemberquits" class="md-nav__link">
+    CrewMemberQuits
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crewmemberrolechange" class="md-nav__link">
+    CrewMemberRoleChange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crimevictim" class="md-nav__link">
+    CrimeVictim
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datalinkscan" class="md-nav__link">
+    DatalinkScan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datalinkvoucher" class="md-nav__link">
+    DatalinkVoucher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datascanned" class="md-nav__link">
+    DataScanned
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockfighter" class="md-nav__link">
+    DockFighter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docksrv" class="md-nav__link">
+    DockSRV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endcrewsession" class="md-nav__link">
+    EndCrewSession
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fighterrebuilt" class="md-nav__link">
+    FighterRebuilt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fuelscoop" class="md-nav__link">
+    FuelScoop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#friends" class="md-nav__link">
+    Friends
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jetconeboost" class="md-nav__link">
+    JetConeBoost
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jetconedamage" class="md-nav__link">
+    JetConeDamage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joinacrew" class="md-nav__link">
+    JoinACrew
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kickcrewmember" class="md-nav__link">
+    KickCrewMember
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launchdrone" class="md-nav__link">
+    LaunchDrone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launchfighter" class="md-nav__link">
+    LaunchFighter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#launchsrv" class="md-nav__link">
+    LaunchSRV
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moduleinfo" class="md-nav__link">
+    ModuleInfo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#music" class="md-nav__link">
+    Music
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npccrewpaidwage" class="md-nav__link">
+    NpcCrewPaidWage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#npccrewrank" class="md-nav__link">
+    NpcCrewRank
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promotion" class="md-nav__link">
+    Promotion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prospectedasteroid" class="md-nav__link">
+    ProspectedAsteroid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quitacrew" class="md-nav__link">
+    QuitACrew
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebootrepair" class="md-nav__link">
+    RebootRepair
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receivetext" class="md-nav__link">
+    ReceiveText
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#repairdrone" class="md-nav__link">
+    RepairDrone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reservoirreplenished" class="md-nav__link">
+    ReservoirReplenished
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resurrect" class="md-nav__link">
+    Resurrect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scanned" class="md-nav__link">
+    Scanned
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selfdestruct" class="md-nav__link">
+    SelfDestruct
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sendtext" class="md-nav__link">
+    SendText
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    Shutdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#synthesis" class="md-nav__link">
+    Synthesis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systemsshutdown" class="md-nav__link">
+    SystemsShutdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ussdrop" class="md-nav__link">
+    USSDrop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vehicleswitch" class="md-nav__link">
+    VehicleSwitch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wingadd" class="md-nav__link">
+    WingAdd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#winginvite" class="md-nav__link">
+    WingInvite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wingjoin" class="md-nav__link">
+    WingJoin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wingleave" class="md-nav__link">
+    WingLeave
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cargotransfer" class="md-nav__link">
+    CargoTransfer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supercruisedestinationdrop" class="md-nav__link">
+    SupercruiseDestinationDrop
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/ROMVoid95/EDJournalAPI/edit/main/docs/misc-events.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>Other Events</h1>
+
+<h2 id="other_events">Other Events<a class="headerlink" href="#other_events" title="Permanent link">&para;</a></h2>
+<h3 id="afmurepairs">AfmuRepairs<a class="headerlink" href="#afmurepairs" title="Permanent link">&para;</a></h3>
+<p>When written: when repairing modules using the Auto Field Maintenance Unit (AFMU)</p>
+<p>Parameters:</p>
+<ul>
+<li>Module: module name </li>
+<li>FullyRepaired: (bool) </li>
+<li>Health; (float 0.0..1.0) </li>
+</ul>
+<p>If the AFMU runs out of ammo, the module may not be fully repaired.</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;timestamp&quot;:</span><span class="w"> </span><span class="err">&quot;2017-08-14</span><span class="n">T15</span><span class="p">:</span><span class="mi">41</span><span class="o">:</span><span class="mi">50</span><span class="n">Z</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">event</span><span class="s2">&quot;: &quot;</span><span class="n">AfmuRepairs</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">Module</span><span class="s2">&quot;: &quot;</span><span class="err">$</span><span class="n">modularcargobaydoor_name</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;Module_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Cargo</span><span class="w"> </span><span class="err">Hatch&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;FullyRepaired&quot;:</span><span class="w"> </span><span class="err">true,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;Health&quot;:</span><span class="w"> </span><span class="err">1</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="approachsettlement">ApproachSettlement<a class="headerlink" href="#approachsettlement" title="Permanent link">&para;</a></h3>
+<p>When written: when approaching a planetary settlement</p>
+<p>Parameters:</p>
+<ul>
+<li>Name </li>
+<li>MarketID </li>
+<li>Latitude </li>
+<li>Longitude </li>
+<li>SystemAddress </li>
+<li>BodyID </li>
+<li>BodyName </li>
+</ul>
+<h3 id="changecrewrole">ChangeCrewRole<a class="headerlink" href="#changecrewrole" title="Permanent link">&para;</a></h3>
+<p>When written: when in a crew on someone else's ship, player switched crew role</p>
+<p>Parameters:</p>
+<ul>
+<li>Role: name of selected role (Idle, FireCon, FighterCon) </li>
+<li>Telepresence: (bool) (only from Odyssey build) </li>
+</ul>
+<h3 id="cockpitbreached">CockpitBreached<a class="headerlink" href="#cockpitbreached" title="Permanent link">&para;</a></h3>
+<p>When written: when cockpit canopy is breached</p>
+<p>Parameters: none</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;CockpitBreached&quot;
+}
+</code></pre></div>
+
+<h3 id="commitcrime">CommitCrime<a class="headerlink" href="#commitcrime" title="Permanent link">&para;</a></h3>
+<p>When written: when a crime is recorded against the player</p>
+<p>Parameters:</p>
+<ul>
+<li>CrimeType – see §15.6 </li>
+<li>Faction </li>
+</ul>
+<p>Optional parameters (depending on crime)</p>
+<ul>
+<li>Victim </li>
+<li>Fine </li>
+<li>Bounty </li>
+</ul>
+<p>Examples:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;CommitCrime&quot;,
+    &quot;CrimeType&quot;: &quot;assault&quot;,
+    &quot;Faction&quot;: &quot;The Pilots Federation&quot;,
+    &quot;Victim&quot;: &quot;Potapinski&quot;,
+    &quot;Bounty&quot;: 210
+}
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;CommitCrime&quot;,
+    &quot;CrimeType&quot;: &quot;fireInNoFireZone&quot;,
+    &quot;Faction&quot;: &quot;Jarildekald Public Industry&quot;,
+    &quot;Fine&quot;: 100
+}
+</code></pre></div>
+
+<h3 id="continued">Continued<a class="headerlink" href="#continued" title="Permanent link">&para;</a></h3>
+<p>When written: if the journal file grows to 500k lines, we write this event, close the file, and start a new one</p>
+<p>Parameters:</p>
+<ul>
+<li>Part: next part number </li>
+</ul>
+<h3 id="crewlaunchfighter">CrewLaunchFighter<a class="headerlink" href="#crewlaunchfighter" title="Permanent link">&para;</a></h3>
+<p>When written: when in multicrew, in Helm player's log, when a crew member launches a fighter</p>
+<p>Parameters:</p>
+<ul>
+<li>Crew: name of crew member launching in fighter </li>
+<li>ID </li>
+<li>Telepresence: (bool) (only from Odyssey build) </li>
+</ul>
+<h3 id="crewmemberjoins">CrewMemberJoins<a class="headerlink" href="#crewmemberjoins" title="Permanent link">&para;</a></h3>
+<p>When written: When another player joins your ship's crew</p>
+<p>Parameters:</p>
+<ul>
+<li>Crew: player's commander name </li>
+<li>Telepresence: (bool) (only from Odyssey build) </li>
+</ul>
+<h3 id="crewmemberquits">CrewMemberQuits<a class="headerlink" href="#crewmemberquits" title="Permanent link">&para;</a></h3>
+<p>When written: When another player leaves your ship's crew</p>
+<p>Parameters:</p>
+<ul>
+<li>Crew: player's commander name </li>
+<li>Telepresence: (bool) (only from Odyssey build) </li>
+</ul>
+<h3 id="crewmemberrolechange">CrewMemberRoleChange<a class="headerlink" href="#crewmemberrolechange" title="Permanent link">&para;</a></h3>
+<p>When written: in Multicrew, Helm's log, when another crew player changes role</p>
+<p>Parameters:</p>
+<ul>
+<li>Crew: player name </li>
+<li>Role: selected role </li>
+<li>Telepresence: (bool) (only from Odyssey build) </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2017-02-22T14:56:54Z&quot;,
+    &quot;event&quot;: &quot;CrewMemberRoleChange&quot;,
+    &quot;Crew&quot;: &quot;HRC1&quot;,
+    &quot;Role&quot;: &quot;FireCon&quot;
+}
+</code></pre></div>
+
+<h3 id="crimevictim">CrimeVictim<a class="headerlink" href="#crimevictim" title="Permanent link">&para;</a></h3>
+<p>When written: when another player commits a crime against the current player</p>
+<p>Parameters:</p>
+<ul>
+<li>Offender </li>
+<li>CrimeType </li>
+<li>Fine _or _Bounty </li>
+</ul>
+<h3 id="datalinkscan">DatalinkScan<a class="headerlink" href="#datalinkscan" title="Permanent link">&para;</a></h3>
+<p>When written: when scanning a data link</p>
+<p>Parameters:</p>
+<ul>
+<li>Message: message from data link </li>
+</ul>
+<h3 id="datalinkvoucher">DatalinkVoucher<a class="headerlink" href="#datalinkvoucher" title="Permanent link">&para;</a></h3>
+<p>When written: when scanning a datalink generates a reward</p>
+<p>Parameters:</p>
+<ul>
+<li>Reward: value in credits </li>
+<li>VictimFaction </li>
+<li>PayeeFaction </li>
+</ul>
+<h3 id="datascanned">DataScanned<a class="headerlink" href="#datascanned" title="Permanent link">&para;</a></h3>
+<p>When written: when scanning some types of data links</p>
+<p>Parameters:</p>
+<ul>
+<li>Type </li>
+</ul>
+<p>Type will typically be one of "DataLink", "DataPoint", "ListeningPost", "AbandonedDataLog", "WreckedShip", etc</p>
+<h3 id="dockfighter">DockFighter<a class="headerlink" href="#dockfighter" title="Permanent link">&para;</a></h3>
+<p>When written: when docking a fighter back with the mothership</p>
+<p>Parameters:</p>
+<ul>
+<li>ID </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;DockFighter&quot;
+}
+</code></pre></div>
+
+<h3 id="docksrv">DockSRV<a class="headerlink" href="#docksrv" title="Permanent link">&para;</a></h3>
+<p>When written: when docking an SRV with the ship</p>
+<p>Parameters:</p>
+<ul>
+<li>ID </li>
+<li>SRVType </li>
+</ul>
+<h3 id="endcrewsession">EndCrewSession<a class="headerlink" href="#endcrewsession" title="Permanent link">&para;</a></h3>
+<p>When written: when the captain in multicrew disbands the crew</p>
+<p>Parameters:</p>
+<ul>
+<li>OnCrime: (bool) true if crew disbanded as a result of a crime in a lawful session </li>
+<li>Telepresence: (bool) (only from Odyssey build) </li>
+</ul>
+<h3 id="fighterrebuilt">FighterRebuilt<a class="headerlink" href="#fighterrebuilt" title="Permanent link">&para;</a></h3>
+<p>When written: when a ship's fighter is rebuilt in the hangar</p>
+<p>Parameters:</p>
+<ul>
+<li>Loadout </li>
+<li>ID </li>
+</ul>
+<h3 id="fuelscoop">FuelScoop<a class="headerlink" href="#fuelscoop" title="Permanent link">&para;</a></h3>
+<p>When written: when scooping fuel from a star</p>
+<p>Parameters:</p>
+<ul>
+<li>Scooped: tons fuel scooped </li>
+<li>Total: total fuel level after scooping </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;FuelScoop&quot;,
+    &quot;Scooped&quot;: 0.4987,
+    &quot;Total&quot;: 16
+}
+</code></pre></div>
+
+<h3 id="friends">Friends<a class="headerlink" href="#friends" title="Permanent link">&para;</a></h3>
+<p>When written: when receiving information about a change in a friend's status</p>
+<p>Also written at startup for friends who are already online (new in v2.4)</p>
+<p>Parameters:</p>
+<ul>
+<li>Status: one of the following: <em>Requested, Declined, Added, Lost, Offline, Online</em> </li>
+<li>Name: the friend's commander name </li>
+</ul>
+<h3 id="jetconeboost">JetConeBoost<a class="headerlink" href="#jetconeboost" title="Permanent link">&para;</a></h3>
+<p>When written: when enough material has been collected from a solar jet code (at a white dwarf or neutron star) for a jump boost</p>
+<p>Parameters:</p>
+<ul>
+<li>BoostValue </li>
+</ul>
+<h3 id="jetconedamage">JetConeDamage<a class="headerlink" href="#jetconedamage" title="Permanent link">&para;</a></h3>
+<p>When written: when passing through the jet code from a white dwarf or neutron star has caused damage to a ship module</p>
+<p>Parameters:</p>
+<ul>
+<li>Module: the name of the module that has taken some damage </li>
+</ul>
+<h3 id="joinacrew">JoinACrew<a class="headerlink" href="#joinacrew" title="Permanent link">&para;</a></h3>
+<p>When written: When you join another player ship's crew</p>
+<p>Parameters:</p>
+<ul>
+<li>Captain: Helm player's commander name </li>
+<li>Telepresence: (bool) (only from Odyssey build) </li>
+</ul>
+<h3 id="kickcrewmember">KickCrewMember<a class="headerlink" href="#kickcrewmember" title="Permanent link">&para;</a></h3>
+<p>When written: When you force another player to leave your ship's crew</p>
+<p>Parameters:</p>
+<ul>
+<li>Crew: player's commander name </li>
+<li>OnCrime: (bool) true if player is automatically kicked for committing a crime in a lawful session </li>
+<li>Telepresence: (bool) (only from Odyssey build) </li>
+</ul>
+<h3 id="launchdrone">LaunchDrone<a class="headerlink" href="#launchdrone" title="Permanent link">&para;</a></h3>
+<p>When written: when using any type of drone/limpet</p>
+<p>Parameters:</p>
+<ul>
+<li>Type: one of:   </li>
+</ul>
+<p>"Hatchbreaker", "FuelTransfer", "Collection", "Prospector", "Repair", "Research", "Decontamination"</p>
+<h3 id="launchfighter">LaunchFighter<a class="headerlink" href="#launchfighter" title="Permanent link">&para;</a></h3>
+<p>When written: when launching a fighter</p>
+<p>Parameters:</p>
+<ul>
+<li>Loadout </li>
+<li>ID </li>
+<li>PlayerControlled: whether player is controlling the fighter from launch </li>
+</ul>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;LaunchFighter&quot;,
+    &quot;Loadout&quot;: &quot;starter&quot;,
+    &quot;PlayerControlled&quot;: true
+}
+</code></pre></div>
+
+<h3 id="launchsrv">LaunchSRV<a class="headerlink" href="#launchsrv" title="Permanent link">&para;</a></h3>
+<p>When written: deploying the SRV from a ship onto planet surface</p>
+<p>Parameters:</p>
+<ul>
+<li>Loadout </li>
+<li>ID </li>
+<li>SRVType </li>
+</ul>
+<h3 id="moduleinfo">ModuleInfo<a class="headerlink" href="#moduleinfo" title="Permanent link">&para;</a></h3>
+<p>When written: when looking at the cockpit RHS modules info panel, if data has changed</p>
+<p>This also writes a ModulesInfo.json file alongside the journal, listing the modules in the same order as displayed</p>
+<p>Parameters: None</p>
+<p>Example of ModulesInfo file:</p>
+<div class="codehilite"><pre><span></span><code>{ &quot;timestamp&quot;:&quot;2018-01-10T14:35:08Z&quot;, &quot;event&quot;:&quot;ModuleInfo&quot;, &quot;Modules&quot;:[
+{ &quot;Slot&quot;:&quot;MainEngines&quot;, &quot;Item&quot;:&quot;int_engine_size3_class5&quot;, &quot;Power&quot;:3.720000, &quot;Priority&quot;:0 },
+{ &quot;Slot&quot;:&quot;MediumHardpoint1&quot;, &quot;Item&quot;:&quot;hpt_beamlaser_turret_medium&quot;, &quot;Power&quot;:0.930000, &quot;Priority&quot;:0 },
+{ &quot;Slot&quot;:&quot;Slot03_Size2&quot;, &quot;Item&quot;:&quot;int_shieldgenerator_size2_class1&quot;, &quot;Power&quot;:0.900000, &quot;Priority&quot;:2 },
+{ &quot;Slot&quot;:&quot;MediumHardpoint2&quot;, &quot;Item&quot;:&quot;hpt_multicannon_gimbal_medium&quot;, &quot;Power&quot;:0.640000, &quot;Priority&quot;:0 },
+{ &quot;Slot&quot;:&quot;CargoHatch&quot;, &quot;Item&quot;:&quot;modularcargobaydoor&quot;, &quot;Power&quot;:0.600000, &quot;Priority&quot;:2 },
+{ &quot;Slot&quot;:&quot;MediumHardpoint3&quot;, &quot;Item&quot;:&quot;hpt_pulselaser_gimbal_medium&quot;, &quot;Power&quot;:0.600000, &quot;Priority&quot;:0 },
+{ &quot;Slot&quot;:&quot;PowerDistributor&quot;, &quot;Item&quot;:&quot;int_powerdistributor_size3_class5&quot;, &quot;Power&quot;:0.600000, &quot;Priority&quot;:0 },
+{ &quot;Slot&quot;:&quot;FrameShiftDrive&quot;, &quot;Item&quot;:&quot;int_hyperdrive_size3_class5&quot;, &quot;Power&quot;:0.450000, &quot;Priority&quot;:0 },
+{ &quot;Slot&quot;:&quot;Slot04_Size2&quot;, &quot;Item&quot;:&quot;int_fuelscoop_size2_class5&quot;, &quot;Power&quot;:0.390000, &quot;Priority&quot;:0 },
+{ &quot;Slot&quot;:&quot;LifeSupport&quot;, &quot;Item&quot;:&quot;int_lifesupport_size1_class1&quot;, &quot;Power&quot;:0.320000, &quot;Priority&quot;:2 },
+{ &quot;Slot&quot;:&quot;Slot05_Size2&quot;, &quot;Item&quot;:&quot;int_buggybay_size2_class1&quot;, &quot;Power&quot;:0.250000, &quot;Priority&quot;:0 },
+{ &quot;Slot&quot;:&quot;Radar&quot;, &quot;Item&quot;:&quot;int_sensors_size2_class2&quot;, &quot;Power&quot;:0.210000, &quot;Priority&quot;:0 },
+{ &quot;Slot&quot;:&quot;ShipCockpit&quot;, &quot;Item&quot;:&quot;empire_courier_cockpit&quot;, &quot;Power&quot;:0.000000 },
+{ &quot;Slot&quot;:&quot;PowerPlant&quot;, &quot;Item&quot;:&quot;int_powerplant_size4_class2&quot;, &quot;Power&quot;:0.000000 },
+{ &quot;Slot&quot;:&quot;Slot01_Size3&quot;, &quot;Item&quot;:&quot;int_cargorack_size2_class1&quot;, &quot;Power&quot;:0.000000 },
+{ &quot;Slot&quot;:&quot;Slot02_Size3&quot;, &quot;Item&quot;:&quot;int_cargorack_size2_class1&quot;, &quot;Power&quot;:0.000000 },
+{ &quot;Slot&quot;:&quot;Slot06_Size1&quot;, &quot;Item&quot;:&quot;int_stellarbodydiscoveryscanner_standard&quot;, &quot;Power&quot;:0.000000 },
+{ &quot;Slot&quot;:&quot;DataLinkScanner&quot;, &quot;Item&quot;:&quot;hpt_shipdatalinkscanner&quot;, &quot;Power&quot;:0, &quot;Priority&quot;:0 }
+ ] }
+</code></pre></div>
+
+<h3 id="music">Music<a class="headerlink" href="#music" title="Permanent link">&para;</a></h3>
+<p>When written: when the game music 'mood' changes</p>
+<p>Parameters:</p>
+<ul>
+<li>MusicTrack: (name) </li>
+</ul>
+<p>Possible track names are: NoTrack, MainMenu, CQCMenu, SystemMap, GalaxyMap, GalacticPowers CQC, DestinationFromHyperspace, DestinationFromSupercruise, Supercruise, Combat_Unknown Unknown_Encounter, CapitalShip, CombatLargeDogFight, Combat_Dogfight, Combat_SRV Unknown_Settlement, DockingComputer, Starport, Unknown_Exploration, Exploration</p>
+<p>Note: Other music track names may be used in future</p>
+<h3 id="npccrewpaidwage">NpcCrewPaidWage<a class="headerlink" href="#npccrewpaidwage" title="Permanent link">&para;</a></h3>
+<p>This is written when crew receive wages</p>
+<p>Parameters:</p>
+<ul>
+<li>NpcCrewId </li>
+<li>NpcCrewName </li>
+<li>Amount </li>
+</ul>
+<h3 id="npccrewrank">NpcCrewRank<a class="headerlink" href="#npccrewrank" title="Permanent link">&para;</a></h3>
+<p>This is written when a crew member's combat rank increases</p>
+<p>Parameters:</p>
+<ul>
+<li>NpcCrewId </li>
+<li>NpcCrewName </li>
+<li>RankCombat </li>
+</ul>
+<h3 id="promotion">Promotion<a class="headerlink" href="#promotion" title="Permanent link">&para;</a></h3>
+<p>When written: when the player's rank increases</p>
+<p>Parameters: one of the following</p>
+<ul>
+<li>Combat: new rank </li>
+<li>Trade: new rank </li>
+<li>Explore: new rank </li>
+<li>CQC: new rank </li>
+<li>Federation: </li>
+<li>Empire: </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;Promotion&quot;,
+    &quot;Explore&quot;: 2
+}
+</code></pre></div>
+
+<h3 id="prospectedasteroid">ProspectedAsteroid<a class="headerlink" href="#prospectedasteroid" title="Permanent link">&para;</a></h3>
+<p>When using a prospecting drone</p>
+<p>Parameters:</p>
+<ul>
+<li>Materials: (array of Name and Proportion) </li>
+<li>Content: (a string representing High/Medium/Low) </li>
+<li>MotherlodeMaterial: name (if it's a motherlode) </li>
+<li>Remaining: percentage </li>
+</ul>
+<h3 id="quitacrew">QuitACrew<a class="headerlink" href="#quitacrew" title="Permanent link">&para;</a></h3>
+<p>When written: When you leave another player ship's crew</p>
+<p>Parameters:</p>
+<ul>
+<li>Captain: Helm player's commander name </li>
+<li>Telepresence: (bool) (only from Odyssey build) </li>
+</ul>
+<h3 id="rebootrepair">RebootRepair<a class="headerlink" href="#rebootrepair" title="Permanent link">&para;</a></h3>
+<p>When written: when the 'reboot repair' function is used</p>
+<p>Parameters:</p>
+<ul>
+<li>Modules: JSON array of names of modules repaired </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;RebootRepair&quot;,
+    &quot;Modules&quot;: [
+        &quot;MainEngines&quot;,
+        &quot;TinyHardpoint1&quot;
+    ]
+}
+</code></pre></div>
+
+<h3 id="receivetext">ReceiveText<a class="headerlink" href="#receivetext" title="Permanent link">&para;</a></h3>
+<p>When written: when a text message is received from another player or npc</p>
+<p>Parameters:</p>
+<ul>
+<li>From </li>
+<li>Message </li>
+<li>Channel: (wing/local/voicechat/friend/player/npc/squadron/starsystem) </li>
+</ul>
+<h3 id="repairdrone">RepairDrone<a class="headerlink" href="#repairdrone" title="Permanent link">&para;</a></h3>
+<p>When written: when the player's ship has been repaired by a repair drone</p>
+<p>Parameters:</p>
+<ul>
+<li>HullRepaired </li>
+<li>CockpitRepaired </li>
+<li>CorrosionRepaired </li>
+</ul>
+<p>Each of these is a number indicating the amount of damage that has been repaired</p>
+<h3 id="reservoirreplenished">ReservoirReplenished<a class="headerlink" href="#reservoirreplenished" title="Permanent link">&para;</a></h3>
+<p>When fuel is moved from one fuel tank to another</p>
+<p>Parameters:</p>
+<ul>
+<li>FuelMain </li>
+<li>FuelReservoir </li>
+</ul>
+<h3 id="resurrect">Resurrect<a class="headerlink" href="#resurrect" title="Permanent link">&para;</a></h3>
+<p>When written: when the player restarts after death</p>
+<p>Parameters:</p>
+<ul>
+<li>Option: the option selected on the insurance rebuy screen </li>
+<li>Cost: the price paid </li>
+<li>Bankrupt: whether the commander declared bankruptcy </li>
+</ul>
+<h3 id="scanned">Scanned<a class="headerlink" href="#scanned" title="Permanent link">&para;</a></h3>
+<p>When written: when the player's ship has been scanned</p>
+<p>(note the "Scan Detected" indication is at the start of the scan, this is written at the end of a successful scan)</p>
+<p>Parameters:</p>
+<ul>
+<li>ScanType: Cargo, Crime, Cabin, Data or Unknown </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2017-02-13T12:30:09Z&quot;,
+    &quot;event&quot;: &quot;Scanned&quot;,
+    &quot;ScanType&quot;: &quot;Cargo&quot;
+}
+</code></pre></div>
+
+<h3 id="selfdestruct">SelfDestruct<a class="headerlink" href="#selfdestruct" title="Permanent link">&para;</a></h3>
+<p>When written: when the 'self destruct' function is used</p>
+<p>Parameters: none</p>
+<h3 id="sendtext">SendText<a class="headerlink" href="#sendtext" title="Permanent link">&para;</a></h3>
+<p>When written: when a text message is sent to another player</p>
+<p>Parameters:</p>
+<ul>
+<li>To: may be player name, or channel name </li>
+<li>Message </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;SendText&quot;,
+    &quot;To&quot;: &quot;HRC-2&quot;,
+    &quot;Message&quot;: &quot;zoom&quot;
+}
+</code></pre></div>
+
+<h3 id="shutdown">Shutdown<a class="headerlink" href="#shutdown" title="Permanent link">&para;</a></h3>
+<p>When written: on a clean shutdown of the game</p>
+<p>Parameters: none</p>
+<h3 id="synthesis">Synthesis<a class="headerlink" href="#synthesis" title="Permanent link">&para;</a></h3>
+<p>When written: when synthesis is used to repair or rearm</p>
+<p>Parameters:</p>
+<ul>
+<li>Name: synthesis blueprint </li>
+<li>Materials: JSON array with objects listing materials used and quantities </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;Synthesis&quot;,
+    &quot;Name&quot;: &quot;Repair Basic&quot;,
+    &quot;Materials&quot;: [
+        {
+            &quot;Name&quot;: &quot;iron&quot;,
+            &quot;Count&quot;: 2
+        },
+        {
+            &quot;Name&quot;: &quot;nickel&quot;,
+            &quot;Count&quot;: 1
+        }
+    ]
+}
+</code></pre></div>
+
+<h3 id="systemsshutdown">SystemsShutdown<a class="headerlink" href="#systemsshutdown" title="Permanent link">&para;</a></h3>
+<p>When written: when the player's ship systems shut down (eg in a Thargoid encounter)</p>
+<p>Parameters: none</p>
+<h3 id="ussdrop">USSDrop<a class="headerlink" href="#ussdrop" title="Permanent link">&para;</a></h3>
+<p>When written: when dropping from Supercruise at a USS</p>
+<p>Parameters:</p>
+<ul>
+<li>USSType: description of USS </li>
+<li>USSThreat: threat level </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;USSDrop&quot;,
+    &quot;USSType&quot;: &quot;Disrupted wake echoes&quot;,
+    &quot;USSThreat&quot;: 0
+}
+</code></pre></div>
+
+<h3 id="vehicleswitch">VehicleSwitch<a class="headerlink" href="#vehicleswitch" title="Permanent link">&para;</a></h3>
+<p>When written: when switching control between the main ship and a fighter</p>
+<p>Parameters:</p>
+<ul>
+<li>To: ( Mothership/Fighter) </li>
+</ul>
+<p>Examples:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;VehicleSwitch&quot;,
+    &quot;To&quot;: &quot;Fighter&quot;
+}
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;VehicleSwitch&quot;,
+    &quot;To&quot;: &quot;Mothership&quot;
+}
+</code></pre></div>
+
+<h3 id="wingadd">WingAdd<a class="headerlink" href="#wingadd" title="Permanent link">&para;</a></h3>
+<p>When written: another player has joined the wing</p>
+<p>Parameters:</p>
+<ul>
+<li>Name </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;WingAdd&quot;,
+    &quot;Name&quot;: &quot;HRC-2&quot;
+}
+</code></pre></div>
+
+<h3 id="winginvite">WingInvite<a class="headerlink" href="#winginvite" title="Permanent link">&para;</a></h3>
+<p>When written: when the player is invited to a wing</p>
+<p>Parameters:</p>
+<ul>
+<li>Name: the commander name of the player inviting to the wing </li>
+</ul>
+<h3 id="wingjoin">WingJoin<a class="headerlink" href="#wingjoin" title="Permanent link">&para;</a></h3>
+<p>When written: this player has joined a wing</p>
+<p>Parameters:</p>
+<ul>
+<li>Others: JSON array of other player names already in wing </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;WingJoin&quot;,
+    &quot;Others&quot;: [
+        &quot;HRC1&quot;
+    ]
+}
+</code></pre></div>
+
+<h3 id="wingleave">WingLeave<a class="headerlink" href="#wingleave" title="Permanent link">&para;</a></h3>
+<p>When written: this player has left a wing</p>
+<p>Parameters: none</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;WingLeave&quot;
+}
+</code></pre></div>
+
+<h3 id="cargotransfer">CargoTransfer<a class="headerlink" href="#cargotransfer" title="Permanent link">&para;</a></h3>
+<p>When transferring cargo between ship and fleet carrier, or between ship and SRV</p>
+<ul>
+<li>Transfers: [ {Type, Count, Direction}, ... ] </li>
+</ul>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2020-03-12T12:49:54Z&quot;,
+    &quot;event&quot;: &quot;CargoTransfer&quot;,
+    &quot;Transfers&quot;: [
+        {
+            &quot;Type&quot;: &quot;tea&quot;,
+            &quot;Count&quot;: 1,
+            &quot;Direction&quot;: &quot;tocarrier&quot;
+        },
+        {
+            &quot;Type&quot;: &quot;gold&quot;,
+            &quot;Count&quot;: 1,
+            &quot;Direction&quot;: &quot;toship&quot;
+        }
+    ]
+}
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2020-03-12T13:34:22Z&quot;,
+    &quot;event&quot;: &quot;CargoTransfer&quot;,
+    &quot;Transfers&quot;: [
+        {
+            &quot;Type&quot;: &quot;grain&quot;,
+            &quot;Count&quot;: 2,
+            &quot;Direction&quot;: &quot;tosrv&quot;
+        }
+    ]
+}
+</code></pre></div>
+
+<h3 id="supercruisedestinationdrop">SupercruiseDestinationDrop<a class="headerlink" href="#supercruisedestinationdrop" title="Permanent link">&para;</a></h3>
+<p>When dropping out of supercruise at a targeted destination. </p>
+<ul>
+<li>Type: The type fo destination being dropped into</li>
+<li>Threat: threat level</li>
+<li>MarketID: (Optional)The market id of the destination if dropping at a market</li>
+</ul>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;:&quot;2020-03-12T12:49:54Z&quot;,
+    &quot;event&quot;:&quot;SupercruiseDestinationDrop&quot;,
+    &quot;Type&quot;:”Azeban City”,
+    “Threat”:0,
+    “MarketID”:128001536 
+}
+</code></pre></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../new-in-oddesey/" class="md-footer__link md-footer__link--prev" aria-label="Previous: New in Odyssey" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              New in Odyssey
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../status-file/" class="md-footer__link md-footer__link--next" aria-label="Next: Status File" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Status File
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 ROMVoid95
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/ROMVoid95" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

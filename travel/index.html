@@ -1,0 +1,1497 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Elite Dangerous journal API">
+      
+      
+        <meta name="author" content="ROMVoid95">
+      
+      
+        <link rel="canonical" href="https://romvoid95.github.io/EDJournalAPI/travel/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Travel - ED:Journal API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#travel" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ED:Journal API" class="md-header__button md-logo" aria-label="ED:Journal API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ED:Journal API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Travel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ROMVoid95/EDJournalAPI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ED:Journal API" class="md-nav__button md-logo" aria-label="ED:Journal API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ED:Journal API
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ROMVoid95/EDJournalAPI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-format/" class="md-nav__link">
+        File Format
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../startup/" class="md-nav__link">
+        Startup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Travel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Travel
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#travel" class="md-nav__link">
+    Travel
+  </a>
+  
+    <nav class="md-nav" aria-label="Travel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approachbody" class="md-nav__link">
+    ApproachBody
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docked" class="md-nav__link">
+    Docked
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockingcancelled" class="md-nav__link">
+    DockingCancelled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockingdenied" class="md-nav__link">
+    DockingDenied
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockinggranted" class="md-nav__link">
+    DockingGranted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockingrequested" class="md-nav__link">
+    DockingRequested
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockingtimeout" class="md-nav__link">
+    DockingTimeout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fsdjump" class="md-nav__link">
+    FSDJump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fsdtarget" class="md-nav__link">
+    FSDTarget
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leavebody" class="md-nav__link">
+    LeaveBody
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liftoff" class="md-nav__link">
+    Liftoff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#location" class="md-nav__link">
+    Location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startjump" class="md-nav__link">
+    StartJump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supercruiseentry" class="md-nav__link">
+    SupercruiseEntry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supercruiseexit" class="md-nav__link">
+    SupercruiseExit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touchdown" class="md-nav__link">
+    Touchdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undocked" class="md-nav__link">
+    Undocked
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navroute" class="md-nav__link">
+    NavRoute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navrouteclear" class="md-nav__link">
+    NavRouteClear
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat/" class="md-nav__link">
+        Combat
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exploration/" class="md-nav__link">
+        Exploration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trade/" class="md-nav__link">
+        Trade
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../station-services/" class="md-nav__link">
+        Station Services
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../powerplay/" class="md-nav__link">
+        Powerplay
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squadrons/" class="md-nav__link">
+        Squadrons
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleetcarriers/" class="md-nav__link">
+        Fleet Carriers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-in-oddesey/" class="md-nav__link">
+        New in Odyssey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../misc-events/" class="md-nav__link">
+        Other Events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../status-file/" class="md-nav__link">
+        Status File
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#travel" class="md-nav__link">
+    Travel
+  </a>
+  
+    <nav class="md-nav" aria-label="Travel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approachbody" class="md-nav__link">
+    ApproachBody
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docked" class="md-nav__link">
+    Docked
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockingcancelled" class="md-nav__link">
+    DockingCancelled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockingdenied" class="md-nav__link">
+    DockingDenied
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockinggranted" class="md-nav__link">
+    DockingGranted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockingrequested" class="md-nav__link">
+    DockingRequested
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dockingtimeout" class="md-nav__link">
+    DockingTimeout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fsdjump" class="md-nav__link">
+    FSDJump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fsdtarget" class="md-nav__link">
+    FSDTarget
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leavebody" class="md-nav__link">
+    LeaveBody
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liftoff" class="md-nav__link">
+    Liftoff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#location" class="md-nav__link">
+    Location
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startjump" class="md-nav__link">
+    StartJump
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supercruiseentry" class="md-nav__link">
+    SupercruiseEntry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supercruiseexit" class="md-nav__link">
+    SupercruiseExit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touchdown" class="md-nav__link">
+    Touchdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#undocked" class="md-nav__link">
+    Undocked
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navroute" class="md-nav__link">
+    NavRoute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navrouteclear" class="md-nav__link">
+    NavRouteClear
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/ROMVoid95/EDJournalAPI/edit/main/docs/travel.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>Travel</h1>
+
+<h2 id="travel">Travel<a class="headerlink" href="#travel" title="Permanent link">&para;</a></h2>
+<h3 id="approachbody">ApproachBody<a class="headerlink" href="#approachbody" title="Permanent link">&para;</a></h3>
+<p>When written: when in Supercruise, and distance from planet drops to within the 'Orbital Cruise' zone</p>
+<p>Parameters:</p>
+<ul>
+<li>StarSystem </li>
+<li>SystemAddress </li>
+<li>Body </li>
+<li>BodyID </li>
+</ul>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2017-09-27T15:21:05Z&quot;,
+    &quot;event&quot;: &quot;ApproachBody&quot;,
+    &quot;StarSystem&quot;: &quot;Eranin&quot;,
+    &quot;Body&quot;: &quot;Eranin 2&quot;
+}
+</code></pre></div>
+
+<h3 id="docked">Docked<a class="headerlink" href="#docked" title="Permanent link">&para;</a></h3>
+<p>When written: when landing at landing pad in a space station, outpost, or surface settlement</p>
+<p>Parameters:</p>
+<ul>
+<li>StationName: name of station </li>
+<li>MarketID </li>
+<li>SystemAddress </li>
+<li>StationType: type of station </li>
+<li>StarSystem: name of system </li>
+<li>CockpitBreach:true (only if landing with breached cockpit) </li>
+<li>StationFaction: station's controlling faction <ul>
+<li>Name </li>
+<li>FactionState </li>
+</ul>
+</li>
+<li>StationAllegiance </li>
+<li>StationEconomy : (station's primary economy) </li>
+<li>StationEconomies: (array of name and proportion values) </li>
+<li>StationGovernment </li>
+<li>DistFromStarLS </li>
+<li>StationServices: (Array of strings) </li>
+<li>Wanted: (only if docking when wanted locally) </li>
+<li>ActiveFine: true (if any fine is active) </li>
+<li>LandingPads: <ul>
+<li>Small </li>
+<li>Medium </li>
+<li>Large </li>
+</ul>
+</li>
+<li>StationState</li>
+</ul>
+<p>The 'anonymous docking' protocol comes into effect if you're either Wanted (ie have a local bounty) or have an ActiveFine</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;timestamp&quot;:</span><span class="w"> </span><span class="err">&quot;2018-03-07</span><span class="n">T12</span><span class="p">:</span><span class="mi">22</span><span class="o">:</span><span class="mi">25</span><span class="n">Z</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">event</span><span class="s2">&quot;: &quot;</span><span class="n">Docked</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">StationName</span><span class="s2">&quot;: &quot;</span><span class="n">Jenner</span><span class="w"> </span><span class="n">Orbital</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">StationType</span><span class="s2">&quot;: &quot;</span><span class="n">Outpost</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">StarSystem</span><span class="s2">&quot;: &quot;</span><span class="n">Luhman</span><span class="w"> </span><span class="mi">16</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">SystemAddress</span><span class="s2">&quot;: 22960358574928,</span>
+<span class="s2">    &quot;</span><span class="n">MarketID</span><span class="s2">&quot;: 3228883456,</span>
+<span class="s2">    &quot;</span><span class="n">StationFaction</span><span class="s2">&quot;: {</span>
+<span class="s2">        &quot;</span><span class="n">Name</span><span class="s2">&quot;: &quot;</span><span class="n">Union</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">Luhman</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="n">Values</span><span class="w"> </span><span class="n">Party</span><span class="s2">&quot;,</span>
+<span class="s2">        &quot;</span><span class="n">FactionState</span><span class="s2">&quot;: &quot;</span><span class="n">CivilWar</span><span class="s2">&quot;</span>
+<span class="s2">    },</span>
+<span class="s2">    &quot;</span><span class="n">StationGovernment</span><span class="s2">&quot;: &quot;</span><span class="err">$</span><span class="n">government_Democracy</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;StationGovernment_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Democracy&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;StationAllegiance&quot;:</span><span class="w"> </span><span class="err">&quot;Federation&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;StationServices&quot;:</span><span class="w"> </span><span class="cp">[</span>
+        <span class="s2">&quot;Dock&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Autodock&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;BlackMarket&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Commodities&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Contacts&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Exploration&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Missions&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Outfitting&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CrewLounge&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Rearm&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Refuel&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Workshop&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;MissionsGenerated&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FlightController&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;StationOperations&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Powerplay&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;SearchAndRescue&quot;</span>
+    <span class="cp">]</span><span class="err">,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;StationEconomy&quot;:</span><span class="w"> </span><span class="err">&quot;$economy_Refinery</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;StationEconomy_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Refinery&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;StationEconomies&quot;:</span><span class="w"> </span><span class="cp">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;$economy_Refinery;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Name_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;Refinery&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Proportion&quot;</span><span class="p">:</span> <span class="mf">0.76</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;$economy_Extraction;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Name_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;Extraction&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Proportion&quot;</span><span class="p">:</span> <span class="mf">0.24</span>
+        <span class="p">}</span>
+    <span class="cp">]</span><span class="err">,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;DistFromStarLS&quot;:</span><span class="w"> </span><span class="err">10.061876</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>StationServices can include:  Dock, Autodock, BlackMarket, Commodities, Contacts, Exploration, Initiatives, Missions, Outfitting,CrewLounge, Rearm, Refuel, Repair, Shipyard, Tuning, Workshop, MissionsGenerated, Facilitator, Research, FlightController, StationOperations, OnDockMission, Powerplay, SearchAndRescue,</p>
+<p>New in v3.7: shop, carriermanagement, carrierfuel, carriervendor, livery, modulepacks, voucherredemption</p>
+<p>StationState can be any of the following: UnderRepairs, Damaged, Abandoned, UnderAttack</p>
+<h3 id="dockingcancelled">DockingCancelled<a class="headerlink" href="#dockingcancelled" title="Permanent link">&para;</a></h3>
+<p>When written: when the player cancels a docking request</p>
+<p>Parameters:</p>
+<ul>
+<li>StationName: name of station </li>
+<li>StationType </li>
+<li>MarketID </li>
+</ul>
+<h3 id="dockingdenied">DockingDenied<a class="headerlink" href="#dockingdenied" title="Permanent link">&para;</a></h3>
+<p>When written: when the station denies a docking request</p>
+<p>Parameters:</p>
+<ul>
+<li>StationName: name of station </li>
+<li>StationType </li>
+<li>MarketID </li>
+<li>Reason: reason for denial </li>
+</ul>
+<p>Reasons include: NoSpace, TooLarge, Hostile, Offences, Distance, ActiveFighter, NoReason</p>
+<h3 id="dockinggranted">DockingGranted<a class="headerlink" href="#dockinggranted" title="Permanent link">&para;</a></h3>
+<p>When written: when a docking request is granted</p>
+<p>Parameters:</p>
+<ul>
+<li>StationName: name of station </li>
+<li>StationType </li>
+<li>MarketID </li>
+<li>LandingPad: pad number </li>
+</ul>
+<h3 id="dockingrequested">DockingRequested<a class="headerlink" href="#dockingrequested" title="Permanent link">&para;</a></h3>
+<p>When written: when the player requests docking at a station</p>
+<p>Parameters:</p>
+<ul>
+<li>StationName: name of station </li>
+<li>StationType </li>
+<li>MarketID </li>
+<li>LandingPads: <ul>
+<li>Small </li>
+<li>Medium </li>
+<li>Large </li>
+</ul>
+</li>
+</ul>
+<h3 id="dockingtimeout">DockingTimeout<a class="headerlink" href="#dockingtimeout" title="Permanent link">&para;</a></h3>
+<p>When written: when a docking request has timed out</p>
+<p>Parameters:</p>
+<ul>
+<li>StationName: name of station </li>
+<li>StationType </li>
+<li>MarketID </li>
+</ul>
+<h3 id="fsdjump">FSDJump<a class="headerlink" href="#fsdjump" title="Permanent link">&para;</a></h3>
+<p>When written: when jumping from one star system to another</p>
+<p>Parameters:</p>
+<ul>
+<li>StarSystem: name of destination starsystem </li>
+<li>SystemAddress </li>
+<li>StarPos: star position, as a Json array [x, y, z], in light years </li>
+<li>Body: star's body name </li>
+<li>JumpDist: distance jumped </li>
+<li>FuelUsed </li>
+<li>FuelLevel </li>
+<li>BoostUsed: whether FSD boost was used </li>
+<li>SystemFaction: system controlling faction <ul>
+<li>Name </li>
+<li>FactionState </li>
+</ul>
+</li>
+<li>SystemAllegiance </li>
+<li>SystemEconomy </li>
+<li>SystemSecondEconomy </li>
+<li>SystemGovernment </li>
+<li>SystemSecurity </li>
+<li>Population </li>
+<li>Wanted </li>
+<li>Factions: an array of info for the local minor factions <ul>
+<li>Name </li>
+<li>FactionState </li>
+<li>Government </li>
+<li>Influence </li>
+<li>Happiness </li>
+<li>MyReputation </li>
+<li>PendingStates: array (if any) with State name and Trend value </li>
+<li>RecovingStates: array (if any)with State name and Trend value </li>
+<li>ActiveStates: array with State names (Note active states do not have a Trend value) </li>
+<li>SquadronFaction:true (if player is in squadron aligned to this faction) </li>
+<li>HappiestSystem:true (if player squadron faction, and this is happiest system) </li>
+<li>HomeSystem:true(if player squadron faction, and this is home system) </li>
+</ul>
+</li>
+<li>Conflicts: an array of info about local conflicts (if any) <ul>
+<li>WarType </li>
+<li>Status </li>
+<li>Faction1: { Name, Stake, WonDays } </li>
+<li>Faction2: { Name, Stake, WonDays } </li>
+</ul>
+</li>
+</ul>
+<p>If the player is pledged to a Power in Powerplay, and the star system is involved in powerplay,</p>
+<ul>
+<li>Powers: a json array with the names of any powers contesting the system, or the name of the controlling power </li>
+<li>PowerplayState: the system state – one of ("InPrepareRadius", "Prepared", "Exploited", "Contested", "Controlled", "Turmoil", "HomeSystem") </li>
+</ul>
+<p>If starting in a system affected by the thargoid war:</p>
+<ul>
+<li>ThargoidWar<ul>
+<li>CurrentState</li>
+<li>NextStateSuccess</li>
+<li>NextStateFailure</li>
+<li>SuccessStateReached</li>
+<li>WarProgress:0-1 values</li>
+<li>RemainingPorts</li>
+<li>EstimatedRemainingTime</li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<p>Happiness values are: (Elated, Happy, Discontented, Unhappy, Despondent)</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;timestamp&quot;:</span><span class="w"> </span><span class="err">&quot;2018-10-29</span><span class="n">T10</span><span class="p">:</span><span class="mi">05</span><span class="o">:</span><span class="mi">21</span><span class="n">Z</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">event</span><span class="s2">&quot;: &quot;</span><span class="n">FSDJump</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">StarSystem</span><span class="s2">&quot;: &quot;</span><span class="n">Eranin</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">SystemAddress</span><span class="s2">&quot;: 2832631632594,</span>
+<span class="s2">    &quot;</span><span class="n">StarPos</span><span class="s2">&quot;: </span><span class="cp">[</span>
+        <span class="o">-</span><span class="mf">22.84375</span><span class="p">,</span>
+        <span class="mf">36.53125</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">1.1875</span>
+    <span class="cp">]</span><span class="s2">,</span>
+<span class="s2">    &quot;</span><span class="n">SystemAllegiance</span><span class="s2">&quot;: &quot;</span><span class="n">Independent</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">SystemEconomy</span><span class="s2">&quot;: &quot;</span><span class="err">$</span><span class="n">economy_Agri</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;SystemEconomy_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Agriculture&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;SystemSecondEconomy&quot;:</span><span class="w"> </span><span class="err">&quot;$economy_Refinery</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;SystemSecondEconomy_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Refinery&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;SystemGovernment&quot;:</span><span class="w"> </span><span class="err">&quot;$government_Anarchy</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;SystemGovernment_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Anarchy&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;SystemSecurity&quot;:</span><span class="w"> </span><span class="err">&quot;$GAlAXY_MAP_INFO_state_anarchy</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;SystemSecurity_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Anarchy&quot;,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;Population&quot;:</span><span class="w"> </span><span class="err">450000,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;JumpDist&quot;:</span><span class="w"> </span><span class="err">13.334,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;FuelUsed&quot;:</span><span class="w"> </span><span class="err">0,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;FuelLevel&quot;:</span><span class="w"> </span><span class="err">25.630281,</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;Factions&quot;:</span><span class="w"> </span><span class="cp">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Eranin Expeditionary Institute&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;FactionState&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Government&quot;</span><span class="p">:</span> <span class="s2">&quot;Cooperative&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Influence&quot;</span><span class="p">:</span> <span class="mf">0.17</span><span class="p">,</span>
+            <span class="s2">&quot;Allegiance&quot;</span><span class="p">:</span> <span class="s2">&quot;Independent&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Happiness&quot;</span><span class="p">:</span> <span class="s2">&quot;$Faction_HappinessBand2;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Happiness_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;Happy&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;MyReputation&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Eranin Peoples Party&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;FactionState&quot;</span><span class="p">:</span> <span class="s2">&quot;CivilWar&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Government&quot;</span><span class="p">:</span> <span class="s2">&quot;Communism&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Influence&quot;</span><span class="p">:</span> <span class="mf">0.226</span><span class="p">,</span>
+            <span class="s2">&quot;Allegiance&quot;</span><span class="p">:</span> <span class="s2">&quot;Independent&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Happiness&quot;</span><span class="p">:</span> <span class="s2">&quot;$Faction_HappinessBand2;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Happiness_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;Happy&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;MyReputation&quot;</span><span class="p">:</span> <span class="mf">29.9743</span><span class="p">,</span>
+            <span class="s2">&quot;ActiveStates&quot;</span><span class="p">:</span> <span class="err">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;CivilWar&quot;</span>
+                <span class="p">}</span>
+            <span class="cp">]</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="o">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Name&quot;:</span><span class="w"> </span><span class="err">&quot;Pilots</span><span class="w"> </span><span class="err">Federation</span><span class="w"> </span><span class="err">Local</span><span class="w"> </span><span class="err">Branch&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;FactionState&quot;:</span><span class="w"> </span><span class="err">&quot;None&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Government&quot;:</span><span class="w"> </span><span class="err">&quot;Democracy&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Influence&quot;:</span><span class="w"> </span><span class="err">0,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Allegiance&quot;:</span><span class="w"> </span><span class="err">&quot;PilotsFederation&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Happiness&quot;:</span><span class="w"> </span><span class="err">&quot;$Faction_HappinessBand2</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Happiness_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Happy&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;MyReputation&quot;:</span><span class="w"> </span><span class="err">82.918297</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="o">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Name&quot;:</span><span class="w"> </span><span class="err">&quot;Eranin</span><span class="w"> </span><span class="err">Industry&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;FactionState&quot;:</span><span class="w"> </span><span class="err">&quot;Outbreak&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Government&quot;:</span><span class="w"> </span><span class="err">&quot;Corporate&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Influence&quot;:</span><span class="w"> </span><span class="err">0.209,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Allegiance&quot;:</span><span class="w"> </span><span class="err">&quot;Independent&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Happiness&quot;:</span><span class="w"> </span><span class="err">&quot;$Faction_HappinessBand3</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Happiness_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Discontented&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;MyReputation&quot;:</span><span class="w"> </span><span class="err">0,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;ActiveStates&quot;:</span><span class="w"> </span><span class="cp">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;Famine&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;Lockdown&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;Outbreak&quot;</span>
+                <span class="p">}</span>
+            <span class="cp">]</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="o">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Name&quot;:</span><span class="w"> </span><span class="err">&quot;Eranin</span><span class="w"> </span><span class="err">Federal</span><span class="w"> </span><span class="err">Bridge&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;FactionState&quot;:</span><span class="w"> </span><span class="err">&quot;CivilWar&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Government&quot;:</span><span class="w"> </span><span class="err">&quot;Dictatorship&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Influence&quot;:</span><span class="w"> </span><span class="err">0.226,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Allegiance&quot;:</span><span class="w"> </span><span class="err">&quot;Independent&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Happiness&quot;:</span><span class="w"> </span><span class="err">&quot;$Faction_HappinessBand2</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Happiness_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Happy&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;MyReputation&quot;:</span><span class="w"> </span><span class="err">0,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;ActiveStates&quot;:</span><span class="w"> </span><span class="cp">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;CivilWar&quot;</span>
+                <span class="p">}</span>
+            <span class="cp">]</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="o">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Name&quot;:</span><span class="w"> </span><span class="err">&quot;Mob</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Eranin&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;FactionState&quot;:</span><span class="w"> </span><span class="err">&quot;CivilLiberty&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Government&quot;:</span><span class="w"> </span><span class="err">&quot;Anarchy&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Influence&quot;:</span><span class="w"> </span><span class="err">0.134,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Allegiance&quot;:</span><span class="w"> </span><span class="err">&quot;Independent&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Happiness&quot;:</span><span class="w"> </span><span class="err">&quot;$Faction_HappinessBand1</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Happiness_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Elated&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;MyReputation&quot;:</span><span class="w"> </span><span class="err">0,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;ActiveStates&quot;:</span><span class="w"> </span><span class="cp">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;Boom&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;CivilLiberty&quot;</span>
+                <span class="p">}</span>
+            <span class="cp">]</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="o">,</span><span class="w"></span>
+<span class="w">        </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Name&quot;:</span><span class="w"> </span><span class="err">&quot;Terran</span><span class="w"> </span><span class="err">Colonial</span><span class="w"> </span><span class="err">Forces&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;FactionState&quot;:</span><span class="w"> </span><span class="err">&quot;CivilUnrest&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Government&quot;:</span><span class="w"> </span><span class="err">&quot;Confederacy&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Influence&quot;:</span><span class="w"> </span><span class="err">0.035,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Allegiance&quot;:</span><span class="w"> </span><span class="err">&quot;Alliance&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Happiness&quot;:</span><span class="w"> </span><span class="err">&quot;$Faction_HappinessBand2</span><span class="p">;</span><span class="err">&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;Happiness_Localised&quot;:</span><span class="w"> </span><span class="err">&quot;Happy&quot;,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;MyReputation&quot;:</span><span class="w"> </span><span class="err">0,</span><span class="w"></span>
+<span class="w">            </span><span class="err">&quot;ActiveStates&quot;:</span><span class="w"> </span><span class="cp">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;Boom&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;CivilUnrest&quot;</span>
+                <span class="p">}</span>
+            <span class="cp">]</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="o">],</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;SystemFaction&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="err">&quot;Name&quot;:</span><span class="w"> </span><span class="err">&quot;Mob</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">Eranin&quot;,</span><span class="w"></span>
+<span class="w">        </span><span class="err">&quot;FactionState&quot;:</span><span class="w"> </span><span class="err">&quot;CivilLiberty&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>Example Conflict data:</p>
+<div class="codehilite"><pre><span></span><code><span class="s2">&quot;</span><span class="s">Conflicts</span><span class="s2">&quot;</span>: [
+    {
+        <span class="s2">&quot;</span><span class="s">WarType</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">war</span><span class="s2">&quot;</span>,
+        <span class="s2">&quot;</span><span class="s">Status</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">active</span><span class="s2">&quot;</span>,
+        <span class="s2">&quot;</span><span class="s">Faction1</span><span class="s2">&quot;</span>: {<span class="s2">&quot;</span><span class="s">Name</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">Movement for LHS 3163 League</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">Stake</span><span class="s2">&quot;</span>: <span class="s2">&quot;&quot;</span>,<span class="s2">&quot;</span><span class="s">WonDays</span><span class="s2">&quot;</span>: <span class="mi">0</span>},
+        <span class="s2">&quot;</span><span class="s">Faction2</span><span class="s2">&quot;</span>: {<span class="s2">&quot;</span><span class="s">Name</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">Official i Bootis Liberty Party</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">Stake</span><span class="s2">&quot;</span>: <span class="s2">&quot;</span><span class="s">Red Bronco Farms</span><span class="s2">&quot;</span>,<span class="s2">&quot;</span><span class="s">WonDays</span><span class="s2">&quot;</span>: <span class="mi">1</span>}
+    }
+]
+</code></pre></div>
+
+<h3 id="fsdtarget">FSDTarget<a class="headerlink" href="#fsdtarget" title="Permanent link">&para;</a></h3>
+<p>When written: when selecting a star system to jump to</p>
+<p>Note, when following a multi-jump route, this will typically appear for the <em>next</em> star, during a jump, ie after "StartJump" but before the "FSDJump"</p>
+<p>Parameters:</p>
+<ul>
+<li>Starsystem </li>
+<li>Name </li>
+<li>RemainingJumpsInRoute </li>
+<li>StarClass </li>
+</ul>
+<h3 id="leavebody">LeaveBody<a class="headerlink" href="#leavebody" title="Permanent link">&para;</a></h3>
+<p>When written: when flying away from a planet, and distance increases above the 'Orbital Cruise' altitude</p>
+<p>Parameters:</p>
+<ul>
+<li>StarSystem </li>
+<li>SystemAddress </li>
+<li>Body </li>
+<li>BodyID </li>
+</ul>
+<h3 id="liftoff">Liftoff<a class="headerlink" href="#liftoff" title="Permanent link">&para;</a></h3>
+<p>When written: when taking off from planet surface</p>
+<p>Parameters:</p>
+<ul>
+<li>Latitude (only if player flying in ship) </li>
+<li>Longitude  (only if player flying in ship) </li>
+<li>StarSystem </li>
+<li>SystemAddress </li>
+<li>Body </li>
+<li>BodyID </li>
+<li>OnStation: bool </li>
+<li>OnPlanet: bool </li>
+<li>NearestDestination </li>
+<li>PlayerControlled: (bool) false if ship dismissed when player is in SRV, true if player is taking off </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-07-22T10:53:19Z&quot;,
+    &quot;event&quot;: &quot;Liftoff&quot;,
+    &quot;Latitude&quot;: 63.468872,
+    &quot;Longitude&quot;: 157.59938,
+    &quot;PlayerControlled&quot;: true
+}
+</code></pre></div>
+
+<h3 id="location">Location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h3>
+<p>When written: at startup, or when being resurrected at a station</p>
+<p>Parameters:</p>
+<ul>
+<li>StarSystem: name of destination starsystem </li>
+<li>SystemAddress </li>
+<li>StarPos: star position, as a Json array [x, y, z], in light years </li>
+<li>Body: star or planet's body name </li>
+<li>BodyID </li>
+<li>BodyType </li>
+<li>DistFromStarLS: (unless close to main star) </li>
+<li>Docked: (bool) </li>
+<li>Latitude (If landed) </li>
+<li>Longitude (if landed) </li>
+<li>StationName: station name, (if docked) </li>
+<li>StationType: (if docked) </li>
+<li>MarketID: (if docked) </li>
+<li>SystemFaction: star system controlling faction <ul>
+<li>Name </li>
+<li>FactionState </li>
+</ul>
+</li>
+<li>SystemAllegiance </li>
+<li>SystemEconomy </li>
+<li>SystemSecondEconomy </li>
+<li>SystemGovernment </li>
+<li>SystemSecurity </li>
+<li>Wanted </li>
+<li>Factions: an array with info on local minor factions (similar to FSDJump) </li>
+<li>Conflicts: an array with info on local conflicts (similar to FSDJump) </li>
+</ul>
+<p>If the player is pledged to a Power in Powerplay, and the star system is involved in powerplay,</p>
+<ul>
+<li>Powers: a json array with the names of any powers contesting the system, or the name of the controlling power </li>
+<li>PowerplayState: the system state – one of ("InPrepareRadius", "Prepared", "Exploited", "Contested", "Controlled", "Turmoil", "HomeSystem") </li>
+</ul>
+<p>The faction data includes happiness info, and can include multiple active states</p>
+<p>If starting docked in a station, also include:</p>
+<ul>
+<li>StationFaction <ul>
+<li>Name </li>
+<li>FactionState </li>
+</ul>
+</li>
+<li>StationGovernment </li>
+<li>StationAllegiance </li>
+<li>StationServices </li>
+<li>StationEconomies (Array of (Name,Proportion) pairs ) </li>
+</ul>
+<p>If starting in a system affected by the thargoid war:</p>
+<ul>
+<li>ThargoidWar<ul>
+<li>CurrentState</li>
+<li>NextStateSuccess</li>
+<li>NextStateFailure</li>
+<li>SuccessStateReached</li>
+<li>WarProgress:0-1 values</li>
+<li>RemainingPorts</li>
+<li>EstimatedRemainingTime</li>
+</ul>
+</li>
+</ul>
+<p>New in Odyssey:</p>
+<ul>
+<li>Taxi: bool </li>
+<li>Multicrew: bool </li>
+<li>InSRV: bool </li>
+<li>OnFoot: bool </li>
+</ul>
+<h3 id="startjump">StartJump<a class="headerlink" href="#startjump" title="Permanent link">&para;</a></h3>
+<p>When written: at the start of a Hyperspace or Supercruise jump (start of countdown)</p>
+<p>Parameters:</p>
+<ul>
+<li>JumpType: "Hyperspace" or "Supercruise" </li>
+<li>Taxi: True if the player is in a taxi</li>
+<li>StarSystem: name of destination system (for a hyperspace jump) </li>
+<li>SystemAddress </li>
+<li>StarClass: star type (only for a hyperspace jump) </li>
+</ul>
+<h3 id="supercruiseentry">SupercruiseEntry<a class="headerlink" href="#supercruiseentry" title="Permanent link">&para;</a></h3>
+<p>When written: entering supercruise from normal space</p>
+<p>Parameters:</p>
+<ul>
+<li>Starsystem </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;SupercruiseEntry&quot;,
+    &quot;StarSystem&quot;: &quot;Yuetu&quot;
+}
+</code></pre></div>
+
+<h3 id="supercruiseexit">SupercruiseExit<a class="headerlink" href="#supercruiseexit" title="Permanent link">&para;</a></h3>
+<p>When written: leaving supercruise for normal space</p>
+<p>Parameters:</p>
+<ul>
+<li>Starsystem </li>
+<li>Body </li>
+<li>BodyID </li>
+<li>BodyType </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;SupercruiseExit&quot;,
+    &quot;StarSystem&quot;: &quot;Yuetu&quot;,
+    &quot;Body&quot;: &quot;Yuetu B&quot;
+}
+</code></pre></div>
+
+<h3 id="touchdown">Touchdown<a class="headerlink" href="#touchdown" title="Permanent link">&para;</a></h3>
+<p>When written: landing on a planet surface</p>
+<p>Parameters:</p>
+<ul>
+<li>Latitude (only if player is landing) </li>
+<li>Longitude (only if player is landing) </li>
+<li>StarSystem </li>
+<li>SystemAddress </li>
+<li>Body </li>
+<li>BodyID </li>
+<li>OnStation: bool </li>
+<li>OnPlanet: bool </li>
+<li>NearestDestination </li>
+<li>PlayerControlled: (bool) false if ship was recalled from SRV, true if player is landing </li>
+</ul>
+<p>The NearestDestination is included if within 50km of a location listed in the nav panel</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2019-05-13T13:20:18Z&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Touchdown&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;PlayerControlled&quot;</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">10.503607</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">102.78981</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;NearestDestination&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$SAA_Unknown_Signal:#type=$SAA_SignalType_Geological;:#index=9;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;NearestDestination_Localised&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Surface signal: Geological (9)&quot;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="undocked">Undocked<a class="headerlink" href="#undocked" title="Permanent link">&para;</a></h3>
+<p>When written: liftoff from a landing pad in a station, outpost or settlement</p>
+<p>Parameters:</p>
+<ul>
+<li>StationName: name of station </li>
+<li>MarketID </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;Undocked&quot;,
+    &quot;StationName&quot;: &quot;Long Sight Base&quot;
+}
+</code></pre></div>
+
+<h3 id="navroute">NavRoute<a class="headerlink" href="#navroute" title="Permanent link">&para;</a></h3>
+<p>When plotting a multi-star route, the file "NavRoute.json" is written in the same directory as the journal, with a list of stars along that route</p>
+<p>Parameters:</p>
+<ul>
+<li>Route <ul>
+<li>StarSystem: (name) </li>
+<li>SystemAddress: (number) </li>
+<li>Starpos: [ x, y, z ] </li>
+<li>StarClass </li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2020-04-27T08:02:52Z&quot;,
+    &quot;event&quot;: &quot;Route&quot;,
+    &quot;Route&quot;: [
+        { &quot;StarSystem&quot;: &quot;i Bootis&quot;, &quot;SystemAddress&quot;: 1281787693419, &quot;StarPos&quot;: [-22.37500,34.84375,4.00000], &quot;StarClass&quot;: &quot;G&quot; },
+        { &quot;StarSystem&quot;: &quot;Acihaut&quot;, &quot;SystemAddress&quot;: 11665802405289, &quot;StarPos&quot;: [-18.50000,25.28125,-4.00000], &quot;StarClass&quot;: &quot;M&quot; },
+        { &quot;StarSystem&quot;: &quot;LHS 455&quot;, &quot;SystemAddress&quot;: 3686969379179, &quot;StarPos&quot;: [-16.90625,10.21875,-3.43750], &quot;StarClass&quot;: &quot;DQ&quot; },
+        { &quot;StarSystem&quot;: &quot;SPF-LF 1&quot;, &quot;SystemAddress&quot;: 22661187052961, &quot;StarPos&quot;: [2.90625,6.31250,-9.56250], &quot;StarClass&quot;: &quot;M&quot; },
+        { &quot;StarSystem&quot;: &quot;Luyten&#39;s Star&quot;, &quot;SystemAddress&quot;:7 268024264097, &quot;StarPos&quot;: [6.56250,2.34375,-10.25000], &quot;StarClass&quot;: &quot;M&quot; }] }
+    ]
+}
+</code></pre></div>
+
+<h3 id="navrouteclear">NavRouteClear<a class="headerlink" href="#navrouteclear" title="Permanent link">&para;</a></h3>
+<p>When written: When the current plotted nav route is cleared</p>
+<p>No parameters</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2022-06-17T16:04:02Z&quot;,
+    &quot;event&quot;: &quot;NavRouteClear&quot;
+}
+</code></pre></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../startup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Startup" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Startup
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../combat/" class="md-footer__link md-footer__link--next" aria-label="Next: Combat" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Combat
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 ROMVoid95
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/ROMVoid95" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

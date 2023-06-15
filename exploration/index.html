@@ -1,0 +1,1481 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Elite Dangerous journal API">
+      
+      
+        <meta name="author" content="ROMVoid95">
+      
+      
+        <link rel="canonical" href="https://romvoid95.github.io/EDJournalAPI/exploration/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Exploration - ED:Journal API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exploration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ED:Journal API" class="md-header__button md-logo" aria-label="ED:Journal API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ED:Journal API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exploration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ROMVoid95/EDJournalAPI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ED:Journal API" class="md-nav__button md-logo" aria-label="ED:Journal API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ED:Journal API
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ROMVoid95/EDJournalAPI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-format/" class="md-nav__link">
+        File Format
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../startup/" class="md-nav__link">
+        Startup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../travel/" class="md-nav__link">
+        Travel
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat/" class="md-nav__link">
+        Combat
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Exploration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Exploration
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exploration" class="md-nav__link">
+    Exploration
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codexentry" class="md-nav__link">
+    CodexEntry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discoveryscan" class="md-nav__link">
+    DiscoveryScan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scan" class="md-nav__link">
+    Scan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fssallbodiesfound" class="md-nav__link">
+    FSSAllBodiesFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fssbodysignals" class="md-nav__link">
+    FSSBodySignals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fssdiscoveryscan" class="md-nav__link">
+    FSSDiscoveryScan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fsssignaldiscovered" class="md-nav__link">
+    FSSSignalDiscovered
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#materialcollected" class="md-nav__link">
+    MaterialCollected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#materialdiscarded" class="md-nav__link">
+    MaterialDiscarded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#materialdiscovered" class="md-nav__link">
+    MaterialDiscovered
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multisellexplorationdata" class="md-nav__link">
+    MultiSellExplorationData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navbeaconscan" class="md-nav__link">
+    NavBeaconScan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buyexplorationdata" class="md-nav__link">
+    BuyExplorationData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saascancomplete" class="md-nav__link">
+    SAAScanComplete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saasignalsfound" class="md-nav__link">
+    SAASignalsFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scanbarycentre" class="md-nav__link">
+    ScanBaryCentre
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sellexplorationdata" class="md-nav__link">
+    SellExplorationData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    Screenshot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trade/" class="md-nav__link">
+        Trade
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../station-services/" class="md-nav__link">
+        Station Services
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../powerplay/" class="md-nav__link">
+        Powerplay
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squadrons/" class="md-nav__link">
+        Squadrons
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleetcarriers/" class="md-nav__link">
+        Fleet Carriers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-in-oddesey/" class="md-nav__link">
+        New in Odyssey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../misc-events/" class="md-nav__link">
+        Other Events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../status-file/" class="md-nav__link">
+        Status File
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix/" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exploration" class="md-nav__link">
+    Exploration
+  </a>
+  
+    <nav class="md-nav" aria-label="Exploration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#codexentry" class="md-nav__link">
+    CodexEntry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discoveryscan" class="md-nav__link">
+    DiscoveryScan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scan" class="md-nav__link">
+    Scan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fssallbodiesfound" class="md-nav__link">
+    FSSAllBodiesFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fssbodysignals" class="md-nav__link">
+    FSSBodySignals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fssdiscoveryscan" class="md-nav__link">
+    FSSDiscoveryScan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fsssignaldiscovered" class="md-nav__link">
+    FSSSignalDiscovered
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#materialcollected" class="md-nav__link">
+    MaterialCollected
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#materialdiscarded" class="md-nav__link">
+    MaterialDiscarded
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#materialdiscovered" class="md-nav__link">
+    MaterialDiscovered
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multisellexplorationdata" class="md-nav__link">
+    MultiSellExplorationData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#navbeaconscan" class="md-nav__link">
+    NavBeaconScan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#buyexplorationdata" class="md-nav__link">
+    BuyExplorationData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saascancomplete" class="md-nav__link">
+    SAAScanComplete
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saasignalsfound" class="md-nav__link">
+    SAASignalsFound
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scanbarycentre" class="md-nav__link">
+    ScanBaryCentre
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sellexplorationdata" class="md-nav__link">
+    SellExplorationData
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screenshot" class="md-nav__link">
+    Screenshot
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/ROMVoid95/EDJournalAPI/edit/main/docs/exploration.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>Exploration</h1>
+
+<h2 id="exploration">Exploration<a class="headerlink" href="#exploration" title="Permanent link">&para;</a></h2>
+<h3 id="codexentry">CodexEntry<a class="headerlink" href="#codexentry" title="Permanent link">&para;</a></h3>
+<p>When written: when a new discovery is added to the Codex</p>
+<p>Parameters:</p>
+<ul>
+<li>EntryID: an ID number </li>
+<li>Name: string (+localisation) </li>
+<li>SubCategory: string (+localisation) </li>
+<li>Category: string (+localisation) </li>
+<li>Region: string </li>
+<li>System: string </li>
+<li>SystemAddress </li>
+<li>BodyID </li>
+<li>NearestDestination: name </li>
+<li>Latitude </li>
+<li>Longitude </li>
+<li>IsNewEntry: bool </li>
+<li>NewTraitsDiscovered: bool </li>
+<li>Traits: [ array of strings ] </li>
+</ul>
+<p>The IsNewEntry and NewTraitsDiscovered fields are optional depending on the results of the scan, and the Traits field is only available for entries that have unlocked traits.</p>
+<p>The "NearestDestination" is added if within 50km of a location listed in the navigation panel</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;timestamp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2019-05-13T13:28:51Z&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CodexEntry&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;EntryID&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1400159</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$Codex_Ent_IceFumarole_CarbonDioxideGeysers_Name;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Name_Localised&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Carbon Dioxide Ice Fumarole&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;SubCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$Codex_SubCategory_Geology_and_Anomalies;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;SubCategory_Localised&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Geology and anomalies&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Category&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$Codex_Category_Biology;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Category_Localised&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Biological and Geological&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Region&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$Codex_RegionName_18;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;Region_Localised&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Inner Orion Spur&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;System&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hermitage&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;SystemAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5363877956440</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;NearestDestination&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;$SAA_Unknown_Signal:#type=$SAA_SignalType_Geological;:#index=9;&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;NearestDestination_Localised&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Surface signal: Geological (9)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;IsNewEntry&quot;</span><span class="p">:</span><span class="w"> </span><span class="bp">true</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;VoucherAmount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50000</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="discoveryscan">DiscoveryScan<a class="headerlink" href="#discoveryscan" title="Permanent link">&para;</a></h3>
+<p>When written: when using the discovery scanner, and new body discoveries are displayed in the cockpit info window. Note you can get two or three of these in a row, where some bodies are discovered by the automatic passive scan, before the active scan is complete.</p>
+<p>Parameters:</p>
+<ul>
+<li>SystemAddress </li>
+<li>Bodies: number of new bodies discovered </li>
+</ul>
+<h3 id="scan">Scan<a class="headerlink" href="#scan" title="Permanent link">&para;</a></h3>
+<p>When Written: basic or detailed discovery scan of a star, planet or moon</p>
+<p>This is also generated when scanning a navigation beacon in a populated system, to record info about all the bodies in the system</p>
+<p>Parameters(star)</p>
+<ul>
+<li>ScanType</li>
+<li>StarSystem: name</li>
+<li>SystemAddress</li>
+<li>Bodyname: name of body</li>
+<li>BodyID</li>
+<li>DistanceFromArrivalLS</li>
+<li>StarType: Stellar classification (for a star) – see §15.2</li>
+<li>Subclass: Star's heat classification 0..9</li>
+<li>StellarMass: mass as multiple of Sol's mass</li>
+<li>Radius</li>
+<li>AbsoluteMagnitude</li>
+<li>RotationPeriod (seconds)</li>
+<li>SurfaceTemperature</li>
+<li>Luminosity – see §15.9</li>
+<li>Age_MY: age in millions of years</li>
+<li>Rings: [ array ] – if present</li>
+<li>WasDiscovered: bool</li>
+<li>WasMapped: bool</li>
+</ul>
+<p>Parameters(Planet/Moon)</p>
+<ul>
+<li>ScanType </li>
+<li>Bodyname: name of body </li>
+<li>BodyID </li>
+<li>Parents: Array of BodyType:BodyID pairs </li>
+<li>DistanceFromArrivalLS </li>
+<li>TidalLock: 1 if tidally locked</li>
+<li>TerraformState: Terraformable, Terraforming, Terraformed, or null</li>
+<li>PlanetClass – see §15.3</li>
+<li>Atmosphere – see §15.4</li>
+<li>AtmosphereType</li>
+<li>AtmosphereComposition: [ array of info ]</li>
+<li>Volcanism – see §15.5</li>
+<li>SurfaceGravity </li>
+<li>SurfaceTemperature</li>
+<li>SurfacePressure</li>
+<li>Landable: true (if landable)</li>
+<li>Materials: JSON array with objects with material names and percentage occurrence</li>
+<li>Composition: structure containing info on solid composition<ul>
+<li>Ice </li>
+<li>Rock </li>
+<li>Metal  </li>
+</ul>
+</li>
+<li>Rings: [ array of info ] – if rings present</li>
+<li>ReserveLevel: (Pristine/Major/Common/Low/Depleted) – if rings present</li>
+</ul>
+<p>If rotating:</p>
+<ul>
+<li>RotationPeriod (seconds) </li>
+<li>Axial tilt </li>
+</ul>
+<p>Orbital Parameters for any Star/Planet/Moon (except main star of single-star system)</p>
+<ul>
+<li>SemiMajorAxis </li>
+<li>Eccentricity </li>
+<li>OrbitalInclination </li>
+<li>Periapsis </li>
+<li>OrbitalPeriod </li>
+</ul>
+<p>Rings properties*</p>
+<ul>
+<li>Name </li>
+<li>RingClass </li>
+<li>MassMT – ie in megatons </li>
+<li>InnerRad </li>
+<li>OuterRad </li>
+</ul>
+<p>Note that a basic scan (ie without having a Detailed Surface Scanner installed) will now save a reduced amount of information.</p>
+<p>A basic scan on a planet will <strong>include</strong> body name, planet class, orbital data, rotation period, mass, radius, surface gravity; but will <strong>exclude</strong> tidal lock, terraform state, atmosphere, volcanism, surface pressure and temperature, available materials, and details of rings. The info for a star will be largely the same whether a basic scanner or detailed scanner is used.</p>
+<p>The "Parents" property provides the body's hierarchical position within the system: in the example below, "Procyon B 3 a" is a moon of a planet (body 11), which is orbiting a star (body 2), which is has a parent body that's a Barycentre</p>
+<p><em>Entries in the list above marked with an asterisk are only included for a detailed scan</em></p>
+<p><strong>ScanType</strong>: one of Basic, Detailed, NavBeacon, NavBeaconDetail, AutoScan</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2018-02-02T10:43:05Z&quot;,
+    &quot;event&quot;: &quot;Scan&quot;,
+    &quot;ScanType&quot;: &quot;NavBeaconDetail&quot;,
+    &quot;BodyName&quot;: &quot;Procyon B 3 a&quot;,
+    &quot;BodyID&quot;: 12,
+    &quot;Parents&quot;: [
+        {
+            &quot;Planet&quot;: 11
+        },
+        {
+            &quot;Star&quot;: 2
+        },
+        {
+            &quot;Null&quot;: 0
+        }
+    ],
+    &quot;DistanceFromArrivalLS&quot;: 10048.152344,
+    &quot;TidalLock&quot;: true,
+    &quot;TerraformState&quot;: &quot;&quot;,
+    &quot;PlanetClass&quot;: &quot;Rocky body&quot;,
+    &quot;Atmosphere&quot;: &quot;&quot;,
+    &quot;AtmosphereType&quot;: &quot;None&quot;,
+    &quot;Volcanism&quot;: &quot;&quot;,
+    &quot;MassEM&quot;: 0.025342,
+    &quot;Radius&quot;: 2011975.25,
+    &quot;SurfaceGravity&quot;: 2.495225,
+    &quot;SurfaceTemperature&quot;: 318.448792,
+    &quot;SurfacePressure&quot;: 0,
+    &quot;Landable&quot;: true,
+    &quot;Materials&quot;: [
+        {
+            &quot;Name&quot;: &quot;iron&quot;,
+            &quot;Percent&quot;: 19.315084
+        },
+        {
+            &quot;Name&quot;: &quot;sulphur&quot;,
+            &quot;Percent&quot;: 17.321133
+        },
+        {
+            &quot;Name&quot;: &quot;nickel&quot;,
+            &quot;Percent&quot;: 14.60912
+        },
+        {
+            &quot;Name&quot;: &quot;carbon&quot;,
+            &quot;Percent&quot;: 14.565277
+        },
+        {
+            &quot;Name&quot;: &quot;phosphorus&quot;,
+            &quot;Percent&quot;: 9.324941
+        },
+        {
+            &quot;Name&quot;: &quot;chromium&quot;,
+            &quot;Percent&quot;: 8.686635
+        },
+        {
+            &quot;Name&quot;: &quot;manganese&quot;,
+            &quot;Percent&quot;: 7.976933
+        },
+        {
+            &quot;Name&quot;: &quot;zinc&quot;,
+            &quot;Percent&quot;: 5.249117
+        },
+        {
+            &quot;Name&quot;: &quot;tin&quot;,
+            &quot;Percent&quot;: 1.200338
+        },
+        {
+            &quot;Name&quot;: &quot;tungsten&quot;,
+            &quot;Percent&quot;: 1.060592
+        },
+        {
+            &quot;Name&quot;: &quot;technetium&quot;,
+            &quot;Percent&quot;: 0.690823
+        }
+    ],
+    &quot;Composition&quot;: {
+        &quot;Ice&quot;: 0,
+        &quot;Rock&quot;: 0.861282,
+        &quot;Metal&quot;: 0.138718
+    },
+    &quot;SemiMajorAxis&quot;: 89655728,
+    &quot;Eccentricity&quot;: 0,
+    &quot;OrbitalInclination&quot;: 4.566576,
+    &quot;Periapsis&quot;: 309.656799,
+    &quot;OrbitalPeriod&quot;: 344902.9375,
+    &quot;RotationPeriod&quot;: 352425.46875,
+    &quot;AxialTilt&quot;: 0.479157
+}
+</code></pre></div>
+
+<h3 id="fssallbodiesfound">FSSAllBodiesFound<a class="headerlink" href="#fssallbodiesfound" title="Permanent link">&para;</a></h3>
+<p>When written: after having identified all bodies in the system</p>
+<p>Parameters:</p>
+<ul>
+<li>SystemName </li>
+<li>SystemAddress </li>
+<li>Count </li>
+</ul>
+<h3 id="fssbodysignals">FSSBodySignals<a class="headerlink" href="#fssbodysignals" title="Permanent link">&para;</a></h3>
+<p>This event is written when completing a "Full Spectrum Scan" of a starsystem, to list the number of SAA signals found in the system (as shown in-game in the top-right panel)</p>
+<p>Parameters:</p>
+<ul>
+<li>BodyName </li>
+<li>BodyID </li>
+<li>SystemAddress </li>
+<li>Signals: Array <ul>
+<li>Type </li>
+<li>Count </li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;timestamp&quot;:</span><span class="w"> </span><span class="err">&quot;2022-03-17</span><span class="n">T18</span><span class="p">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">53</span><span class="n">Z</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">event</span><span class="s2">&quot;: &quot;</span><span class="n">FSSBodySignals</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">BodyName</span><span class="s2">&quot;: &quot;</span><span class="n">Phroi</span><span class="w"> </span><span class="n">Blou</span><span class="w"> </span><span class="n">EW-W</span><span class="w"> </span><span class="n">d1-1056</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">a</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">BodyID</span><span class="s2">&quot;: 18,</span>
+<span class="s2">    &quot;</span><span class="n">SystemAddress</span><span class="s2">&quot;: 36293555558035,</span>
+<span class="s2">    &quot;</span><span class="n">Signals</span><span class="err">&quot;</span><span class="o">:</span><span class="w"> </span><span class="cp">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;$SAA_SignalType_Geological;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Type_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;Geological&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Count&quot;</span><span class="p">:</span> <span class="mi">3</span>
+        <span class="p">}</span>
+    <span class="cp">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="fssdiscoveryscan">FSSDiscoveryScan<a class="headerlink" href="#fssdiscoveryscan" title="Permanent link">&para;</a></h3>
+<p>When written: when performing a full system scan ("Honk")</p>
+<p>Parameters:</p>
+<ul>
+<li>Progress: (a value in range 0-1 showing how completely the system has been scanned) </li>
+<li>BodyCount: number of stellar bodies in system </li>
+<li>NonBodyCount: Number of non-body signals found </li>
+</ul>
+<h3 id="fsssignaldiscovered">FSSSignalDiscovered<a class="headerlink" href="#fsssignaldiscovered" title="Permanent link">&para;</a></h3>
+<p>When written: when zooming in on a signal using the FSS scanner</p>
+<p>Parameters:</p>
+<ul>
+<li>SignalName </li>
+<li>SpawningState: the BGS state that triggered this event, if relevant </li>
+<li>SpawningFaction: the minor faction, if relevant </li>
+<li>TimeRemaining: remaining lifetime in seconds, if relevant </li>
+<li>SystemAddress </li>
+<li>ThreatLevel (if a USS) </li>
+<li>USSType: (if a USS) – same types as in USSDrop event </li>
+<li>IsStation: true (if it is a station) </li>
+</ul>
+<h3 id="materialcollected">MaterialCollected<a class="headerlink" href="#materialcollected" title="Permanent link">&para;</a></h3>
+<p>When Written: whenever materials are collected</p>
+<p>Parameters:</p>
+<ul>
+<li>Category: type of material (Raw/Encoded/Manufactured) </li>
+<li>Name: name of material </li>
+<li>Count: number of units collected </li>
+</ul>
+<p>Examples:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;MaterialCollected&quot;,
+    &quot;Category&quot;: &quot;Raw&quot;,
+    &quot;Name&quot;: &quot;sulphur&quot;,
+    &quot;Count&quot;: 2
+}
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;MaterialCollected&quot;,
+    &quot;Category&quot;: &quot;Encoded&quot;,
+    &quot;Name&quot;: &quot;disruptedwakeechoes&quot;,
+    &quot;Count&quot;: 1
+}
+</code></pre></div>
+
+<h3 id="materialdiscarded">MaterialDiscarded<a class="headerlink" href="#materialdiscarded" title="Permanent link">&para;</a></h3>
+<p>When Written: if materials are discarded</p>
+<p>Parameters:</p>
+<ul>
+<li>Category </li>
+<li>Name </li>
+<li>Count </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;MaterialDiscarded&quot;,
+    &quot;Category&quot;: &quot;Raw&quot;,
+    &quot;Name&quot;: &quot;sulphur&quot;,
+    &quot;Count&quot;: 5
+}
+</code></pre></div>
+
+<h3 id="materialdiscovered">MaterialDiscovered<a class="headerlink" href="#materialdiscovered" title="Permanent link">&para;</a></h3>
+<p>When Written: when a new material is discovered</p>
+<p>Parameters:</p>
+<ul>
+<li>Category </li>
+<li>Name </li>
+<li>DiscoveryNumber </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;MaterialDiscovered&quot;,
+    &quot;Category&quot;: &quot;Manufactured&quot;,
+    &quot;Name&quot;: &quot;focuscrystals&quot;,
+    &quot;DiscoveryNumber&quot;: 3
+}
+</code></pre></div>
+
+<h3 id="multisellexplorationdata">MultiSellExplorationData<a class="headerlink" href="#multisellexplorationdata" title="Permanent link">&para;</a></h3>
+<p>When written: when selling exploration data in Cartographics, a page at a time</p>
+<p>Parameters:</p>
+<ul>
+<li>Discovered: (array of records, as follows) <ul>
+<li>SystemName </li>
+<li>NumBodies </li>
+</ul>
+</li>
+<li>BaseValue </li>
+<li>Bonus </li>
+<li>TotalEarnings </li>
+</ul>
+<p>Example</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2018-11-14T10:35:35Z&quot;,
+    &quot;event&quot;: &quot;MultiSellExplorationData&quot;,
+    &quot;Discovered&quot;: [
+        {
+            &quot;SystemName&quot;: &quot;HIP 84742&quot;,
+            &quot;NumBodies&quot;: 23
+        },
+        {
+            &quot;SystemName&quot;: &quot;Col 359 Sector NY-S b20-1&quot;,
+            &quot;NumBodies&quot;: 9
+        }
+    ],
+    &quot;BaseValue&quot;: 2938186,
+    &quot;Bonus&quot;: 291000,
+    &quot;TotalEarnings&quot;: 3229186
+}
+</code></pre></div>
+
+<h3 id="navbeaconscan">NavBeaconScan<a class="headerlink" href="#navbeaconscan" title="Permanent link">&para;</a></h3>
+<p>When written: when scanning  a navigation beacon, before the scan data for all the bodies in the system is written into the journal</p>
+<p>Parameters:</p>
+<ul>
+<li>NumBodies </li>
+<li>SystemAddress </li>
+</ul>
+<h3 id="buyexplorationdata">BuyExplorationData<a class="headerlink" href="#buyexplorationdata" title="Permanent link">&para;</a></h3>
+<p>When Written: when buying system data via the galaxy map</p>
+<p>Parameters:</p>
+<ul>
+<li>System </li>
+<li>Cost </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;BuyExplorationData&quot;,
+    &quot;System&quot;: &quot;Styx&quot;,
+    &quot;Cost&quot;: 352
+}
+</code></pre></div>
+
+<h3 id="saascancomplete">SAAScanComplete<a class="headerlink" href="#saascancomplete" title="Permanent link">&para;</a></h3>
+<p>When written: after using the "Surface Area Analysis" scanner</p>
+<p>Parameters:</p>
+<ul>
+<li>SystemAddress </li>
+<li>BodyName </li>
+<li>BodyID </li>
+<li>~~Discoverers: (array of names)~~ </li>
+<li>~~Mappers: (array of names)~~ </li>
+<li>ProbesUsed: (int) </li>
+<li>EfficiencyTarget: (int) </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2018-10-05T15:06:12Z&quot;,
+    &quot;event&quot;: &quot;SAAScanComplete&quot;,
+    &quot;BodyName&quot;: &quot;Eranin 5&quot;,
+    &quot;BodyID&quot;: 5,
+    &quot;ProbesUsed&quot;: 6,
+    &quot;EfficiencyTarget&quot;: 9
+}
+</code></pre></div>
+
+<h3 id="saasignalsfound">SAASignalsFound<a class="headerlink" href="#saasignalsfound" title="Permanent link">&para;</a></h3>
+<p>When written: when using SAA scanner on a planet or rings</p>
+<p>Parameters:</p>
+<ul>
+<li>SystemAddress </li>
+<li>BodyName </li>
+<li>BodyID </li>
+<li>Signals: (array) <ul>
+<li>Type </li>
+<li>Count </li>
+</ul>
+</li>
+<li>Genuses: (array) <ul>
+<li>Genus </li>
+</ul>
+</li>
+</ul>
+<p>Examples:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2019-04-17T13:38:18Z&quot;,
+    &quot;event&quot;: &quot;SAASignalsFound&quot;,
+    &quot;BodyName&quot;: &quot;Hermitage 4 A Ring&quot;,
+    &quot;SystemAddress&quot;: 5363877956440,
+    &quot;BodyID&quot;: 11,
+    &quot;Signals&quot;: [
+        {
+            &quot;Type&quot;: &quot;LowTemperatureDiamond&quot;,
+            &quot;Type_Localised&quot;: &quot;Low Temperature Diamonds&quot;,
+            &quot;Count&quot;: 1
+        },
+        {
+            &quot;Type&quot;: &quot;Alexandrite&quot;,
+            &quot;Count&quot;: 1
+        }
+    ]
+}
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;timestamp&quot;:</span><span class="w"> </span><span class="err">&quot;2019-04-17</span><span class="n">T13</span><span class="p">:</span><span class="mi">40</span><span class="o">:</span><span class="mi">39</span><span class="n">Z</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">event</span><span class="s2">&quot;: &quot;</span><span class="n">SAASignalsFound</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">BodyName</span><span class="s2">&quot;: &quot;</span><span class="n">Hermitage</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="n">b</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">SystemAddress</span><span class="s2">&quot;: 5363877956440,</span>
+<span class="s2">    &quot;</span><span class="n">BodyID</span><span class="s2">&quot;: 13,</span>
+<span class="s2">    &quot;</span><span class="n">Signals</span><span class="err">&quot;</span><span class="o">:</span><span class="w"> </span><span class="cp">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;$SAA_SignalType_Geological;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Type_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;Geological&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Count&quot;</span><span class="p">:</span> <span class="mi">14</span>
+        <span class="p">}</span>
+    <span class="cp">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="err">&quot;timestamp&quot;:</span><span class="w"> </span><span class="err">&quot;2022-07-01</span><span class="n">T09</span><span class="p">:</span><span class="mi">14</span><span class="o">:</span><span class="mi">32</span><span class="n">Z</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">event</span><span class="s2">&quot;: &quot;</span><span class="n">SAASignalsFound</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">BodyName</span><span class="s2">&quot;: &quot;</span><span class="n">Asellus</span><span class="w"> </span><span class="mi">3</span><span class="n">a</span><span class="s2">&quot;,</span>
+<span class="s2">    &quot;</span><span class="n">SystemAddress</span><span class="s2">&quot;: 1144348739947,</span>
+<span class="s2">    &quot;</span><span class="n">BodyID</span><span class="s2">&quot;: 10,</span>
+<span class="s2">    &quot;</span><span class="n">Signals</span><span class="s2">&quot;: </span><span class="cp">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;$SAA_SignalType_Biological;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Type_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;Biological&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Count&quot;</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;$SAA_SignalType_Geological;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Type_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;Geological&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Count&quot;</span><span class="p">:</span> <span class="mi">3</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;$SAA_SignalType_Human;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Type_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;Human&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Count&quot;</span><span class="p">:</span> <span class="mi">8</span>
+        <span class="p">}</span>
+    <span class="cp">]</span><span class="s2">,</span>
+<span class="s2">    &quot;</span><span class="n">Genuses</span><span class="err">&quot;</span><span class="o">:</span><span class="w"> </span><span class="cp">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Genus&quot;</span><span class="p">:</span> <span class="s2">&quot;$Codex_Ent_Bacterial_Genus_Name;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Genus_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;Bacterium&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Genus&quot;</span><span class="p">:</span> <span class="s2">&quot;$Codex_Ent_Stratum_Genus_Name;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Genus_Localised&quot;</span><span class="p">:</span> <span class="s2">&quot;Stratum&quot;</span>
+        <span class="p">}</span>
+    <span class="cp">]</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+
+<h3 id="scanbarycentre">ScanBaryCentre<a class="headerlink" href="#scanbarycentre" title="Permanent link">&para;</a></h3>
+<p>When scanning one body of a binary pair, you will now get an event detailing the orbital parameters of their BaryCentre</p>
+<p>Parameters:</p>
+<ul>
+<li>StarSystem </li>
+<li>SystemAddress </li>
+<li>BodyID </li>
+<li>SemiMajorAxis </li>
+<li>Eccentricity </li>
+<li>OrbitalInclination </li>
+<li>Periapsis </li>
+<li>OrbitalPeriod </li>
+<li>AscendingNode </li>
+<li>MeanAnomaly </li>
+</ul>
+<p>Example</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2021-07-27T13:52:20Z&quot;,
+    &quot;event&quot;: &quot;ScanBaryCentre&quot;,
+    &quot;StarSystem&quot;: &quot;Col 285 Sector YX-N b21-1&quot;,
+    &quot;SystemAddress&quot;: 2867561768401,
+    &quot;BodyID&quot;: 10,
+    &quot;SemiMajorAxis&quot;: 2107998251914.978,
+    &quot;Eccentricity&quot;: 0.033074,
+    &quot;OrbitalInclination&quot;: 0.019013,
+    &quot;Periapsis&quot;: 342.187341,
+    &quot;OrbitalPeriod&quot;: 3739380657.672882,
+    &quot;AscendingNode&quot;: -31.477241,
+    &quot;MeanAnomaly&quot;: 64.03028
+}
+</code></pre></div>
+
+<h3 id="sellexplorationdata">SellExplorationData<a class="headerlink" href="#sellexplorationdata" title="Permanent link">&para;</a></h3>
+<p>When Written: when selling exploration data in Cartographics</p>
+<p>Parameters:</p>
+<ul>
+<li>Systems: JSON array of system names </li>
+<li>Discovered: JSON array of discovered bodies </li>
+<li>BaseValue: value of systems </li>
+<li>Bonus: bonus for first discoveries </li>
+<li>TotalEarnings: total credits received (including for example the 200% bonus if rank 5 with Li Yong Rui) </li>
+</ul>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2016-06-10T14:32:03Z&quot;,
+    &quot;event&quot;: &quot;SellExplorationData&quot;,
+    &quot;Systems&quot;: [
+        &quot;HIP 78085&quot;,
+        &quot;Praea Euq NW-W b1-3&quot;
+    ],
+    &quot;Discovered&quot;: [
+        &quot;HIP 78085 A&quot;,
+        &quot;Praea Euq NW-W b1-3&quot;,
+        &quot;Praea Euq NW-W b1-3 3 a&quot;,
+        &quot;Praea Euq NW-W b1-3 3&quot;
+    ],
+    &quot;BaseValue&quot;: 10822,
+    &quot;Bonus&quot;: 3959,
+    &quot;TotalEarnings&quot;: 44343
+}
+</code></pre></div>
+
+<h3 id="screenshot">Screenshot<a class="headerlink" href="#screenshot" title="Permanent link">&para;</a></h3>
+<p>When Written: when a screen snapshot is saved</p>
+<p>Parameters:</p>
+<ul>
+<li>Filename: filename of screenshot </li>
+<li>Width: size in pixels </li>
+<li>Height: size in pixels </li>
+<li>System: current star system </li>
+<li>Body: name of nearest body </li>
+<li>Latitude </li>
+<li>Longitude </li>
+<li>Altitude </li>
+<li>Heading </li>
+</ul>
+<p>The latitude, longitude, altitude and heading will be included if on a planet or in low-altitude flight</p>
+<p>Example:</p>
+<div class="codehilite"><pre><span></span><code>{
+    &quot;timestamp&quot;: &quot;2018-01-17T09:48:26Z&quot;,
+    &quot;event&quot;: &quot;Screenshot&quot;,
+    &quot;Filename&quot;: &quot;_Screenshots/Screenshot_0024.bmp&quot;,
+    &quot;Width&quot;: 1440,
+    &quot;Height&quot;: 900,
+    &quot;System&quot;: &quot;Nuenets&quot;,
+    &quot;Body&quot;: &quot;Nuenets C 2&quot;,
+    &quot;Latitude&quot;: -60.7999,
+    &quot;Longitude&quot;: -74.059799,
+    &quot;Heading&quot;: 39,
+    &quot;Altitude&quot;: 27502.876953
+}
+</code></pre></div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../combat/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Combat" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Combat
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../trade/" class="md-footer__link md-footer__link--next" aria-label="Next: Trade" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Trade
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 ROMVoid95
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/ROMVoid95" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

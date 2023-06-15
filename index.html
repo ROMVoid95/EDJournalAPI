@@ -1,0 +1,792 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Elite Dangerous journal API">
+      
+      
+        <meta name="author" content="ROMVoid95">
+      
+      
+        <link rel="canonical" href="https://romvoid95.github.io/EDJournalAPI/">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>ED:Journal API</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="custom.css">
+    
+    <script>__md_scope=new URL(".",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="ED:Journal API" class="md-header__button md-logo" aria-label="ED:Journal API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ED:Journal API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ROMVoid95/EDJournalAPI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="ED:Journal API" class="md-nav__button md-logo" aria-label="ED:Journal API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ED:Journal API
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ROMVoid95/EDJournalAPI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Introduction
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    ChangeLog
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="file-format/" class="md-nav__link">
+        File Format
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="startup/" class="md-nav__link">
+        Startup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="travel/" class="md-nav__link">
+        Travel
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="combat/" class="md-nav__link">
+        Combat
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exploration/" class="md-nav__link">
+        Exploration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="trade/" class="md-nav__link">
+        Trade
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="station-services/" class="md-nav__link">
+        Station Services
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="powerplay/" class="md-nav__link">
+        Powerplay
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="squadrons/" class="md-nav__link">
+        Squadrons
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="fleetcarriers/" class="md-nav__link">
+        Fleet Carriers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="new-in-oddesey/" class="md-nav__link">
+        New in Odyssey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="misc-events/" class="md-nav__link">
+        Other Events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="status-file/" class="md-nav__link">
+        Status File
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="appendix/" class="md-nav__link">
+        Appendix
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    ChangeLog
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/ROMVoid95/EDJournalAPI/edit/main/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>Introduction</h1>
+
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>Elite:Dangerous writes a network log file primarily to help when investigating problems.</p>
+<p>Third-party tools developers have been reading some of the entries in the network log file, mainly in order to track the player's location.</p>
+<p>There is a clear demand from players for third-party tools, and from tools developers for more information from the game and/or server api.</p>
+<p>The new Player Journal provides a stream of information about gameplay events which can be used by tools developers to provide richer, more detailed tools to enhance the player experience. The data records written to this journal are much more high-level then that written to the network log.</p>
+<p>A short example of a player journal file (<em><strong>out of date, some events may have additional data</strong></em>):</p>
+<div class="codehilite"><pre><span></span><code>{&quot;timestamp&quot;:&quot;2016-06-10T14:31:00Z&quot;, &quot;event&quot;:&quot;FileHeader&quot;, &quot;part&quot;:1, &quot;gameversion&quot;:&quot;2.2&quot;, &quot;build&quot;:&quot;r113684 &quot; },
+{&quot;timestamp&quot;:&quot;2016-06-10T14:32:03Z&quot;, &quot;event&quot;:&quot;LoadGame&quot;, &quot;Commander&quot;:&quot;HRC1&quot;, &quot;Ship&quot;:&quot;SideWinder&quot;, &quot;ShipID&quot;:1, &quot;GameMode&quot;:&quot;Open&quot;, &quot;Credits&quot;:600120, &quot;Loan&quot;:0  }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:32:03Z&quot;, &quot;event&quot;:&quot;Rank&quot;, &quot;Combat&quot;:0, &quot;Trade&quot;:0, &quot;Explore&quot;:1, &quot;Empire&quot;:0, &quot;Federation&quot;:0, &quot;CQC&quot;:0 }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:32:03Z&quot;, &quot;event&quot;:&quot;Progress&quot;, &quot;Combat&quot;:0, &quot;Trade&quot;:0, &quot;Explore&quot;:73, &quot;Empire&quot;:0, &quot;Federation&quot;:0, &quot;CQC&quot;:0 }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:32:15Z&quot;, &quot;event&quot;:&quot;Location&quot;, &quot;StarSystem&quot;:&quot;Asellus  Primus&quot;, &quot;StarPos&quot;:[-23.938,40.875,-1.344] }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:32:16Z&quot;, &quot;event&quot;:&quot;Docked&quot;, &quot;StationName&quot;:&quot;Beagle 2 Landing&quot;, &quot;StationType&quot;:&quot;Coriolis&quot; }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:32:38Z&quot;, &quot;event&quot;:&quot;RefuelAll&quot;, &quot;Cost&quot;:12, &quot;Amount&quot;:0.234493 }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:34:25Z&quot;, &quot;event&quot;:&quot;Undocked&quot;, &quot;StationName&quot;:&quot;Beagle  2 Landing&quot;, &quot;StationType&quot;:&quot;Coriolis&quot; }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:35:00Z&quot;, &quot;event&quot;:&quot;FSDJump&quot;, &quot;StarSystem&quot;:&quot;HIP 78085&quot;, &quot;StarPos&quot;:[120.250,40.219,268.594], &quot;JumpDist&quot;:36.034 }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:35:22Z&quot;, &quot;event&quot;:&quot;Scan&quot;, &quot;BodyName&quot;:&quot;HIP 78085 A&quot;, &quot;StarType&quot;:&quot;G&quot; }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:36:10Z&quot;, &quot;event&quot;:&quot;FSDJump&quot;, &quot;StarSystem&quot;:&quot;Praea Euq NW-W b1-3&quot;, &quot;StarPos&quot;:[120.719,34.188,271.750], &quot;JumpDist&quot;:6.823 }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:36:42Z&quot;, &quot;event&quot;:&quot;Scan&quot;, &quot;BodyName&quot;:&quot;Praea  Euq NW-W b1-3&quot;, &quot;StarType&quot;:&quot;M&quot; }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:38:50Z&quot;, &quot;event&quot;:&quot;Scan&quot;, &quot;BodyName&quot;:&quot;Praea  Euq NW-W b1-3 3&quot;, &quot;Description&quot;:&quot;Icy body with  neon rich atmosphere and major water geysers volcanism&quot; }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:39:08Z&quot;, &quot;event&quot;:&quot;Scan&quot;, &quot;BodyName&quot;:&quot;Praea  Euq NW-W b1-3 3 a&quot;, &quot;Description&quot;:&quot;Tidally locked Icy body&quot; }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:41:03Z&quot;, &quot;event&quot;:&quot;FSDJump&quot;, &quot;StarSystem&quot;:&quot;Asellus Primus&quot;, &quot;StarPos&quot;:[-23.938,40.875,-1.344], &quot;JumpDist&quot;:39.112 }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:41:26Z&quot;, &quot;event&quot;:&quot;SupercruiseExit&quot;, &quot;StarSystem&quot;:&quot;Asellus   Primus&quot;, &quot;Body&quot;:&quot;Beagle 2 Landing&quot; }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:41:29Z&quot;, &quot;event&quot;:&quot;Docked&quot;, &quot;StationName&quot;:&quot;Beagle 2 Landing&quot;, &quot;StationType&quot;:&quot;Coriolis&quot; }
+{&quot;timestamp&quot;:&quot;2016-06-10T14:41:58Z&quot;, &quot;event&quot;:&quot;SellExplorationData&quot;, &quot;Systems&quot;:[ &quot;HIP 78085&quot;, &quot;Praea Euq NW-W b1-3&quot; ], &quot;Discovered&quot;:[ &quot;HIP 78085 A&quot;, &quot;Praea Euq  NW-W b1-3&quot;, &quot;Praea Euq NW-W b1-3 3 a&quot;, &quot;Praea Euq NW-W b1-3 3&quot; ], &quot;BaseValue&quot;:10822, &quot;Bonus&quot;:3959 }
+</code></pre></div>
+
+<h3 id="changelog">ChangeLog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h3>
+<p><strong>Version 37</strong></p>
+<p><strong>Changes for Odyssey up to update14 (May 2023)</strong></p>
+<ul>
+<li>The “CarrierJump” event is now written to the journal again on a carrier hyperspace jump instead of it writing a “Location” event.</li>
+<li>‘MissionFailed’ event is now written when the mission enters the failed state instead of when the mission is abandoned in the transactions panel.</li>
+<li>Ensured StationState is documented in the “Docked” event</li>
+<li>“StartJump” now sent for jumps while in a taxi, new field added to differentiate between a taxi jump and a jump in a pleyers own ship.</li>
+<li>Added the param “IsThargoid” to the events “Interdicted” and “EscapeInterdiction”</li>
+<li>Added new event “SupercruiseDestinationDrop” which is sent when dropping out of supercruise at a targeted destination.</li>
+<li>Added Thargoid war data to the events “FSDJump”, “CarrierJump” and “Location”</li>
+<li>Added documentation for the ClearImpound event(no change, was just missing from documentation)</li>
+<li>Added organic variant to the “ScanOrganic” and “SellOrganicData” events</li>
+<li>Fixed the “FactionKillBond” event sometimes not getting written</li>
+</ul>
+<p><strong>Version 36</strong></p>
+<p><strong>Changes for Odyssey up to update14 (November 2022)</strong></p>
+<ul>
+<li>Updated the "MissionCompleted" documentation to include the optional params "DestinationSystem", "DestinationStation" and "DestinationSettlement". No functional change, these params where already present. </li>
+<li>Added a new flag to Status.json to indicate if a charging fsd is charging a hyperspace jump </li>
+<li>Extended the UpgradeSuit/UpgradeWeapon events to include the resources used for the upgrade </li>
+<li>Added "DepartureTime" to the "CarrierJumpRequest" event </li>
+</ul>
+<p><strong>Version 35</strong></p>
+<p><strong>Changes for Odyssey up to update13 (July 2022)</strong></p>
+<ul>
+<li>A negotiated mission now writes event "MissionAccepted" only when the mission is accepted, not when the negotiation happens. </li>
+<li>Handing in a mission to a mission giver while on foot will now write the "MissionCompleted" event   </li>
+<li>Accepting an on foot mission will now report the destination system and destination settlement. "DestinationSettlement" added as a new optional parameter for the "MissionAccepted" event </li>
+<li>The route in NavRoute.json is now cleared when the route is cleared. New journal event "NavRouteClear" </li>
+<li>Extended the SAASignalsFound event to include the genuses on the scanned planet </li>
+<li>Fixed the "PayFines" event being written instead of "PayBounties" when paying off a bounty </li>
+</ul>
+<p><strong>Version 34</strong></p>
+<p><strong>Changes for Odyssey up to update12 (May 2022)</strong></p>
+<ul>
+<li>BookTaxi: add "retreat" flag </li>
+<li>CodexEntry: add BodyID </li>
+<li>BuyMicroResources: multi-buy format added </li>
+<li>FCMaterials – fleet carrier materials pricelist </li>
+<li>FSSBodySignals: extra info during a scan (actually from Update 6 last year) </li>
+<li>Bugfix: Resurrect event was sometimes written with blank strings </li>
+</ul>
+<p><strong>Version 33</strong></p>
+<p><strong>Changes for Odyssey up to update 11 (March 2022)</strong></p>
+<ul>
+<li>new flags in Status flags to distinguish between telepresence and physical crew </li>
+<li>the following events have a new bool value Telepresence: ChangeCrewRole EndCrewSession CrewMemberJoins CrewMemberQuits CrewLaunchFighter CrewMemberRoleChange JoinACrew QuitACrew KickCrewMember </li>
+<li>LaunchSRV, DockSRV and SRVDestroyed events now add a new value "SRVType" (from Oct 2021 update) </li>
+<li>when scanning one body of a binary pair, you will now get an event detailing the orbital parameters of their BaryCentre (from Sep 2021 update) </li>
+</ul>
+<p><strong>Version 32</strong></p>
+<p><strong>Changes up to Odyssey Update 5 (July 2021)</strong></p>
+<ul>
+<li>The "LoadGame" event now includes the language, gameversion, and Build number </li>
+<li>Include module class and modifications in suit loadout </li>
+<li>Changes to the way the ShipLocker contents are listed </li>
+<li>Updated description of CommunityGoal event </li>
+<li>Include info on landing pads in DockingRequested and Docked </li>
+<li>Added balance and travel destination in Status.json </li>
+<li>Fixed bug creating invalid ShipLocker.json </li>
+<li>Fixed bug re ADS mode in Status flags </li>
+<li>Added names for military and exobiolost ranks in appendix </li>
+<li>Corrected details of the contents of the NavRoute file </li>
+</ul>
+<p><strong>Version 31</strong></p>
+<p><strong>Changes for Odyssey release (May 2021)</strong></p>
+<ul>
+<li>Omit "MissionID":18446744073709551615 in inventory data when it is not mission-related </li>
+<li>Ensure the Touchdown/Liftoff events are logged when recalling/dismissing your empty ship </li>
+<li>Improve data written to journal on Touchdown/Takeoff, (with Lat/Lon) when recalling/dismissing unoccupied ship </li>
+<li>Add flags in status.json for 'glide mode', and for hangar, social space, etc </li>
+<li>Properly register strings to avoid blank event name for "RedeemVoucher" </li>
+<li>Get station name and station type for planetary surface stations </li>
+<li>Provide a new common method for determining Latitude &amp; Longitude, used for CodexEntry, ApproachSettlement, Touchdown, Liftoff – fixes data that was sometimes missing </li>
+<li>Improved tracking of backpack contents – new Backpack and BackpackChange events </li>
+<li>SuitLoadout on starting on-foot, or when disembarking: </li>
+<li>Fix station type when docking at FleetCarrier </li>
+<li>Fix bug with incorrect LoadoutID in CreateSuitLoadout event </li>
+</ul>
+<p><strong>Version 30</strong></p>
+<p><strong>Changes for Odyssey Alpha 4</strong></p>
+<ul>
+<li>See sections 12, 14 </li>
+</ul>
+<p><strong>Version 29</strong></p>
+<p><strong>Changes for "Odyssey"</strong></p>
+<ul>
+<li>See section 12 </li>
+</ul>
+<p><strong>Version 28</strong></p>
+<p><strong>Changes for v3.7 beta 2 (May 2020)</strong></p>
+<p>new events added:</p>
+<ul>
+<li>CarrierJumpCancelled </li>
+<li>CarrierNameChanged (with callsign, name, carrierid) </li>
+<li>new NavRoute.json file </li>
+</ul>
+<p>events with new data:</p>
+<ul>
+<li>CarrierJumpRequest - added Body (name) and BodyID </li>
+<li>Bounty - include localised Target   </li>
+<li>FSDTarget - include StarClass </li>
+</ul>
+<p>bugs fixed:</p>
+<ul>
+<li>CarrierStats  - don't write a ReservePercent value when in debt </li>
+<li>Status.json - flags fixed in SRV, and Lat/Lon in station </li>
+<li>Loadout - fix cases where loadout data was mix of SLF and mothership </li>
+<li>EngineerProgress - now written when state updates </li>
+<li>RefuelAll, RepairAll - fix null strings </li>
+<li>Docked - fix bug where docking at a FC doesn't sometimes pick up nearby station name </li>
+</ul>
+<p><strong>Version 27</strong></p>
+<p><strong>Changes for v3.7 beta 1 (April 2020)</strong></p>
+<ul>
+<li>Added events relating to Fleet Carriers (§11) </li>
+<li>New CargoTransfer event (§13.52) </li>
+<li>Change to Repair event (§8.38) </li>
+<li>Added some station services (see 'Docked' §4.2) </li>
+</ul>
+<p><strong>Version 26 - Changes for v3.5 (September 2019)</strong></p>
+<p><strong>Version 25 - Changes for v3.4 (April 2019)</strong></p>
+<p><strong>Version 24</strong></p>
+<p><strong>Version 22 – in v3.3 (beta 4)</strong></p>
+<p><strong>Version 21 – for v3.3 (beta 2)</strong></p>
+<p><strong>Version 20 – for v3.3 (beta 1)</strong> <em>(released 30th Oct 2018)</em></p>
+<p><strong>Version 19 – for v3.3</strong> <em>(preview released 20th Sept 2018)</em></p>
+<p><strong>Version 18 – for v3.0.4</strong> (27th March 2018)</p>
+<p><strong>Version 17 – for v3.0.3</strong> (19th March 2018)</p>
+<p><strong>Version 16 – for v3.0.2</strong> (5th March 2018)</p>
+<p><strong>Version 15 – for v3.0 – beta3</strong> (6th Feb 2018)</p>
+<p><strong>Version 14 – for v3.0 – beta1</strong> (25/Jan/2018)</p>
+<p><strong>Version 13 - In 2.4 Open beta</strong> <em>(24th Aug 2017)</em></p>
+<p><strong>Version 12 - In 2.4 beta1</strong> <em>(17th Aug 2017)</em></p>
+<p><strong>Version 11</strong><em>published 26/Jun/2017</em></p>
+<p><strong>Version 10</strong><em>published 29/Mar/2017 (for v2.3 beta 5)</em></p>
+<p><strong>Version 9</strong><em>published 20/Feb/2017 (for v2.3 beta)</em></p>
+<p><strong>Version 8</strong><em>published 10/Jan/2017 (for v2.2.03)</em></p>
+<p><strong>Version 7</strong><em>published 15/Nov/2016 (for release 2.2.02)</em></p>
+<p><strong>Version 6</strong><em>published 26/Oct/2016 (for 2.2 public release)</em></p>
+<p><strong>Version 1</strong> was published 20/July/2016</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        
+        <a href="file-format/" class="md-footer__link md-footer__link--next" aria-label="Next: File Format" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              File Format
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 ROMVoid95
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/ROMVoid95" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": ["tabs"], "search": "assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

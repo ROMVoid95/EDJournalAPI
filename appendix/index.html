@@ -1,0 +1,1868 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Elite Dangerous journal API">
+      
+      
+        <meta name="author" content="ROMVoid95">
+      
+      
+        <link rel="canonical" href="https://romvoid95.github.io/EDJournalAPI/appendix/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-8.2.11">
+    
+    
+      
+        <title>Appendix - ED:Journal API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c5ef100.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#appendix" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ED:Journal API" class="md-header__button md-logo" aria-label="ED:Journal API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ED:Journal API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Appendix
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ROMVoid95/EDJournalAPI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ED:Journal API" class="md-nav__button md-logo" aria-label="ED:Journal API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ED:Journal API
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ROMVoid95/EDJournalAPI" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-format/" class="md-nav__link">
+        File Format
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../startup/" class="md-nav__link">
+        Startup
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../travel/" class="md-nav__link">
+        Travel
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat/" class="md-nav__link">
+        Combat
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exploration/" class="md-nav__link">
+        Exploration
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trade/" class="md-nav__link">
+        Trade
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../station-services/" class="md-nav__link">
+        Station Services
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../powerplay/" class="md-nav__link">
+        Powerplay
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../squadrons/" class="md-nav__link">
+        Squadrons
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fleetcarriers/" class="md-nav__link">
+        Fleet Carriers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-in-oddesey/" class="md-nav__link">
+        New in Odyssey
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../misc-events/" class="md-nav__link">
+        Other Events
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../status-file/" class="md-nav__link">
+        Status File
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Appendix
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Appendix
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ranks" class="md-nav__link">
+    Ranks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#star_descriptions" class="md-nav__link">
+    Star Descriptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planet_classes" class="md-nav__link">
+    Planet Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atmosphere_classes" class="md-nav__link">
+    Atmosphere Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volcanism_classes" class="md-nav__link">
+    Volcanism classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crime_types" class="md-nav__link">
+    Crime types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bodytype_values" class="md-nav__link">
+    BodyType values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gases_in_atmospherecomposition" class="md-nav__link">
+    Gases in AtmosphereComposition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#star_luminosity_classes" class="md-nav__link">
+    Star Luminosity classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineer_ids" class="md-nav__link">
+    Engineer IDs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module_attributes" class="md-nav__link">
+    Module Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ranks" class="md-nav__link">
+    Ranks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#star_descriptions" class="md-nav__link">
+    Star Descriptions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planet_classes" class="md-nav__link">
+    Planet Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atmosphere_classes" class="md-nav__link">
+    Atmosphere Classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#volcanism_classes" class="md-nav__link">
+    Volcanism classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crime_types" class="md-nav__link">
+    Crime types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bodytype_values" class="md-nav__link">
+    BodyType values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gases_in_atmospherecomposition" class="md-nav__link">
+    Gases in AtmosphereComposition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#star_luminosity_classes" class="md-nav__link">
+    Star Luminosity classes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#engineer_ids" class="md-nav__link">
+    Engineer IDs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#module_attributes" class="md-nav__link">
+    Module Attributes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/ROMVoid95/EDJournalAPI/edit/main/docs/appendix.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>Appendix</h1>
+
+<h2 id="appendix">Appendix<a class="headerlink" href="#appendix" title="Permanent link">&para;</a></h2>
+<h3 id="ranks">Ranks<a class="headerlink" href="#ranks" title="Permanent link">&para;</a></h3>
+<p><em><strong>Combat ranks</strong></em>:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Index</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td>'Harmless'</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td>'Mostly Harmless'</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>'Novice'</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>'Competent'</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>'Expert'</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>'Master'</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>'Dangerous'</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>'Deadly'</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>'Elite'</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Trade ranks</strong></em>:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Index</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td>'Penniless'</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td>'Mostly Pennliess'</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>'Peddler'</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>'Dealer'</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>'Merchant'</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>'Broker'</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>'Entrepreneur'</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>'Tycoon'</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>'Elite'</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Exploration ranks</strong></em>:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Index</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td>'Aimless'</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td>'Mostly Aimless'</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>'Scout'</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>'Surveyor'</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>'Explorer'</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>'Pathfinder'</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>'Ranger'</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>'Pioneer'</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>'Elite'</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Federation ranks</strong></em>:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Index</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td>'None'</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td>'Recruit'</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>'Cadet'</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>'Midshipman'</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>'Petty Officer'</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>'Chief Petty Officer'</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>'Warrant Officer'</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>'Ensign'</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>'Lieutenant'</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td>'Lt. Commander'</td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td>'Post Commander'</td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td>'Post Captain'</td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td>'Rear Admiral'</td>
+</tr>
+<tr>
+<td align="right">13</td>
+<td>'Vice Admiral'</td>
+</tr>
+<tr>
+<td align="right">14</td>
+<td>'Admiral'</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Empire ranks</strong></em>:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Index</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td>'None'</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td>'Outsider'</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>'Serf'</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>'Master'</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>'Squire'</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>'Knight'</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>'Lord'</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>'Baron'</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>'Viscount '</td>
+</tr>
+<tr>
+<td align="right">9</td>
+<td>'Count'</td>
+</tr>
+<tr>
+<td align="right">10</td>
+<td>'Earl'</td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td>'Marquis'</td>
+</tr>
+<tr>
+<td align="right">12</td>
+<td>'Duke'</td>
+</tr>
+<tr>
+<td align="right">13</td>
+<td>'Prince'</td>
+</tr>
+<tr>
+<td align="right">14</td>
+<td>'King'</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>CQC ranks</strong></em>:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Index</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td>'Helpless'</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td>'Mostly Helpless'</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>'Amateur'</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>'Semi Professional'</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>'Professional'</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>'Champion'</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>'Hero'</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>'Legend'</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>'Elite'</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Military Ranks</strong></em>:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Index</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td>Defenceless</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td>Mostly Defenceless</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Rookie</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>Soldier</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Gunslinger</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>Warrior</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>Gladiator</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>Deadeye</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>Elite</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>Exobiologist Ranks</strong></em>:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Index</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">0</td>
+<td>Directionless</td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td>Mostly Directionless</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td>Compiler</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td>Collector</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td>Cataloguer</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td>Taxonomist</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td>Ecologist</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td>Geneticist</td>
+</tr>
+<tr>
+<td align="right">8</td>
+<td>Elite</td>
+</tr>
+</tbody>
+</table>
+<h3 id="star_descriptions">Star Descriptions<a class="headerlink" href="#star_descriptions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>(<em>Main sequence</em>:) O B A F G K M L T Y</p>
+</li>
+<li>
+<p>(<em>Proto stars</em>:) TTS AeBe</p>
+</li>
+<li>
+<p>(<em>Wolf-Rayet</em>:) W WN WNC WC WO</p>
+</li>
+<li>
+<p>(<em>Carbon stars</em>:) CS C CN CJ CH CHd</p>
+</li>
+<li>
+<p>MS S</p>
+</li>
+<li>
+<p>(<em>white dwarfs</em>:) D DA DAB DAO DAZ DAV DB DBZ DBV DO DOV DQ DC DCV DX</p>
+</li>
+<li>
+<p>N (=<em>Neutron</em>)</p>
+</li>
+<li>
+<p>H (=<em>Black Hole</em>)</p>
+</li>
+<li>
+<p>X (=<em>exotic</em>)</p>
+</li>
+<li>
+<p>SupermassiveBlackHole</p>
+</li>
+<li>
+<p>A_BlueWhiteSuperGiant</p>
+</li>
+<li>
+<p>F_WhiteSuperGiant</p>
+</li>
+<li>
+<p>M_RedSuperGiant</p>
+</li>
+<li>
+<p>M_RedGiant</p>
+</li>
+<li>
+<p>K_OrangeGiant</p>
+</li>
+<li>
+<p>RoguePlanet</p>
+</li>
+<li>
+<p>Nebula</p>
+</li>
+<li>
+<p>StellarRemnantNebula</p>
+</li>
+</ul>
+<h3 id="planet_classes">Planet Classes<a class="headerlink" href="#planet_classes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Metal rich body</p>
+</li>
+<li>
+<p>High metal content body</p>
+</li>
+<li>
+<p>Rocky body</p>
+</li>
+<li>
+<p>Icy body</p>
+</li>
+<li>
+<p>Rocky ice body</p>
+</li>
+<li>
+<p>Earthlike body</p>
+</li>
+<li>
+<p>Water world</p>
+</li>
+<li>
+<p>Ammonia world</p>
+</li>
+<li>
+<p>Water giant</p>
+</li>
+<li>
+<p>Water giant with life</p>
+</li>
+<li>
+<p>Gas giant with water based life</p>
+</li>
+<li>
+<p>Gas giant with ammonia based life</p>
+</li>
+<li>
+<p>Sudarsky class I gas giant (also class II, III, IV, V)</p>
+</li>
+<li>
+<p>Helium rich gas giant</p>
+</li>
+<li>
+<p>Helium gas giant</p>
+</li>
+</ul>
+<h3 id="atmosphere_classes">Atmosphere Classes<a class="headerlink" href="#atmosphere_classes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>No atmosphere</p>
+</li>
+<li>
+<p>Suitable for water-based life</p>
+</li>
+<li>
+<p>Ammonia and oxygen</p>
+</li>
+<li>
+<p>Ammonia</p>
+</li>
+<li>
+<p>Water</p>
+</li>
+<li>
+<p>Carbon dioxide</p>
+</li>
+<li>
+<p>Sulphur dioxide</p>
+</li>
+<li>
+<p>Nitrogen</p>
+</li>
+<li>
+<p>Water-rich</p>
+</li>
+<li>
+<p>Methane-rich</p>
+</li>
+<li>
+<p>Ammonia-rich</p>
+</li>
+<li>
+<p>Carbon dioxide-rich</p>
+</li>
+<li>
+<p>Methane</p>
+</li>
+<li>
+<p>Helium</p>
+</li>
+<li>
+<p>Silicate vapour</p>
+</li>
+<li>
+<p>Metallic vapour</p>
+</li>
+<li>
+<p>Neon-rich</p>
+</li>
+<li>
+<p>Argon-rich</p>
+</li>
+<li>
+<p>Neon</p>
+</li>
+<li>
+<p>Argon</p>
+</li>
+<li>
+<p>Oxygen</p>
+</li>
+</ul>
+<h3 id="volcanism_classes">Volcanism classes<a class="headerlink" href="#volcanism_classes" title="Permanent link">&para;</a></h3>
+<p>(all with possible 'minor' or 'major' qualifier)</p>
+<ul>
+<li>
+<p>None</p>
+</li>
+<li>
+<p>Water Magma</p>
+</li>
+<li>
+<p>Sulphur Dioxide Magma</p>
+</li>
+<li>
+<p>Ammonia Magma</p>
+</li>
+<li>
+<p>Methane Magma</p>
+</li>
+<li>
+<p>Nitrogen Magma</p>
+</li>
+<li>
+<p>Silicate Magma</p>
+</li>
+<li>
+<p>Metallic Magma</p>
+</li>
+<li>
+<p>Water Geysers</p>
+</li>
+<li>
+<p>Carbon Dioxide Geysers</p>
+</li>
+<li>
+<p>Ammonia Geysers</p>
+</li>
+<li>
+<p>Methane Geysers</p>
+</li>
+<li>
+<p>Nitrogen Geysers</p>
+</li>
+<li>
+<p>Helium Geysers</p>
+</li>
+<li>
+<p>Silicate Vapour Geysers</p>
+</li>
+</ul>
+<h3 id="crime_types">Crime types<a class="headerlink" href="#crime_types" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Assault</p>
+</li>
+<li>
+<p>Murder</p>
+</li>
+<li>
+<p>Piracy</p>
+</li>
+<li>
+<p>Interdiction</p>
+</li>
+<li>
+<p>IllegalCargo</p>
+</li>
+<li>
+<p>DisobeyPolice</p>
+</li>
+<li>
+<p>FireInNoFireZone</p>
+</li>
+<li>
+<p>FireInStation</p>
+</li>
+<li>
+<p>DumpingDangerous</p>
+</li>
+<li>
+<p>DumpingNearStation</p>
+</li>
+<li>
+<p>DockingMinor_BlockingAirlock</p>
+</li>
+<li>
+<p>DockingMajor_BlockingAirlock</p>
+</li>
+<li>
+<p>DockingMinor_BlockingLandingPad</p>
+</li>
+<li>
+<p>DockingMajor_BlockingLandingPad</p>
+</li>
+<li>
+<p>DockingMinor_Trespass</p>
+</li>
+<li>
+<p>DockingMajor_Trespass</p>
+</li>
+<li>
+<p>CollidedAtSpeedInNoFireZone</p>
+</li>
+<li>
+<p>CollidedAtSpeedInNoFireZone_HullDamage</p>
+</li>
+</ul>
+<h3 id="bodytype_values">BodyType values<a class="headerlink" href="#bodytype_values" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Null" (eg the barycentre of a binary star system)</p>
+</li>
+<li>
+<p>"Star"</p>
+</li>
+<li>
+<p>"Planet"</p>
+</li>
+<li>
+<p>"PlanetaryRing"</p>
+</li>
+<li>
+<p>"StellarRing"</p>
+</li>
+<li>
+<p>"Station"</p>
+</li>
+<li>
+<p>"AsteroidCluster"</p>
+</li>
+</ul>
+<h3 id="gases_in_atmospherecomposition">Gases in AtmosphereComposition<a class="headerlink" href="#gases_in_atmospherecomposition" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Water</p>
+</li>
+<li>
+<p>Oxygen</p>
+</li>
+<li>
+<p>CarbonDioxide</p>
+</li>
+<li>
+<p>SulphurDioxide</p>
+</li>
+<li>
+<p>Ammonia</p>
+</li>
+<li>
+<p>Methane</p>
+</li>
+<li>
+<p>Nitrogen</p>
+</li>
+<li>
+<p>Hydrogen</p>
+</li>
+<li>
+<p>Helium</p>
+</li>
+<li>
+<p>Neon</p>
+</li>
+<li>
+<p>Argon</p>
+</li>
+<li>
+<p>Silicates</p>
+</li>
+<li>
+<p>Iron</p>
+</li>
+</ul>
+<h3 id="star_luminosity_classes">Star Luminosity classes<a class="headerlink" href="#star_luminosity_classes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>0</p>
+</li>
+<li>
+<p>I</p>
+</li>
+<li>
+<p>Ia0</p>
+</li>
+<li>
+<p>Ia</p>
+</li>
+<li>
+<p>Ib</p>
+</li>
+<li>
+<p>Iab</p>
+</li>
+<li>
+<p>II</p>
+</li>
+<li>
+<p>IIa</p>
+</li>
+<li>
+<p>IIab</p>
+</li>
+<li>
+<p>IIb</p>
+</li>
+<li>
+<p>III</p>
+</li>
+<li>
+<p>IIIa</p>
+</li>
+<li>
+<p>IIIab</p>
+</li>
+<li>
+<p>IIIb</p>
+</li>
+<li>
+<p>IV</p>
+</li>
+<li>
+<p>IVa</p>
+</li>
+<li>
+<p>IVab</p>
+</li>
+<li>
+<p>IVb</p>
+</li>
+<li>
+<p>V</p>
+</li>
+<li>
+<p>Va</p>
+</li>
+<li>
+<p>Vab</p>
+</li>
+<li>
+<p>Vb</p>
+</li>
+<li>
+<p>Vz</p>
+</li>
+<li>
+<p>VI</p>
+</li>
+<li>
+<p>VII</p>
+</li>
+</ul>
+<h3 id="engineer_ids">Engineer IDs<a class="headerlink" href="#engineer_ids" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="right">ID</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">300000</td>
+<td>Didi Vatermann</td>
+</tr>
+<tr>
+<td align="right">300010</td>
+<td>Bill Turner</td>
+</tr>
+<tr>
+<td align="right">300030</td>
+<td>Broo Tarquin</td>
+</tr>
+<tr>
+<td align="right">300040</td>
+<td>The Sarge</td>
+</tr>
+<tr>
+<td align="right">300050</td>
+<td>Zachariah Nemo</td>
+</tr>
+<tr>
+<td align="right">300080</td>
+<td>Liz Ryder</td>
+</tr>
+<tr>
+<td align="right">300090</td>
+<td>Hera Tani</td>
+</tr>
+<tr>
+<td align="right">300100</td>
+<td>Felicity Farseer</td>
+</tr>
+<tr>
+<td align="right">300110</td>
+<td>Ram Tah</td>
+</tr>
+<tr>
+<td align="right">300120</td>
+<td>Lei Cheung</td>
+</tr>
+<tr>
+<td align="right">300140</td>
+<td>Col. Bris Dekker</td>
+</tr>
+<tr>
+<td align="right">300160</td>
+<td>Elvira Martuuk</td>
+</tr>
+<tr>
+<td align="right">300180</td>
+<td>The Dweller</td>
+</tr>
+<tr>
+<td align="right">300200</td>
+<td>Marco Quent</td>
+</tr>
+<tr>
+<td align="right">300210</td>
+<td>Selene Jean</td>
+</tr>
+<tr>
+<td align="right">300220</td>
+<td>Prof. Palin</td>
+</tr>
+<tr>
+<td align="right">300230</td>
+<td>Lori Jameson</td>
+</tr>
+<tr>
+<td align="right">300250</td>
+<td>Juri Ishmaak</td>
+</tr>
+<tr>
+<td align="right">300260</td>
+<td>Tod 'The Blaster' McQuinn</td>
+</tr>
+<tr>
+<td align="right">300270</td>
+<td>Tiana Fortune</td>
+</tr>
+</tbody>
+</table>
+<h3 id="module_attributes">Module Attributes<a class="headerlink" href="#module_attributes" title="Permanent link">&para;</a></h3>
+<p>These are the named attributes on modules, but not all are modifiable via engineering:</p>
+<p>(note, based on enum eItemInfoFieldType)</p>
+<ul>
+<li>Size </li>
+<li>Class </li>
+<li>Mass </li>
+<li>Integrity </li>
+<li>PowerDraw </li>
+<li>BootTime </li>
+<li>ShieldBankSpinUp </li>
+<li>ShieldBankDuration </li>
+<li>ShieldBankReinforcement </li>
+<li>ShieldBankHeat </li>
+<li>DamagePerSecond </li>
+<li>Damage </li>
+<li>DistributorDraw </li>
+<li>ThermalLoad </li>
+<li>ArmourPenetration </li>
+<li>MaximumRange </li>
+<li>ShotSpeed </li>
+<li>RateOfFire </li>
+<li>BurstRateOfFire </li>
+<li>BurstSize </li>
+<li>AmmoClipSize </li>
+<li>AmmoMaximum </li>
+<li>RoundsPerShot </li>
+<li>ReloadTime </li>
+<li>BreachDamage </li>
+<li>MinBreachChance </li>
+<li>MaxBreachChance </li>
+<li>Jitter </li>
+<li>WeaponMode </li>
+<li>DamageType </li>
+<li>ShieldGenMinimumMass </li>
+<li>ShieldGenOptimalMass </li>
+<li>ShieldGenMaximumMass </li>
+<li>ShieldGenMinStrength </li>
+<li>ShieldGenStrength </li>
+<li>ShieldGenMaxStrength </li>
+<li>RegenRate </li>
+<li>BrokenRegenRate </li>
+<li>EnergyPerRegen </li>
+<li>FSDOptimalMass </li>
+<li>FSDHeatRate </li>
+<li>MaxFuelPerJump </li>
+<li>EngineMinimumMass </li>
+<li>EngineOptimalMass </li>
+<li>MaximumMass </li>
+<li>EngineMinPerformance </li>
+<li>EngineOptPerformance </li>
+<li>EngineMaxPerformance </li>
+<li>EngineHeatRate </li>
+<li>PowerCapacity </li>
+<li>HeatEfficiency </li>
+<li>WeaponsCapacity </li>
+<li>WeaponsRecharge </li>
+<li>EnginesCapacity </li>
+<li>EnginesRecharge </li>
+<li>SystemsCapacity </li>
+<li>SystemsRecharge </li>
+<li>DefenceModifierHealthMultiplier </li>
+<li>DefenceModifierHealthAddition </li>
+<li>DefenceModifierShieldMultiplier </li>
+<li>DefenceModifierShieldAddition </li>
+<li>KineticResistance </li>
+<li>ThermicResistance </li>
+<li>ExplosiveResistance </li>
+<li>CausticResistance </li>
+<li>FSDInterdictorRange </li>
+<li>FSDInterdictorFacingLimit </li>
+<li>ScannerRange </li>
+<li>DiscoveryScannerRange </li>
+<li>DiscoveryScannerPassiveRange </li>
+<li>MaxAngle </li>
+<li>ScannerTimeToScan </li>
+<li>ChaffJamDuration </li>
+<li>ECMRange </li>
+<li>ECMTimeToCharge </li>
+<li>ECMActivePowerConsumption </li>
+<li>ECMHeat </li>
+<li>ECMCooldown </li>
+<li>HeatSinkDuration </li>
+<li>ThermalDrain </li>
+<li>NumBuggySlots </li>
+<li>CargoCapacity </li>
+<li>MaxActiveDrones </li>
+<li>DroneTargetRange </li>
+<li>DroneLifeTime </li>
+<li>DroneSpeed </li>
+<li>DroneMultiTargetSpeed </li>
+<li>DroneFuelCapacity </li>
+<li>DroneRepairCapacity </li>
+<li>DroneHackingTime </li>
+<li>DroneMinJettisonedCargo </li>
+<li>DroneMaxJettisonedCargo </li>
+<li>FuelScoopRate </li>
+<li>FuelCapacity </li>
+<li>OxygenTimeCapacity </li>
+<li>RefineryBins </li>
+<li>AFMRepairCapacity </li>
+<li>AFMRepairConsumption </li>
+<li>AFMRepairPerAmmo </li>
+<li>MaxRange </li>
+<li>SensorTargetScanAngle </li>
+<li>Range </li>
+<li>VehicleCargoCapacity </li>
+<li>VehicleHullMass </li>
+<li>VehicleFuelCapacity </li>
+<li>VehicleArmourHealth </li>
+<li>VehicleShieldHealth </li>
+<li>FighterMaxSpeed </li>
+<li>FighterBoostSpeed </li>
+<li>FighterPitchRate </li>
+<li>FighterDPS </li>
+<li>FighterYawRate </li>
+<li>FighterRollRate </li>
+<li>CabinCapacity </li>
+<li>CabinClass </li>
+<li>DisruptionBarrierRange </li>
+<li>DisruptionBarrierChargeDuration </li>
+<li>DisruptionBarrierActivePower </li>
+<li>DisruptionBarrierCooldown </li>
+<li>WingDamageReduction </li>
+<li>WingMinDuration </li>
+<li>WingMaxDuration </li>
+<li>ShieldSacrificeAmountRemoved </li>
+<li>ShieldSacrificeAmountGiven </li>
+<li>FSDJumpRangeBoost </li>
+<li>FSDFuelUseIncrease </li>
+<li>BoostSpeedMultiplier </li>
+<li>BoostAugmenterPowerUse </li>
+<li>ModuleDefenceAbsorption </li>
+<li>FalloffRange </li>
+<li>DSS_RangeMult </li>
+<li>DSS_AngleMult </li>
+<li>DSS_RateMult </li>
+</ul>
+<p>The following module attributes have enum values, written as a string, all others are float</p>
+<p>WeaponMode should be one of:</p>
+<ul>
+<li>ForwardFire</li>
+<li>Gimbal</li>
+<li>TargetOnly</li>
+<li>FireAtWill</li>
+<li>Manual</li>
+<li>NoMode</li>
+</ul>
+<p>DamageType should be one of:</p>
+<ul>
+<li>Kinetic</li>
+<li>Thermal</li>
+<li>Explosive</li>
+<li>Collision</li>
+<li>Thargoid</li>
+<li>AntiThargoid</li>
+</ul>
+<p>CabinClass should be one of:</p>
+<ul>
+<li>Prison</li>
+<li>Economy</li>
+<li>Standard</li>
+<li>Business</li>
+<li>First</li>
+<li>Luxury</li>
+</ul>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../status-file/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Status File" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Status File
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 ROMVoid95
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/ROMVoid95" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["tabs"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.748e2769.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
