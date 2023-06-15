@@ -2,15 +2,15 @@
 site_name: "ED:Journal API"
 site_description: "Documentation for Elite Dangerous journal API"
 site_author: "ROMVoid95"
-site_url: "https://mkdocs.peaceiris.com/"
+site_url: "https://romvoid95.github.io/EDJournalAPI/"
 
 # Copyright
-copyright: "&copy; 2021 peaceiris"
+copyright: "&copy; 2023 ROMVoid95"
 
 # Repository
 repo_name: "GitHub"
-repo_url: "https://github.com/peaceiris/mkdocs-material-boilerplate"
-edit_uri: "https://github.com/peaceiris/mkdocs-material-boilerplate/edit/main/docs_sample"
+repo_url: "https://github.com/ROMVoid95/EDJournalAPI"
+edit_uri: "https://github.com/ROMVoid95/EDJournalAPI/edit/main/docs"
 
 # Configuration
 docs_dir: "docs"
@@ -55,33 +55,26 @@ plugins:
 extra_javascript:
   - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"
 extra_css:
-  - "assets/css/custom.css"
+  - "custom.css"
 extra:
   manifest: "manifest.json"
   social:
     - icon: "fontawesome/brands/github-alt"
-      link: "https://github.com/peaceiris"
-    - icon: "fontawesome/brands/twitter"
-      link: "https://twitter.com/piris314en"
+      link: "https://github.com/ROMVoid95"
 
-# Page tree
 nav:
-  - "Home": "index.md"
-  - "Material for MkDocs": "material-for-mkdocs.md"
-  - "Getting started":
-      - "Download boilerplate": "getting-started/download-boilerplate.md"
-      - "pipenv": "getting-started/pipenv.md"
-      - "invoke": "getting-started/invoke.md"
-      - "Docker": "getting-started/docker.md"
-      - "pip": "getting-started/pip.md"
-  - "Hosting and Deployment":
-      - "Combinations": "hosting-and-deployment/combinations.md"
-      - "Netlify": "hosting-and-deployment/netlify.md"
-      - "GitHub Pages": "hosting-and-deployment/github-pages.md"
-      - "GitLab Pages": "hosting-and-deployment/gitlab-pages.md"
-      - "AWS Amplify Console": "hosting-and-deployment/aws-amplify-console.md"
-  - "Extensions":
-      - "MathJax": "extensions/mathjax.md"
-      - "Code Hilite": "extensions/code-hilite.md"
-      - "Footnote": "extensions/footnote.md"
-  - "License": "license.md"
+  - "Introduction": "index.md"
+  - "File Format": "file-format.md"
+  - "Startup": "startup.md"
+  - "Travel": "travel.md"
+  - "Combat": "combat.md"
+  - "Exploration": "exploration.md"
+  - "Trade": "trade.md"
+  - "Station Services": "station-services.md"
+  - "Powerplay": "powerplay.md"
+  - "Squadrons": "squadrons.md"
+  - "Fleet Carriers": "fleetcarriers.md"
+  - "New in Odyssey": "new-in-oddesey.md"
+  - "Other Events": "misc-events.md"
+  - "Status File": "status-file.md"
+  - "Appendix": "appendix.md"
